@@ -1,2 +1,4 @@
 # Write any command you want to run
-# sbt -Dtest.VCS=true "; testOnly ProjectTemplate"
+#sbt -Dtest.CS217=true "; testOnly MolDSim"
+source ./exports.sh
+sbt -Dtest.VCS=true "; testOnly MolDSim"
