@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Jun  4 02:22:46 2024
+# Process ID: 3042897
+# Current directory: /home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu
+# Command line: vivado -mode batch -source bdproject.tcl -tclargs 100
+# Log file: /home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/vivado.log
+# Journal file: /home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/vivado.jou
+#-----------------------------------------------------------
+source bdproject.tcl

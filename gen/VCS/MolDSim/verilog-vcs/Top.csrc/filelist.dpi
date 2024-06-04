@@ -1,0 +1,3 @@
+DPI_STUB_OBJS += ./../accel.bit.bin.daidir/vc_hdrs.o
+./../accel.bit.bin.daidir/vc_hdrs.o: ./../accel.bit.bin.daidir/vc_hdrs.c
+	@$(CC) -I/cad/synopsys/vcs/K-2015.09-SP2-7/include  -pipe -fPIC    -I/cad/synopsys/vcs/K-2015.09-SP2-7/include -I../../cpp/SW -I../../vcs.sw-resources -I../dramShim -I../DRAMSim2 -I../ -fPIC -std=c++11 -L../ -ldramsim -lstdc++ -Wl,-rpath=../ -I/cad/synopsys/vcs/K-2015.09-SP2-7/include  -fPIC -c -o ./../accel.bit.bin.daidir/vc_hdrs.o ./../accel.bit.bin.daidir/vc_hdrs.c

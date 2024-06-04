@@ -1,0 +1,5 @@
+          Transforming x64 (x54 ? Block(x63) : Block(Const(90))
+          Creating SwitchCase from cond x54 and body Block(x63)
+            x103 = SwitchCase(Block(x63))
+          Creating SwitchCase from cond x102 and body Block(Const(90))
+            x104 = SwitchCase(Block(Const(90)))

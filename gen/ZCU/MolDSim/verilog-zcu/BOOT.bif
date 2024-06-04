@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+  [bootloader]fsbl.elf
+  /home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/accel.bit
+  u-boot.elf
+}

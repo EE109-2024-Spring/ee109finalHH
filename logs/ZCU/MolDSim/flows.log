@@ -1,0 +1,42 @@
+[[34minfo[0m] @flow analyses
+[[34minfo[0m] flows: 0.0s (NaN%)
+[[34minfo[0m] flows.accumulator: 0.123s (100.00%)
+[[34minfo[0m] flows.controlLevel: 0.087s (100.00%)
+[[34minfo[0m] flows.streams: 0.077s (100.00%)
+[[34minfo[0m] flows.globals: 0.068s (100.00%)
+[[34minfo[0m] flows.blockLevel: 0.065s (100.00%)
+[[34minfo[0m] flows.controlSchedule: 0.06s (100.00%)
+[[34minfo[0m] flows.memories: 0.028s (100.00%)
+[[34minfo[0m] flows.accesses: 0.021s (100.00%)
+[[34minfo[0m] flows.blackbox: 0.002s (100.00%)
+[[34minfo[0m] flows.transferDataToAllNew_x591: 0.0s (NaN%)
+[[34minfo[0m] flows.transferDataToAllNew_x564: 0.0s (NaN%)
+[[34minfo[0m] flows.transferDataToAllNew_x711: 0.0s (NaN%)
+[[34minfo[0m] flows.transferDataToAllNew_x531: 0.0s (NaN%)
+[[34minfo[0m] flows.transferDataToAllNew_x679: 0.0s (NaN%)
+[[34minfo[0m] flows.transferDataToAllNew_x661: 0.0s (NaN%)
+[[34minfo[0m] flows.transferDataToAllNew_x481: 0.0s (NaN%)
+[[34minfo[0m] flows.transferDataToAllNew_x569: 0.0s (NaN%)
+[[34minfo[0m] flows.inReduce: 0.0s (NaN%)
+[[34minfo[0m] flows.transferDataToAllNew_x587: 0.0s (NaN%)
+
+
+flows.transferDataToAllNew_x591: 0.0s
+flows.transferDataToAllNew_x564: 0.0s
+flows.transferDataToAllNew_x531: 0.0s
+flows.controlLevel: 0.087s
+flows.transferDataToAllNew_x711: 0.0s
+flows.blackbox: 0.002s
+flows.blockLevel: 0.065s
+flows.accumulator: 0.123s
+flows.transferDataToAllNew_x587: 0.0s
+flows.transferDataToAllNew_x569: 0.0s
+flows.streams: 0.077s
+flows.memories: 0.028s
+flows.accesses: 0.021s
+flows.inReduce: 0.0s
+flows.transferDataToAllNew_x481: 0.0s
+flows.transferDataToAllNew_x661: 0.0s
+flows.transferDataToAllNew_x679: 0.0s
+flows.controlSchedule: 0.06s
+flows.globals: 0.068s

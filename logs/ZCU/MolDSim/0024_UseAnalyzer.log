@@ -1,0 +1,1399 @@
+  x1 = OpenCSVFile(Const("/home/hhollen/ee109finalHH/mol_arr100.csv"),false) [ctrl: Host, inner: false]
+  x2 = ReadTokens(x1,Const(",")) [ctrl: Host, inner: false]
+  x4 = CloseCSVFile(x1) [ctrl: Host, inner: false]
+  x8 = ArrayMap(x2,Block((x2,b5) => x6),Block((x6) => x7)) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x8
+      used Set(x2, b5)
+      
+    - x2 = ReadTokens(x1,Const(","))
+    - b5
+    x6 = ArrayApply(x2,b5) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x8
+      used Set()
+      
+    Uses [Block: Host]:
+      consumer x8
+      used Set(x6)
+      
+    - x6 = ArrayApply(x2,b5)
+    x7 = TextToFix(x6,TRUE,_10,_22) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x8
+      used Set()
+      
+  x13 = DRAMHostNew(List(Const(100), Const(3)),Const(0)) [ctrl: Host, inner: false]
+  x14 = SetMem(x13,x8) [ctrl: Host, inner: false]
+  x15 = DRAMHostNew(List(Const(100), Const(3)),Const(0)) [ctrl: Host, inner: false]
+  x90 = AccelScope(Block(Const(()))) [ctrl: x90 (stage: -1), inner: false]
+    Pending: 
+    Inputs:  
+    Uses:    
+    Transient: false
+    Outer: true
+    x16 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [ctrl: x90 (stage: -1), inner: false]
+      Pending: 
+      Inputs:  Const(100), Const(3)
+      Uses:    
+      Transient: false
+      Outer: true
+    x107 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x163 (stage: -1), inner: false]
+      Pending: 
+      Inputs:  Const(0), Const(100), Const(1)
+      Uses:    
+      Transient: false
+      Outer: true
+      Adding pending: x107 [ctrl: x163 (stage: -1), block: x90 (block: 0)]
+    x109 = CounterChainNew(List(x107)) [ctrl: x163 (stage: -1), inner: false]
+      Pending: x107 -> Set(x107)
+      Inputs:  x107
+      Uses:    x107
+      Transient: false
+      Outer: true
+      Uses [Block: x90 (block: 0)]:
+        consumer x109
+        used Set(x107)
+        
+      - x107 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+      Adding direct (x109 x163 (block: -1)) to uses for x107
+    x163 = OpForeach(Set(),x109,Block(Const(())),List(b108),None) [ctrl: x163 (stage: -1), inner: false]
+      Pending: x107 -> Set(x107)
+      Inputs:  x109, b108
+      Uses:    
+      Transient: false
+      Outer: true
+      x110 = StreamOutNew(BurstCmdBus) [ctrl: x163 (stage: -1), inner: false]
+        Pending: x107 -> Set(x107)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x111 = FIFONew(Const(16)) [ctrl: x163 (stage: -1), inner: false]
+        Pending: x107 -> Set(x107)
+        Inputs:  Const(16)
+        Uses:    
+        Transient: false
+        Outer: true
+      x112 = StreamInNew(BurstDataBus()) [ctrl: x163 (stage: -1), inner: false]
+        Pending: x107 -> Set(x107)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x131 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x131 (stage: -1), inner: true]
+        Pending: x107 -> Set(x107)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+        x113 = FixMul(b108,Const(3)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  b108, Const(3)
+          Uses:    
+          Transient: false
+          Outer: false
+        x114 = FixDivSRA(x113,Const(4)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x113, Const(4)
+          Uses:    
+          Transient: false
+          Outer: false
+        x115 = FixSLA(x114,Const(4)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x114, Const(4)
+          Uses:    
+          Transient: false
+          Outer: false
+        x116 = FixSLA(x115,Const(2)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x115, Const(2)
+          Uses:    
+          Transient: false
+          Outer: false
+        x117 = FixSub(x113,x115) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x113, x115
+          Uses:    
+          Transient: false
+          Outer: false
+        x118 = FixAdd(x117,Const(3)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x117, Const(3)
+          Uses:    
+          Transient: false
+          Outer: false
+        x119 = FixAdd(x117,Const(18)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x117, Const(18)
+          Uses:    
+          Transient: false
+          Outer: false
+        x120 = FixDivSRA(x119,Const(4)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x119, Const(4)
+          Uses:    
+          Transient: false
+          Outer: false
+        x121 = FixSLA(x120,Const(4)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x120, Const(4)
+          Uses:    
+          Transient: false
+          Outer: false
+        x122 = FixSLA(x121,Const(2)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x121, Const(2)
+          Uses:    
+          Transient: false
+          Outer: false
+        x123 = FixToFix(x116,TRUE,_64,_0) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107)
+          Inputs:  x116
+          Uses:    
+          Transient: true
+          Outer: false
+          Adding pending: x123 [ctrl: x131 (stage: -1), block: x131 (block: 0)]
+        x124 = DRAMAddress(x13) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107), x123 -> Set(x123)
+          Inputs:  x13
+          Uses:    
+          Transient: false
+          Outer: false
+        x125 = FixAdd(x123,x124) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107), x123 -> Set(x123)
+          Inputs:  x123, x124
+          Uses:    x123
+          Transient: false
+          Outer: false
+          Uses [Block: x131 (block: 0)]:
+            consumer x125
+            used Set(x123)
+            
+          - x123 = FixToFix(x116,TRUE,_64,_0)
+          Adding direct (x125 x131 (block: 0)) to uses for x123
+        x126 = SimpleStruct(ArrayBuffer((offset,x125), (size,x122), (isLoad,Const(true)))) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107), x123 -> Set(x123)
+          Inputs:  x125, x122, Const(true)
+          Uses:    
+          Transient: true
+          Outer: false
+          Adding pending: x126 [ctrl: x131 (stage: -1), block: x131 (block: 0)]
+        x127 = DRAMIsAlloc(x13) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  x13
+          Uses:    
+          Transient: false
+          Outer: false
+        x128 = StreamOutWrite(x110,x126,Set(x127)) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  x110, x126, x127
+          Uses:    x126
+          Transient: false
+          Outer: false
+          Uses [Block: x131 (block: 0)]:
+            consumer x128
+            used Set(x126)
+            
+          - x126 = SimpleStruct(ArrayBuffer((offset,x125), (size,x122), (isLoad,Const(true))))
+          Adding direct (x128 x131 (block: 0)) to uses for x126
+        x129 = SimpleStruct(ArrayBuffer((size,x121), (start,x117), (end,x118))) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  x121, x117, x118
+          Uses:    
+          Transient: true
+          Outer: false
+          Adding pending: x129 [ctrl: x131 (stage: -1), block: x131 (block: 0)]
+        x130 = FIFOEnq(x111,x129,Set(Const(true))) [ctrl: x131 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  x111, x129, Const(true)
+          Uses:    x129
+          Transient: false
+          Outer: false
+          Uses [Block: x131 (block: 0)]:
+            consumer x130
+            used Set(x129)
+            
+          - x129 = SimpleStruct(ArrayBuffer((size,x121), (start,x117), (end,x118)))
+          Adding direct (x130 x131 (block: 0)) to uses for x129
+      x132 = FringeDenseLoad(x13,x110,x112) [ctrl: x163 (stage: -1), inner: false]
+        Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+        Inputs:  x13, x110, x112
+        Uses:    
+        Transient: false
+        Outer: true
+      x162 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x162 (stage: -1), inner: false]
+        Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+        x133 = RegNew(Const(0)) [ctrl: x162 (stage: -1), inner: false]
+          Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x134 = RegNew(Const(0)) [ctrl: x162 (stage: -1), inner: false]
+          Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x135 = RegNew(Const(0)) [ctrl: x162 (stage: -1), inner: false]
+          Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x143 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x143 (stage: -1), inner: true]
+          Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  
+          Uses:    
+          Transient: false
+          Outer: true
+          x136 = FIFODeq(x111,Set(Const(true))) [ctrl: x143 (stage: -1), inner: true]
+            Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+            Inputs:  x111, Const(true)
+            Uses:    
+            Transient: false
+            Outer: false
+          x137 = FieldApply(x136,start) [ctrl: x143 (stage: -1), inner: true]
+            Pending: x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+            Inputs:  x136
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x137 [ctrl: x143 (stage: -1), block: x143 (block: 0)]
+          x138 = RegWrite(x133,x137,Set()) [ctrl: x143 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+            Inputs:  x133, x137
+            Uses:    x137
+            Transient: false
+            Outer: false
+            Uses [Block: x143 (block: 0)]:
+              consumer x138
+              used Set(x137)
+              
+            - x137 = FieldApply(x136,start)
+            Adding direct (x138 x143 (block: 0)) to uses for x137
+          x139 = FieldApply(x136,end) [ctrl: x143 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+            Inputs:  x136
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x139 [ctrl: x143 (stage: -1), block: x143 (block: 0)]
+          x140 = RegWrite(x134,x139,Set()) [ctrl: x143 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x139 -> Set(x139), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+            Inputs:  x134, x139
+            Uses:    x139
+            Transient: false
+            Outer: false
+            Uses [Block: x143 (block: 0)]:
+              consumer x140
+              used Set(x139)
+              
+            - x139 = FieldApply(x136,end)
+            Adding direct (x140 x143 (block: 0)) to uses for x139
+          x141 = FieldApply(x136,size) [ctrl: x143 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x139 -> Set(x139), x129 -> Set(x129), x123 -> Set(x123), x126 -> Set(x126)
+            Inputs:  x136
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x141 [ctrl: x143 (stage: -1), block: x143 (block: 0)]
+          x142 = RegWrite(x135,x141,Set()) [ctrl: x143 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x126 -> Set(x126)
+            Inputs:  x135, x141
+            Uses:    x141
+            Transient: false
+            Outer: false
+            Uses [Block: x143 (block: 0)]:
+              consumer x142
+              used Set(x141)
+              
+            - x141 = FieldApply(x136,size)
+            Adding direct (x142 x143 (block: 0)) to uses for x141
+        x144 = RegRead(x135) [ctrl: x161 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x107 -> Set(x107), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x126 -> Set(x126)
+          Inputs:  x135
+          Uses:    
+          Transient: true
+          Outer: true
+          Adding pending: x144 [ctrl: x161 (stage: -1), block: x162 (block: 0)]
+        x145 = CounterNew(Const(0),x144,Const(1),Const(1)) [ctrl: x161 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x107 -> Set(x107), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126)
+          Inputs:  Const(0), x144, Const(1)
+          Uses:    x144
+          Transient: false
+          Outer: true
+          Node is propagating reader of:
+          - x144 = RegRead(x135)
+        x147 = CounterChainNew(List(x145)) [ctrl: x161 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x107 -> Set(x107), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126)
+          Inputs:  x145
+          Uses:    x144, x145
+          Transient: false
+          Outer: true
+          Uses [Block: x162 (block: 0)]:
+            consumer x147
+            used Set(x144, x145)
+            
+          - x144 = RegRead(x135)
+          - x145 = CounterNew(Const(0),x144,Const(1),Const(1))
+          Adding direct (x147 x161 (block: -1)) to uses for x144
+          Adding direct (x147 x161 (block: -1)) to uses for x145
+          Adding pending (x145 x161 (block: -1)) to uses for x144
+        x161 = OpForeach(Set(),x147,Block(Const(())),List(b146),None) [ctrl: x161 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x107 -> Set(x107), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126)
+          Inputs:  x147, b146
+          Uses:    
+          Transient: false
+          Outer: true
+          x152 = RegRead(x133) [ctrl: x161 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126)
+            Inputs:  x133
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x152 [ctrl: x161 (stage: -1), block: x161 (block: 0)]
+          x153 = FixLeq(x152,b146) [ctrl: x161 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+            Inputs:  x152, b146
+            Uses:    x152
+            Transient: false
+            Outer: false
+            Uses [Block: x161 (block: 0)]:
+              consumer x153
+              used Set(x152)
+              
+            - x152 = RegRead(x133)
+            Adding direct (x153 x161 (block: 0)) to uses for x152
+          x154 = RegRead(x134) [ctrl: x161 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+            Inputs:  x134
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x154 [ctrl: x161 (stage: -1), block: x161 (block: 0)]
+          x155 = FixLst(b146,x154) [ctrl: x161 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+            Inputs:  b146, x154
+            Uses:    x154
+            Transient: false
+            Outer: false
+            Uses [Block: x161 (block: 0)]:
+              consumer x155
+              used Set(x154)
+              
+            - x154 = RegRead(x134)
+            Adding direct (x155 x161 (block: 0)) to uses for x154
+          x156 = And(x153,x155) [ctrl: x161 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+            Inputs:  x153, x155
+            Uses:    
+            Transient: false
+            Outer: false
+          x158 = FixSub(b146,x152) [ctrl: x161 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+            Inputs:  b146, x152
+            Uses:    x152
+            Transient: false
+            Outer: false
+            Uses [Block: x161 (block: 0)]:
+              consumer x158
+              used Set(x152)
+              
+            - x152 = RegRead(x133)
+            Adding direct (x158 x161 (block: 0)) to uses for x152
+          x159 = StreamInRead(x112,Set()) [ctrl: x161 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+            Inputs:  x112
+            Uses:    
+            Transient: false
+            Outer: false
+          x160 = SRAMWrite(x16,x159,List(b108, x158),Set(x156)) [ctrl: x161 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+            Inputs:  x156, x159, b108, x16, x158
+            Uses:    
+            Transient: false
+            Outer: false
+    x18 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [ctrl: x90 (stage: -1), inner: false]
+      Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+      Inputs:  Const(100), Const(3)
+      Uses:    
+      Transient: false
+      Outer: true
+    x19 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x88 (stage: -1), inner: false]
+      Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+      Inputs:  Const(0), Const(100), Const(1)
+      Uses:    
+      Transient: false
+      Outer: true
+      Adding pending: x19 [ctrl: x88 (stage: -1), block: x90 (block: 0)]
+    x21 = CounterChainNew(List(x19)) [ctrl: x88 (stage: -1), inner: false]
+      Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x19 -> Set(x19), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+      Inputs:  x19
+      Uses:    x19
+      Transient: false
+      Outer: true
+      Uses [Block: x90 (block: 0)]:
+        consumer x21
+        used Set(x19)
+        
+      - x19 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+      Adding direct (x21 x88 (block: -1)) to uses for x19
+    x88 = OpForeach(Set(),x21,Block(Const(())),List(b20),None) [ctrl: x88 (stage: -1), inner: false]
+      Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x19 -> Set(x19), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+      Inputs:  b20, x21
+      Uses:    
+      Transient: false
+      Outer: true
+      x22 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x88 (stage: -1), inner: false]
+        Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x19 -> Set(x19), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+        Inputs:  Const(3)
+        Uses:    
+        Transient: false
+        Outer: true
+      x23 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x79 (stage: -1), inner: false]
+        Pending: x137 -> Set(x137), x107 -> Set(x107), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x19 -> Set(x19), x129 -> Set(x129), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x152 -> Set(x152)
+        Inputs:  Const(0), Const(100), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x23 [ctrl: x79 (stage: -1), block: x88 (block: 0)]
+      x24 = CounterChainNew(List(x23)) [ctrl: x79 (stage: -1), inner: false]
+        Pending: x137 -> Set(x137), x23 -> Set(x23), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+        Inputs:  x23
+        Uses:    x23
+        Transient: false
+        Outer: true
+        Uses [Block: x88 (block: 0)]:
+          consumer x24
+          used Set(x23)
+          
+        - x23 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+        Adding direct (x24 x79 (block: -1)) to uses for x23
+      x25 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [ctrl: x79 (stage: -1), inner: false]
+        Pending: x137 -> Set(x137), x23 -> Set(x23), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+        Inputs:  Const(0), Const(3), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x25 [ctrl: x79 (stage: -1), block: x88 (block: 0)]
+      x26 = CounterChainNew(Vector(x25)) [ctrl: x79 (stage: -1), inner: false]
+        Pending: x137 -> Set(x137), x23 -> Set(x23), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+        Inputs:  x25
+        Uses:    x25
+        Transient: false
+        Outer: true
+        Uses [Block: x88 (block: 0)]:
+          consumer x26
+          used Set(x25)
+          
+        - x25 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+        Adding direct (x26 x79 (block: -1)) to uses for x25
+      x79 = OpMemReduce(Set(),x24,x26,x22,Block(x31),Block((x31) => x76),Block((x22) => x77),Block((b29,b30) => x75),Block((x22,x75) => x78),None,false,List(b27),List(b28),None,Fix[TRUE,_10,_22],SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x79 (stage: -1), inner: false]
+        Pending: x137 -> Set(x137), x23 -> Set(x23), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+        Inputs:  x24, b28, x22, b27, x26
+        Uses:    
+        Transient: false
+        Outer: true
+        Uses [Block: x79 (block: 0)]:
+          consumer x79
+          used Set()
+          
+        x31 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(3)
+          Uses:    
+          Transient: false
+          Outer: true
+        x32 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [ctrl: x39 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(0), Const(3), Const(1)
+          Uses:    
+          Transient: false
+          Outer: true
+          Adding pending: x32 [ctrl: x39 (stage: -1), block: x79 (block: 0)]
+        x34 = CounterChainNew(List(x32)) [ctrl: x39 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  x32
+          Uses:    x32
+          Transient: false
+          Outer: true
+          Uses [Block: x79 (block: 0)]:
+            consumer x34
+            used Set(x32)
+            
+          - x32 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+          Adding direct (x34 x39 (block: -1)) to uses for x32
+        x39 = OpForeach(Set(),x34,Block(Const(())),List(b33),None) [ctrl: x39 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  b33, x34
+          Uses:    
+          Transient: false
+          Outer: true
+          x35 = SRAMRead(x16,List(b20, b33),Set()) [ctrl: x39 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x16, b20, b33
+            Uses:    
+            Transient: false
+            Outer: false
+          x36 = SRAMRead(x16,List(b27, b33),Set()) [ctrl: x39 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x16, b27, b33
+            Uses:    
+            Transient: false
+            Outer: false
+          x37 = FixSub(x35,x36) [ctrl: x39 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x35, x36
+            Uses:    
+            Transient: false
+            Outer: false
+          x38 = SRAMWrite(x31,x37,List(b33),Set()) [ctrl: x39 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x31, x37, b33
+            Uses:    
+            Transient: false
+            Outer: false
+        x40 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(1)
+          Uses:    
+          Transient: false
+          Outer: true
+        x219 = RegNew(Const(0)) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x220 = RegNew(Const(0)) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x221 = RegNew(Const(0)) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x225 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x225 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  
+          Uses:    
+          Transient: false
+          Outer: true
+          x41 = SRAMRead(x31,List(Const(0)),Set()) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x31, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+          x42 = FixMul(x41,x41) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x41
+            Uses:    
+            Transient: false
+            Outer: false
+          x43 = SRAMRead(x31,List(Const(1)),Set()) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x31, Const(1)
+            Uses:    
+            Transient: false
+            Outer: false
+          x44 = FixMul(x43,x43) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x43
+            Uses:    
+            Transient: false
+            Outer: false
+          x45 = FixAdd(x42,x44) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x42, x44
+            Uses:    
+            Transient: false
+            Outer: false
+          x46 = SRAMRead(x31,List(Const(2)),Set()) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x31, Const(2)
+            Uses:    
+            Transient: false
+            Outer: false
+          x47 = FixMul(x46,x46) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x46
+            Uses:    
+            Transient: false
+            Outer: false
+          x48 = FixAdd(x45,x47) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x45, x47
+            Uses:    
+            Transient: false
+            Outer: false
+          x49 = SRAMWrite(x40,x48,List(Const(0)),Set()) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x40, x48, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+          x222 = RegWrite(x219,x41,Set()) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x219, x41
+            Uses:    
+            Transient: false
+            Outer: false
+          x223 = RegWrite(x220,x43,Set()) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x220, x43
+            Uses:    
+            Transient: false
+            Outer: false
+          x224 = RegWrite(x221,x46,Set()) [ctrl: x225 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x221, x46
+            Uses:    
+            Transient: false
+            Outer: false
+        x50 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(1)
+          Uses:    
+          Transient: false
+          Outer: true
+        x229 = RegNew(Const(0)) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x230 = RegNew(Const(false)) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(false)
+          Uses:    
+          Transient: false
+          Outer: true
+        x231 = RegNew(Const(false)) [ctrl: x79 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(false)
+          Uses:    
+          Transient: false
+          Outer: true
+        x235 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x235 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  
+          Uses:    
+          Transient: false
+          Outer: true
+          x51 = SRAMRead(x40,List(Const(0)),Set()) [ctrl: x235 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x40, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+          x52 = FixLst(Const(0),x51) [ctrl: x235 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  Const(0), x51
+            Uses:    
+            Transient: false
+            Outer: false
+          x53 = FixLst(Const(1),x51) [ctrl: x235 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  Const(1), x51
+            Uses:    
+            Transient: false
+            Outer: false
+          x54 = And(x52,x53) [ctrl: x235 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x52, x53
+            Uses:    
+            Transient: false
+            Outer: false
+          x102 = Not(x54) [ctrl: x235 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x54
+            Uses:    
+            Transient: false
+            Outer: false
+          x232 = RegWrite(x229,x51,Set()) [ctrl: x235 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x229, x51
+            Uses:    
+            Transient: false
+            Outer: false
+          x233 = RegWrite(x230,x54,Set()) [ctrl: x235 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x230, x54
+            Uses:    
+            Transient: false
+            Outer: false
+          x234 = RegWrite(x231,x102,Set()) [ctrl: x235 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x231, x102
+            Uses:    
+            Transient: false
+            Outer: false
+        x237 = RegRead(x230) [ctrl: x103 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  x230
+          Uses:    
+          Transient: true
+          Outer: true
+          Adding pending: x237 [ctrl: x103 (stage: -1), block: x79 (block: 0)]
+        x238 = RegRead(x231) [ctrl: x218 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  x231
+          Uses:    
+          Transient: true
+          Outer: true
+          Adding pending: x238 [ctrl: x218 (stage: -1), block: x79 (block: 0)]
+        x218 = Switch(List(x237, x238),Block(x104)) [ctrl: x218 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  x237, x238
+          Uses:    x237, x238
+          Transient: false
+          Outer: true
+          Uses [Block: x218 (block: -1)]:
+            consumer x218
+            used Set(x237, x238)
+            
+          - x237 = RegRead(x230)
+          - x238 = RegRead(x231)
+          Adding direct (x218 x218 (block: -1)) to uses for x237
+          Adding direct (x218 x218 (block: -1)) to uses for x238
+          Uses [Block: x218 (block: 0)]:
+            consumer x218
+            used Set()
+            
+          x103 = SwitchCase(Block(x63)) [ctrl: x103 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  
+            Uses:    
+            Transient: false
+            Outer: true
+            Uses [Block: x103 (block: 0)]:
+              consumer x103
+              used Set()
+              
+            x55 = SRAMRead(x40,List(Const(0)),Set(x237)) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  x40, Const(0), x237
+              Uses:    x237
+              Transient: false
+              Outer: false
+              Uses [Block: x103 (block: 0)]:
+                consumer x55
+                used Set(x237)
+                
+              - x237 = RegRead(x230)
+              Adding direct (x55 x103 (block: 0)) to uses for x237
+            x56 = FixDiv(Const(100),x55) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  Const(100), x55
+              Uses:    
+              Transient: false
+              Outer: false
+            x57 = FixDiv(x56,x55) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  x56, x55
+              Uses:    
+              Transient: false
+              Outer: false
+            x58 = FixDiv(x57,x55) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  x57, x55
+              Uses:    
+              Transient: false
+              Outer: false
+            x59 = FixDiv(x58,x55) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  x58, x55
+              Uses:    
+              Transient: false
+              Outer: false
+            x60 = FixDiv(x59,x55) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  x59, x55
+              Uses:    
+              Transient: false
+              Outer: false
+            x61 = FixDiv(Const(10),x55) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  Const(10), x55
+              Uses:    
+              Transient: false
+              Outer: false
+            x62 = FixDiv(x61,x55) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  x61, x55
+              Uses:    
+              Transient: false
+              Outer: false
+            x63 = FixSub(x60,x62) [ctrl: x103 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+              Inputs:  x60, x62
+              Uses:    
+              Transient: false
+              Outer: false
+            Uses [Block: x103 (block: 0)]:
+              consumer x103
+              used Set()
+              
+          x104 = SwitchCase(Block(Const(90))) [ctrl: x104 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  
+            Uses:    
+            Transient: false
+            Outer: true
+          Uses [Block: x218 (block: 0)]:
+            consumer x218
+            used Set()
+            
+        x239 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x239 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  
+          Uses:    
+          Transient: false
+          Outer: true
+          x65 = SRAMWrite(x50,x218,List(Const(0)),Set()) [ctrl: x239 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+            Inputs:  x50, x218, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+        x66 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [ctrl: x74 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x152 -> Set(x152)
+          Inputs:  Const(0), Const(3), Const(1)
+          Uses:    
+          Transient: false
+          Outer: true
+          Adding pending: x66 [ctrl: x74 (stage: -1), block: x79 (block: 0)]
+        x68 = CounterChainNew(List(x66)) [ctrl: x74 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  x66
+          Uses:    x66
+          Transient: false
+          Outer: true
+          Uses [Block: x79 (block: 0)]:
+            consumer x68
+            used Set(x66)
+            
+          - x66 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+          Adding direct (x68 x74 (block: -1)) to uses for x66
+        x74 = OpForeach(Set(),x68,Block(Const(())),List(b67),None) [ctrl: x74 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  b67, x68
+          Uses:    
+          Transient: false
+          Outer: true
+          x69 = SRAMRead(x31,List(b67),Set()) [ctrl: x74 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  x31, b67
+            Uses:    
+            Transient: false
+            Outer: false
+          x70 = FixMul(x69,Const(0.099999904632568359375)) [ctrl: x74 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  x69, Const(0.099999904632568359375)
+            Uses:    
+            Transient: false
+            Outer: false
+          x71 = SRAMRead(x50,List(Const(0)),Set()) [ctrl: x74 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  x50, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+          x72 = FixMul(x70,x71) [ctrl: x74 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  x70, x71
+            Uses:    
+            Transient: false
+            Outer: false
+          x73 = SRAMWrite(x31,x72,List(b67),Set()) [ctrl: x74 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  x31, x72, b67
+            Uses:    
+            Transient: false
+            Outer: false
+        Uses [Block: x79 (block: 0)]:
+          consumer x79
+          used Set()
+          
+        Uses [Block: x79 (block: 1)]:
+          consumer x79
+          used Set(x31)
+          
+        - x31 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+        x76 = SRAMRead(x31,List(b28),Set()) [ctrl: x79 (stage: 1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  x31, b28
+          Uses:    
+          Transient: false
+          Outer: false
+        Uses [Block: x79 (block: 1)]:
+          consumer x79
+          used Set()
+          
+        Uses [Block: x79 (block: 2)]:
+          consumer x79
+          used Set(x22)
+          
+        - x22 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+        x77 = SRAMRead(x22,List(b28),Set()) [ctrl: x79 (stage: 1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  x22, b28
+          Uses:    
+          Transient: false
+          Outer: false
+        Uses [Block: x79 (block: 2)]:
+          consumer x79
+          used Set()
+          
+        Uses [Block: x79 (block: 3)]:
+          consumer x79
+          used Set(b29, b30)
+          
+        - b29
+        - b30
+        x75 = FixAdd(b29,b30) [ctrl: x79 (stage: 1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  b29, b30
+          Uses:    
+          Transient: false
+          Outer: false
+        Uses [Block: x79 (block: 3)]:
+          consumer x79
+          used Set()
+          
+        Uses [Block: x79 (block: 4)]:
+          consumer x79
+          used Set(x22, x75)
+          
+        - x22 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+        - x75 = FixAdd(b29,b30)
+        x78 = SRAMWrite(x22,x75,List(b28),Set()) [ctrl: x79 (stage: 1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  x22, x75, b28
+          Uses:    
+          Transient: false
+          Outer: false
+        Uses [Block: x79 (block: 4)]:
+          consumer x79
+          used Set()
+          
+      x80 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [ctrl: x87 (stage: -1), inner: true]
+        Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+        Inputs:  Const(0), Const(3), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x80 [ctrl: x87 (stage: -1), block: x88 (block: 0)]
+      x82 = CounterChainNew(List(x80)) [ctrl: x87 (stage: -1), inner: true]
+        Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+        Inputs:  x80
+        Uses:    x80
+        Transient: false
+        Outer: true
+        Uses [Block: x88 (block: 0)]:
+          consumer x82
+          used Set(x80)
+          
+        - x80 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+        Adding direct (x82 x87 (block: -1)) to uses for x80
+      x87 = OpForeach(Set(),x82,Block(Const(())),List(b81),None) [ctrl: x87 (stage: -1), inner: true]
+        Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+        Inputs:  b81, x82
+        Uses:    
+        Transient: false
+        Outer: true
+        x83 = SRAMRead(x22,List(b81),Set()) [ctrl: x87 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  x22, b81
+          Uses:    
+          Transient: false
+          Outer: false
+        x84 = SRAMRead(x16,List(b20, b81),Set()) [ctrl: x87 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  x16, b20, b81
+          Uses:    
+          Transient: false
+          Outer: false
+        x85 = FixAdd(x83,x84) [ctrl: x87 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  x83, x84
+          Uses:    
+          Transient: false
+          Outer: false
+        x86 = SRAMWrite(x18,x85,List(b20, b81),Set()) [ctrl: x87 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  x18, x85, b20, b81
+          Uses:    
+          Transient: false
+          Outer: false
+    x164 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x217 (stage: -1), inner: false]
+      Pending: x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+      Inputs:  Const(0), Const(100), Const(1)
+      Uses:    
+      Transient: false
+      Outer: true
+      Adding pending: x164 [ctrl: x217 (stage: -1), block: x90 (block: 0)]
+    x166 = CounterChainNew(List(x164)) [ctrl: x217 (stage: -1), inner: false]
+      Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+      Inputs:  x164
+      Uses:    x164
+      Transient: false
+      Outer: true
+      Uses [Block: x90 (block: 0)]:
+        consumer x166
+        used Set(x164)
+        
+      - x164 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+      Adding direct (x166 x217 (block: -1)) to uses for x164
+    x217 = OpForeach(Set(),x166,Block(Const(())),List(b165),None) [ctrl: x217 (stage: -1), inner: false]
+      Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+      Inputs:  b165, x166
+      Uses:    
+      Transient: false
+      Outer: true
+      x167 = StreamOutNew(BurstCmdBus) [ctrl: x217 (stage: -1), inner: false]
+        Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x168 = StreamOutNew(BurstFullDataBus()) [ctrl: x217 (stage: -1), inner: false]
+        Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x169 = StreamInNew(BurstAckBus) [ctrl: x217 (stage: -1), inner: false]
+        Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x216 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x216 (stage: -1), inner: false]
+        Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+        x212 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x212 (stage: -1), inner: false]
+          Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+          Inputs:  
+          Uses:    
+          Transient: false
+          Outer: true
+          x170 = RegNew(Const(0)) [ctrl: x212 (stage: -1), inner: false]
+            Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  Const(0)
+            Uses:    
+            Transient: false
+            Outer: true
+          x171 = RegNew(Const(0)) [ctrl: x212 (stage: -1), inner: false]
+            Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  Const(0)
+            Uses:    
+            Transient: false
+            Outer: true
+          x172 = RegNew(Const(0)) [ctrl: x212 (stage: -1), inner: false]
+            Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  Const(0)
+            Uses:    
+            Transient: false
+            Outer: true
+          x192 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x192 (stage: -1), inner: true]
+            Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  
+            Uses:    
+            Transient: false
+            Outer: true
+            x173 = FixMul(b165,Const(3)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  b165, Const(3)
+              Uses:    
+              Transient: false
+              Outer: false
+            x174 = FixDivSRA(x173,Const(4)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x173, Const(4)
+              Uses:    
+              Transient: false
+              Outer: false
+            x175 = FixSLA(x174,Const(4)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x174, Const(4)
+              Uses:    
+              Transient: false
+              Outer: false
+            x176 = FixSLA(x175,Const(2)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x175, Const(2)
+              Uses:    
+              Transient: false
+              Outer: false
+            x177 = FixSub(x173,x175) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x173, x175
+              Uses:    
+              Transient: false
+              Outer: false
+            x178 = FixAdd(x177,Const(3)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x177, Const(3)
+              Uses:    
+              Transient: false
+              Outer: false
+            x179 = FixAdd(x177,Const(18)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x177, Const(18)
+              Uses:    
+              Transient: false
+              Outer: false
+            x180 = FixDivSRA(x179,Const(4)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x179, Const(4)
+              Uses:    
+              Transient: false
+              Outer: false
+            x181 = FixSLA(x180,Const(4)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x180, Const(4)
+              Uses:    
+              Transient: false
+              Outer: false
+            x182 = FixSLA(x181,Const(2)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x181, Const(2)
+              Uses:    
+              Transient: false
+              Outer: false
+            x183 = FixToFix(x176,TRUE,_64,_0) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x176
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x183 [ctrl: x192 (stage: -1), block: x192 (block: 0)]
+            x184 = DRAMAddress(x15) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x15
+              Uses:    
+              Transient: false
+              Outer: false
+            x185 = FixAdd(x183,x184) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x183, x184
+              Uses:    x183
+              Transient: false
+              Outer: false
+              Uses [Block: x192 (block: 0)]:
+                consumer x185
+                used Set(x183)
+                
+              - x183 = FixToFix(x176,TRUE,_64,_0)
+              Adding direct (x185 x192 (block: 0)) to uses for x183
+            x186 = SimpleStruct(ArrayBuffer((offset,x185), (size,x182), (isLoad,Const(false)))) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x185, x182, Const(false)
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x186 [ctrl: x192 (stage: -1), block: x192 (block: 0)]
+            x187 = DRAMIsAlloc(x15) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x15
+              Uses:    
+              Transient: false
+              Outer: false
+            x188 = StreamOutWrite(x167,x186,Set(x187)) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x167, x186, x187
+              Uses:    x186
+              Transient: false
+              Outer: false
+              Uses [Block: x192 (block: 0)]:
+                consumer x188
+                used Set(x186)
+                
+              - x186 = SimpleStruct(ArrayBuffer((offset,x185), (size,x182), (isLoad,Const(false))))
+              Adding direct (x188 x192 (block: 0)) to uses for x186
+            x189 = RegWrite(x170,x177,Set()) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x170, x177
+              Uses:    
+              Transient: false
+              Outer: false
+            x190 = RegWrite(x171,x178,Set()) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x171, x178
+              Uses:    
+              Transient: false
+              Outer: false
+            x191 = RegWrite(x172,x181,Set()) [ctrl: x192 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x172, x181
+              Uses:    
+              Transient: false
+              Outer: false
+          x193 = RegRead(x172) [ctrl: x211 (stage: -1), inner: true]
+            Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  x172
+            Uses:    
+            Transient: true
+            Outer: true
+            Adding pending: x193 [ctrl: x211 (stage: -1), block: x212 (block: 0)]
+          x194 = CounterNew(Const(0),x193,Const(1),Const(1)) [ctrl: x211 (stage: -1), inner: true]
+            Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  Const(0), x193, Const(1)
+            Uses:    x193
+            Transient: false
+            Outer: true
+            Node is propagating reader of:
+            - x193 = RegRead(x172)
+          x196 = CounterChainNew(List(x194)) [ctrl: x211 (stage: -1), inner: true]
+            Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  x194
+            Uses:    x193, x194
+            Transient: false
+            Outer: true
+            Uses [Block: x212 (block: 0)]:
+              consumer x196
+              used Set(x193, x194)
+              
+            - x193 = RegRead(x172)
+            - x194 = CounterNew(Const(0),x193,Const(1),Const(1))
+            Adding direct (x196 x211 (block: -1)) to uses for x193
+            Adding direct (x196 x211 (block: -1)) to uses for x194
+            Adding pending (x194 x211 (block: -1)) to uses for x193
+          x211 = OpForeach(Set(),x196,Block(Const(())),List(b195),None) [ctrl: x211 (stage: -1), inner: true]
+            Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+            Inputs:  x196, b195
+            Uses:    
+            Transient: false
+            Outer: true
+            x201 = RegRead(x170) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x164 -> Set(x164), x137 -> Set(x137), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x145 -> Set(x144, x145), x154 -> Set(x154), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x183 -> Set(x183), x129 -> Set(x129), x237 -> Set(x237), x186 -> Set(x186), x123 -> Set(x123), x141 -> Set(x141), x126 -> Set(x126), x144 -> Set(x144), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x170
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x201 [ctrl: x211 (stage: -1), block: x211 (block: 0)]
+            x202 = FixLeq(x201,b195) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x201, b195
+              Uses:    x201
+              Transient: false
+              Outer: false
+              Uses [Block: x211 (block: 0)]:
+                consumer x202
+                used Set(x201)
+                
+              - x201 = RegRead(x170)
+              Adding direct (x202 x211 (block: 0)) to uses for x201
+            x203 = RegRead(x171) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x152 -> Set(x152)
+              Inputs:  x171
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x203 [ctrl: x211 (stage: -1), block: x211 (block: 0)]
+            x204 = FixLst(b195,x203) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+              Inputs:  b195, x203
+              Uses:    x203
+              Transient: false
+              Outer: false
+              Uses [Block: x211 (block: 0)]:
+                consumer x204
+                used Set(x203)
+                
+              - x203 = RegRead(x171)
+              Adding direct (x204 x211 (block: 0)) to uses for x203
+            x205 = And(x202,x204) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+              Inputs:  x202, x204
+              Uses:    
+              Transient: false
+              Outer: false
+            x207 = FixSub(b195,x201) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+              Inputs:  b195, x201
+              Uses:    x201
+              Transient: false
+              Outer: false
+              Uses [Block: x211 (block: 0)]:
+                consumer x207
+                used Set(x201)
+                
+              - x201 = RegRead(x170)
+              Adding direct (x207 x211 (block: 0)) to uses for x201
+            x208 = SRAMRead(x18,List(b165, x207),Set(x205)) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+              Inputs:  x18, b165, x207, x205
+              Uses:    
+              Transient: false
+              Outer: false
+            x209 = SimpleStruct(ArrayBuffer((_1,x208), (_2,x205))) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+              Inputs:  x208, x205
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x209 [ctrl: x211 (stage: -1), block: x211 (block: 0)]
+            x210 = StreamOutWrite(x168,x209,Set()) [ctrl: x211 (stage: -1), inner: true]
+              Pending: x137 -> Set(x137), x209 -> Set(x209), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+              Inputs:  x168, x209
+              Uses:    x209
+              Transient: false
+              Outer: false
+              Uses [Block: x211 (block: 0)]:
+                consumer x210
+                used Set(x209)
+                
+              - x209 = SimpleStruct(ArrayBuffer((_1,x208), (_2,x205)))
+              Adding direct (x210 x211 (block: 0)) to uses for x209
+        x213 = FringeDenseStore(x15,x167,x168,x169) [ctrl: x216 (stage: -1), inner: false]
+          Pending: x137 -> Set(x137), x209 -> Set(x209), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+          Inputs:  x15, x167, x168, x169
+          Uses:    
+          Transient: false
+          Outer: true
+        x215 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x215 (stage: -1), inner: true]
+          Pending: x137 -> Set(x137), x209 -> Set(x209), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+          Inputs:  
+          Uses:    
+          Transient: false
+          Outer: true
+          x214 = StreamInRead(x169,Set()) [ctrl: x215 (stage: -1), inner: true]
+            Pending: x137 -> Set(x137), x209 -> Set(x209), x164 -> Set(x164), x23 -> Set(x23), x194 -> Set(x193, x194), x32 -> Set(x32), x80 -> Set(x80), x107 -> Set(x107), x193 -> Set(x193), x238 -> Set(x238), x154 -> Set(x154), x145 -> Set(x144, x145), x139 -> Set(x139), x25 -> Set(x25), x19 -> Set(x19), x129 -> Set(x129), x183 -> Set(x183), x237 -> Set(x237), x201 -> Set(x201), x186 -> Set(x186), x141 -> Set(x141), x123 -> Set(x123), x144 -> Set(x144), x126 -> Set(x126), x66 -> Set(x66), x203 -> Set(x203), x152 -> Set(x152)
+            Inputs:  x169
+            Uses:    
+            Transient: false
+            Outer: false
+  x91 = ArrayNew(Const(300)) [ctrl: Host, inner: false]
+  x92 = GetMem(x15,x91) [ctrl: Host, inner: false]
+  x93 = OpenCSVFile(Const("/home/hhollen/ee109finalHH/output.csv"),true) [ctrl: Host, inner: false]
+  x94 = ArrayLength(x91) [ctrl: Host, inner: false]
+  x98 = WriteTokens(x93,Const(","),x94,Block((b95) => x97)) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x98
+      used Set(b95)
+      
+    - b95
+    x96 = ArrayApply(x91,b95) [ctrl: Host, inner: false]
+    x97 = FixToText(x96,None) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x98
+      used Set()
+      
+  x99 = CloseCSVFile(x93) [ctrl: Host, inner: false]
+  x101 = AssertIf(Set(),Const(true),Some(Const("ProjectTemplate.scala:58:11: Assertion failure"))) [ctrl: Host, inner: false]

@@ -1,0 +1,102 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Tue Jun  4 02:39:40 2024
+| Host         : lagos running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_ram_utilization -detail -file ./synth_ram_utilization.rpt
+| Design       : design_1
+| Device       : xczu9eg-ffvb1156-2-e
+| Speed File   : -2
+------------------------------------------------------------------------------------
+
+RAM Usage Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Memory Description
+3. Memory Utilization
+4. Memory Performance
+5. Memory Power
+
+1. Summary
+----------
+
++--------------------------+------------+-----------+--------+------------+
+| Memory Type              | Total Used | Available | Util % | Inferred % |
++--------------------------+------------+-----------+--------+------------+
+| URAM                     |        0.0 |         0 |    0.0 |        0.0 |
+| BlockRAM                 |        2.0 |       912 |    0.2 |      100.0 |
+|  RAMB18E2                |          4 |           |        |      100.0 |
+| LUTMs as Distributed RAM |      264.0 |    144000 |    0.2 |      100.0 |
+|  LUTMs as RAM64M8        |         22 |           |        |      100.0 |
+|  LUTMs as RAM32M16       |        242 |           |        |      100.0 |
++--------------------------+------------+-----------+--------+------------+
+*  Each RAMB18 is calculated as 0.5 BlockRAM
+**  Detailed reports below cover XPMs and Vivado Synthesis inference for BlockRAMs and URAMs only
+
+
+2. Memory Description
+---------------------
+
++---------------------------------------------------------------------------------------------------------------+------------+------------------+------------------+-------------------------+------------------+-------------------------+
+| Memory Name                                                                                                   | Array Size | Memory Type      | Port A Dimension | Port A Requirement (ns) | Port B Dimension | Port B Requirement (ns) |
++---------------------------------------------------------------------------------------------------------------+------------+------------------+------------------+-------------------------+------------------+-------------------------+
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem   |       9600 | Single Clock TDP | 512x32           |                    10.0 | 512x32           |                    10.0 |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem   |       9600 | Single Clock TDP | 512x32           |                    10.0 | 512x32           |                    10.0 |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem   |       9600 | Single Clock TDP | 512x32           |                    10.0 | 512x32           |                    10.0 |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem |       9600 | Single Clock TDP | 512x32           |                    10.0 | 512x32           |                    10.0 |
++---------------------------------------------------------------------------------------------------------------+------------+------------------+------------------+-------------------------+------------------+-------------------------+
+
+
+3. Memory Utilization
+---------------------
+
++--------------------------------------------------------------------------------------------------------------------+------------------+------------------+-----------+----------------+-----------+--------------------+---------+---------------+---------------+---------+---------------+----------------+---------+---------------+---------------+---------+---------------+----------------+-------------+
+| Memory Name                                                                                                        | Port A Dimension | Port B Dimension | Primitive | Available Bits | Used Bits | Bit Utilizaztion % | A Depth | A Depth Avail | A Depth Util% | A Width | A Width Avail | A Width Util % | B Depth | B Depth Avail | B Depth Util% | B Width | B Width Avail | B Width Util % | ECC Enabled |
++--------------------------------------------------------------------------------------------------------------------+------------------+------------------+-----------+----------------+-----------+--------------------+---------+---------------+---------------+---------+---------------+----------------+---------+---------------+---------------+---------+---------------+----------------+-------------+
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem        | 512x32           | 512x32           |           |                |           |                    |         |               |               |         |               |                |         |               |               |         |               |                |             |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   |  512x32          |  512x32          | RAMB18E2  |          18432 |      8192 |               44.4 |     512 |           512 |         100.0 |      16 |            36 |           44.4 |     512 |           512 |         100.0 |      16 |            36 |           44.4 |          No |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem        | 512x32           | 512x32           |           |                |           |                    |         |               |               |         |               |                |         |               |               |         |               |                |             |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   |  512x32          |  512x32          | RAMB18E2  |          18432 |      8192 |               44.4 |     512 |           512 |         100.0 |      16 |            36 |           44.4 |     512 |           512 |         100.0 |      16 |            36 |           44.4 |          No |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem        | 512x32           | 512x32           |           |                |           |                    |         |               |               |         |               |                |         |               |               |         |               |                |             |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   |  512x32          |  512x32          | RAMB18E2  |          18432 |      8192 |               44.4 |     512 |           512 |         100.0 |      16 |            36 |           44.4 |     512 |           512 |         100.0 |      16 |            36 |           44.4 |          No |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem      | 512x32           | 512x32           |           |                |           |                    |         |               |               |         |               |                |         |               |               |         |               |                |             |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg |  512x32          |  512x32          | RAMB18E2  |          18432 |      8192 |               44.4 |     512 |           512 |         100.0 |      16 |            36 |           44.4 |     512 |           512 |         100.0 |      16 |            36 |           44.4 |          No |
++--------------------------------------------------------------------------------------------------------------------+------------------+------------------+-----------+----------------+-----------+--------------------+---------+---------------+---------------+---------+---------------+----------------+---------+---------------+---------------+---------+---------------+----------------+-------------+
+
+
+4. Memory Performance
+---------------------
+
++--------------------------------------------------------------------------------------------------------------------+-----------+------------------+-------------------------+------------------+-------------------------+-----------+--------+--------+---------+-----------+--------+--------+---------+
+| Memory Name                                                                                                        | Primitive | Port A Dimension | Port A Requirement (ns) | Port B Dimension | Port B Requirement (ns) | A Cascade | IREG_A | OREG_A | DOA_REG | B Cascade | IREG_B | OREG_B | DOB_REG |
++--------------------------------------------------------------------------------------------------------------------+-----------+------------------+-------------------------+------------------+-------------------------+-----------+--------+--------+---------+-----------+--------+--------+---------+
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem        |           |           512x32 |                         |           512x32 |                         |           |        |        |         |           |        |        |         |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   | RAMB18E2  |           512x32 |                    10.0 |           512x32 |                    10.0 |      NONE |        |        |       0 |      NONE |        |        |       0 |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem        |           |           512x32 |                         |           512x32 |                         |           |        |        |         |           |        |        |         |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   | RAMB18E2  |           512x32 |                    10.0 |           512x32 |                    10.0 |      NONE |        |        |       0 |      NONE |        |        |       0 |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem        |           |           512x32 |                         |           512x32 |                         |           |        |        |         |           |        |        |         |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   | RAMB18E2  |           512x32 |                    10.0 |           512x32 |                    10.0 |      NONE |        |        |       0 |      NONE |        |        |       0 |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem      |           |           512x32 |                         |           512x32 |                         |           |        |        |         |           |        |        |         |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg | RAMB18E2  |           512x32 |                    10.0 |           512x32 |                    10.0 |      NONE |        |        |       0 |      NONE |        |        |       0 |
++--------------------------------------------------------------------------------------------------------------------+-----------+------------------+-------------------------+------------------+-------------------------+-----------+--------+--------+---------+-----------+--------+--------+---------+
+
+
+5. Memory Power
+---------------
+
++--------------------------------------------------------------------------------------------------------------------+-----------+-------------+------------------+---------------+-------------------+------------------+---------------+-------------------+-----------+-----------+
+| Memory Name                                                                                                        | Primitive | Power Gated | Port A Dimension | Port A Enable | Port A WRITE_MODE | Port B Dimension | Port B Enable | Port B WRITE_MODE | A Cascade | B Cascade |
++--------------------------------------------------------------------------------------------------------------------+-----------+-------------+------------------+---------------+-------------------+------------------+---------------+-------------------+-----------+-----------+
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem        |           |             |           512x32 |               |                   |           512x32 |               |                   |           |           |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   | RAMB18E2  |             |           512x32 |           Vcc |        READ_FIRST |           512x32 |           Vcc |        READ_FIRST |      NONE |      NONE |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem        |           |             |           512x32 |               |                   |           512x32 |               |                   |           |           |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   | RAMB18E2  |             |           512x32 |           Vcc |        READ_FIRST |           512x32 |           Vcc |        READ_FIRST |      NONE |      NONE |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem        |           |             |           512x32 |               |                   |           512x32 |               |                   |           |           |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg   | RAMB18E2  |             |           512x32 |           Vcc |        READ_FIRST |           512x32 |           Vcc |        READ_FIRST |      NONE |      NONE |
+| SpatialIP_0/accel/RootController_kernelRootController_concrete1/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem      |           |             |           512x32 |               |                   |           512x32 |               |                   |           |           |
+|  SpatialIP_0/accel/RootController_kernelRootController_concrete1/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg | RAMB18E2  |             |           512x32 |           Vcc |        READ_FIRST |           512x32 |           Vcc |        READ_FIRST |      NONE |      NONE |
++--------------------------------------------------------------------------------------------------------------------+-----------+-------------+------------------+---------------+-------------------+------------------+---------------+-------------------+-----------+-----------+
+
+

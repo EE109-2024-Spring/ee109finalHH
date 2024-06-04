@@ -1,0 +1,7 @@
+          Optimizing Switch with selects/cases: 
+            #0 [sel]: x54 = And(x52,x53)
+            #0 [cas]: x103 = SwitchCase(Block(x63))
+            #1 [sel]: x102 = Not(x54)
+            #1 [cas]: x104 = SwitchCase(Block(Const(90)))
+          x103 = SwitchCase(Block(x63))
+          x104 = SwitchCase(Block(Const(90)))

@@ -1,0 +1,14 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MolDSim, org.scalatest.tools.Framework$$anon$1@241266d9, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMolDSim:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMolDSim[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should compile, run, and verify for backend ZCU *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  utils.Result$MakeError: error copying "./bd_project/bd_project.srcs/sources_1/bd/design_1/hdl/design_1.v": no such file or directory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 34 minutes, 15 seconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 1, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	MolDSim[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m

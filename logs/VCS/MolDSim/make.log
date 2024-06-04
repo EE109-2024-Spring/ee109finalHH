@@ -1,0 +1,165 @@
+echo "$(date +%s)"  start.log
+sed -i "s/vcdon = .*;/vcdon = 0;/g" vcs.hw-resources/Top-harness.sv
+if [[ -n "" ]]; then sed -i "s/vcdon = .*;/vcdon = 1;/g" vcs.hw-resources/Top-harness.sv; fi
+if [[ -n "1" ]]; then sed -i "s/vcdon = .*;/vcdon = 0;/g" vcs.hw-resources/Top-harness.sv; fi
+#if [[ ! -z "" ]]; then sed -i "s/vcdon = .*;/vcdon = 0;/g" vcs.hw-resources/Top-harness.sv; fi
+#sed -i 's/vcdon = .*;/vcdon = 1;/g' *\.hw-resources/Top-harness.sv
+sbt "runMain spatialIP.Instantiator --verilog --testArgs vcs"
+[info] welcome to sbt 1.8.2 (Eclipse Adoptium Java 11.0.22)
+[info] loading settings for project moldsim-build from plugins.sbt ...
+[info] loading project definition from /home/hhollen/ee109finalHH/gen/VCS/MolDSim/project
+[info] loading settings for project moldsim from build.sbt ...
+[info] set current project to spatial-app (in build file:/home/hhollen/ee109finalHH/gen/VCS/MolDSim/)
+[info] compiling 474 Scala sources to /home/hhollen/ee109finalHH/gen/VCS/MolDSim/target/scala-2.12/classes ...
+[info] done compiling
+[info] running spatialIP.Instantiator --verilog --testArgs vcs
+[[35minfo[0m] [0.002] Elaborating design...
+[warn] In the last 10 seconds, 5.016 (51.3%) were spent in GC. [Heap: 0.04GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 7.857 (82.3%) were spent in GC. [Heap: 0.02GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 8.809 (89.4%) were spent in GC. [Heap: 0.01GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 8.554 (85.8%) were spent in GC. [Heap: 0.01GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 8.786 (87.9%) were spent in GC. [Heap: 0.01GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 8.746 (88.0%) were spent in GC. [Heap: 0.01GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.297 (94.0%) were spent in GC. [Heap: 0.01GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.166 (93.8%) were spent in GC. [Heap: 0.01GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.01 (90.2%) were spent in GC. [Heap: 0.01GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 8.872 (93.4%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.284 (94.4%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.267 (95.1%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.068 (95.4%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.621 (96.7%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.146 (97.5%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.747 (97.9%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.685 (97.6%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.323 (97.2%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.336 (97.1%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.465 (97.4%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.314 (97.2%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.296 (97.3%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.572 (97.4%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.671 (97.3%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.235 (97.4%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.497 (97.2%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 9.499 (97.5%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[warn] In the last 10 seconds, 10.417 (109.6%) were spent in GC. [Heap: 0.00GB free of 1.00GB, max 1.00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.
+[success] Total time: 415 s (06:55), completed Jun 3, 2024, 2:39:40 AM
+cp -r vcs.hw-resources/* verilog-vcs
+cp *.v verilog-vcs 2/dev/null || : # hack for grabbing any blackboxes that may have been dumped here
+touch in.txt
+make -C verilog-vcs
+make[1]: Entering directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs'
+make -j8 -C DRAMSim2 libdramsim.so
+make[2]: Entering directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs/DRAMSim2'
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o AddressMapping.po -c AddressMapping.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o Bank.po -c Bank.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o BankState.po -c BankState.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o BusPacket.po -c BusPacket.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o ClockDomain.po -c ClockDomain.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o CommandQueue.po -c CommandQueue.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o IniReader.po -c IniReader.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o MemoryController.po -c MemoryController.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o MemorySystem.po -c MemorySystem.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o MultiChannelMemorySystem.po -c MultiChannelMemorySystem.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o PrintMacros.po -c PrintMacros.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o Rank.po -c Rank.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o SimulatorObject.po -c SimulatorObject.cpp
+g++ -DNO_STORAGE -Wall -DDEBUG_BUILD  -O3  -DLOG_OUTPUT -fPIC -o Transaction.po -c Transaction.cpp
+g++ -g -shared -Wl,-soname,libdramsim.so -o libdramsim.so AddressMapping.po Bank.po BankState.po BusPacket.po ClockDomain.po CommandQueue.po IniReader.po MemoryController.po MemorySystem.po MultiChannelMemorySystem.po PrintMacros.po Rank.po SimulatorObject.po Transaction.po
+Built libdramsim.so successfully
+make[2]: Leaving directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs/DRAMSim2'
+ln -sf DRAMSim2/libdramsim.so .
+export LM_LICENSE_FILE=27000@cadlic0.stanford.edu
+vcs -full64 -quiet -timescale=1ns/1ps -sverilog -debug_pp -Mdir=Top.csrc +v2k +vcs+lic+wait +vcs+initreg+random +define+CLOCK_PERIOD=1 +lint=TFIPC-L +libext++.v -y /cad/synopsys/dc_shell/J-2014.09-SP3/dw/sim_ver +incdir+/cad/synopsys/dc_shell/J-2014.09-SP3/dw/dw02/src_ver -cpp g++ -LDFLAGS "-Wl,--no-as-needed -no-pie -L../ -ldramsim -lstdc++ -Wl,-rpath=../" -CFLAGS "-O0 -g -I/cad/synopsys/vcs/K-2015.09-SP2-7/include -I../../cpp/SW -I../../vcs.sw-resources -I../dramShim -I../DRAMSim2 -I../ -fPIC -std=c++11 -L../ -ldramsim -lstdc++ -Wl,-rpath=../" -o accel.bit.bin *.v *.sv sim.cpp
+
+Warning-[IPDASP] Identifier in ANSI port declaration
+Math.v, 25
+  Redeclaration of ANSI ports not allowed for 'rdy', this will be an error in 
+  a future release
+
+Notice: Ports coerced to inout, use -notice for details
+131 modules and 0 UDP read.
+	However, due to incremental compilation, no re-compilation is necessary.
+make[2]: Entering directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs/Top.csrc'
+make[2]: Leaving directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs/Top.csrc'
+make[2]: Entering directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs/Top.csrc'
+g++ -w  -pipe -fPIC -g -I/cad/synopsys/vcs/K-2015.09-SP2-7/include -I../../cpp/SW -I../../vcs.sw-resources -I../dramShim -I../DRAMSim2 -I../ -fPIC -std=c++11 -L../ -ldramsim -lstdc++ -Wl,-rpath=../ -I/cad/synopsys/vcs/K-2015.09-SP2-7/include    -c ../sim.cpp
+cc1: warning: command-line option '-std=c++11' is valid for C++/ObjC++ but not for C
+../accel.bit.bin up to date
+make[2]: Leaving directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs/Top.csrc'
+make[1]: Leaving directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs'
+ln -sf verilog-vcs verilog
+echo "$(date +%s)"  end.log
+cp vcs.sw-resources/Makefile cpp/Makefile
+cp cpp/cpptypes.hpp cpp/datastructures
+cp cpp/Structs.h cpp/datastructures 2/dev/null || :
+cp cpp/cppDeliteArrayStructs.h cpp/datastructures 2/dev/null || :
+make -j8 -C cpp
+make[1]: Entering directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/cpp'
+g++ -I.// -I.//datastructures -I/home/hhollen/.sdkman/candidates/java/current/include -I/home/hhollen/.sdkman/candidates/java/current/include/linux -I../vcs.sw-resources -I../vcs.sw-resources  -DVCS -D__USE_STD_STRING__ -std=c++11   -c -o TopHost.o  TopHost.cpp
+g++ -I.// -I.//datastructures -I/home/hhollen/.sdkman/candidates/java/current/include -I/home/hhollen/.sdkman/candidates/java/current/include/linux -I../vcs.sw-resources -I../vcs.sw-resources  -DVCS -D__USE_STD_STRING__ -std=c++11   -c -o functions.o  functions.cpp
+g++ -Wl,--hash-style=both -lstdc++ -pthread -lpthread -lm TopHost.o functions.o   -o Top   2&1 | c++filt
+make[1]: Leaving directory '/home/hhollen/ee109finalHH/gen/VCS/MolDSim/cpp'
+ln -sf cpp/Top .
+tar -czf TopVCS.tar.gz -C verilog-vcs accel.bit.bin -C ../cpp Top
+Exception in thread "sbt-bg-threads-1" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.lang.StringLatin1.newString(StringLatin1.java:715)
+	at java.base/java.lang.StringBuilder.toString(StringBuilder.java:452)
+	at scala.collection.mutable.StringBuilder.toString(StringBuilder.scala:433)
+	at scala.collection.mutable.StringBuilder.result(StringBuilder.scala:449)
+	at scala.collection.mutable.StringBuilder.result(StringBuilder.scala:34)
+	at scala.collection.TraversableLike.filterImpl(TraversableLike.scala:306)
+	at scala.collection.TraversableLike.filterImpl$(TraversableLike.scala:297)
+	at scala.collection.immutable.StringOps.filterImpl(StringOps.scala:33)
+	at scala.collection.TraversableLike.filter(TraversableLike.scala:395)
+	at scala.collection.TraversableLike.filter$(TraversableLike.scala:395)
+	at scala.collection.immutable.StringOps.filter(StringOps.scala:33)
+	at chisel3.internal.Namespace.sanitize(Builder.scala:29)
+	at chisel3.internal.Namespace.name(Builder.scala:38)
+	at chisel3.internal.HasId.forceName(Builder.scala:105)
+	at chisel3.internal.HasId.forceName$(Builder.scala:102)
+	at chisel3.core.Data.forceName(Data.scala:201)
+	at chisel3.core.UserModule.$anonfun$generateComponent$7(UserModule.scala:62)
+	at chisel3.core.UserModule.$anonfun$generateComponent$7$adapted(UserModule.scala:59)
+	at chisel3.core.UserModule$$Lambda$6802/0x0000000101b8b840.apply(Unknown Source)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at chisel3.core.UserModule.generateComponent(UserModule.scala:59)
+	at chisel3.core.LegacyModule.generateComponent(UserModule.scala:182)
+	at chisel3.core.Module$.do_apply(Module.scala:63)
+	at accel.x2368_inr_UnitPipe_kernel.kernel(sm_x2368_inr_UnitPipe.scala:127)
+	at accel.x2382_kernel$x2382_concrete$1.init(sm_x2382.scala:128)
+	at accel.x2382_kernel.$anonfun$kernel$1(sm_x2382.scala:151)
+	at accel.x2382_kernel$$Lambda$11087/0x0000000101db1c40.apply(Unknown Source)
+	at chisel3.core.Module$.do_apply(Module.scala:49)
+	at accel.x2382_kernel.kernel(sm_x2382.scala:151)
+	at accel.x2498_outr_Reduce_kernel$x2498_outr_Reduce_concrete$1.init(sm_x2498_outr_Reduce.scala:176)
+BusPacket.cpp: In member function ‘void DRAMSim::BusPacket::print(uint64_t, bool)’:
+BusPacket.cpp:64:2: warning: ‘nonnull’ argument ‘this’ compared to NULL [-Wnonnull-compare]
+   64 |  if (this == NULL)
+      |  ^~
+BusPacket.cpp: In member function ‘void DRAMSim::BusPacket::print()’:
+BusPacket.cpp:105:2: warning: ‘nonnull’ argument ‘this’ compared to NULL [-Wnonnull-compare]
+  105 |  if (this == NULL) //pointer use makes this a necessary precaution
+      |  ^~
+In file included from ../vcs.sw-resources/simDefs.h:11,
+                 from ../vcs.sw-resources/FringeContextVCS.h:18,
+                 from ../vcs.sw-resources/FringeContext.h:17,
+                 from TopHost.cpp:21:
+../vcs.sw-resources/FringeContextVCS.h: In constructor ‘FringeContextVCS::FringeContextVCS(std::string)’:
+../vcs.sw-resources/FringeContextVCS.h:339:13: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
+  339 |     EPRINTF("Env Cycles: %d\n", envCycles);
+      |             ^~~~~~~~~~~~~~~~~~  ~~~~~~~~~
+      |                                 |
+      |                                 long int
+../vcs.sw-resources/commonDefs.h:13:38: note: in definition of macro ‘EPRINTF’
+   13 | #define EPRINTF(...) fprintf(stderr, __VA_ARGS__)
+      |                                      ^~~~~~~~~~~
+In file included from ../vcs.sw-resources/FringeContext.h:17,
+                 from TopHost.cpp:21:
+../vcs.sw-resources/FringeContextVCS.h:339:27: note: format string is defined here
+  339 |     EPRINTF("Env Cycles: %d\n", envCycles);
+      |                          ~^
+      |                           |
+      |                           int
+      |                          %ld

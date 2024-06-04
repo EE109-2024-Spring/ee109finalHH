@@ -1,0 +1,2 @@
+        java.lang.Exception: No final port defined for x384 occured while trying to log memory x329 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]).
+java.lang.Exception: No final port defined for x333 occured while trying to generate Single Buffered Mem Data, probably not computed yet.

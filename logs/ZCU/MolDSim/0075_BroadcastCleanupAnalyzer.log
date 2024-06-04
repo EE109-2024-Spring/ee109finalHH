@@ -1,0 +1,759 @@
+      Node x497 has BroadcastAddress metadata defined as false 
+        - Propogating info to x489
+        - Propogating info to x763
+        - Propogating info to x762
+      Node x763 has BroadcastAddress metadata defined as false 
+        - Propogating info to x485
+      Node x762 has BroadcastAddress metadata defined as false 
+        - Propogating info to x486
+      Node x761 has BroadcastAddress metadata defined as false 
+        - Propogating info to b480
+      Node x760 has BroadcastAddress metadata defined as false 
+        - Propogating info to x495
+      Node x495 has BroadcastAddress metadata defined as false 
+        - Propogating info to x468
+      Node x494 has BroadcastAddress metadata defined as false 
+        - Propogating info to x759
+        - Propogating info to x741
+      Node x759 has BroadcastAddress metadata defined as false 
+        - Propogating info to x493
+      Node x493 has BroadcastAddress metadata defined as false 
+        - Propogating info to x491
+        - Propogating info to x758
+      Node x758 has BroadcastAddress metadata defined as false 
+        - Propogating info to x492
+      Node x492 has BroadcastAddress metadata defined as false 
+        - Propogating info to x468
+      Node x491 has BroadcastAddress metadata defined as false 
+        - Propogating info to x740
+      Node x741 has BroadcastAddress metadata defined as false 
+        - Propogating info to x488
+      Node x489 has BroadcastAddress metadata defined as false 
+        - Propogating info to x488
+      Node x488 has BroadcastAddress metadata defined as false 
+        - Propogating info to x487
+      Node x487 has BroadcastAddress metadata defined as false 
+        - Propogating info to x485
+      Node x486 has BroadcastAddress metadata defined as false 
+        - Propogating info to x485
+      Node x485 has BroadcastAddress metadata defined as false 
+        - Propogating info to x739
+        - Propogating info to x483
+      Node x740 has BroadcastAddress metadata defined as false 
+        - Propogating info to x482
+      Node x483 has BroadcastAddress metadata defined as false 
+        - Propogating info to x482
+      Node x482 has BroadcastAddress metadata defined as false 
+        - Propogating info to x739
+      Node x739 has BroadcastAddress metadata defined as false 
+        - Propogating info to x738
+        - Propogating info to b479
+      Node x738 has BroadcastAddress metadata defined as false 
+        - Propogating info to b479
+        Writer x515 is broadcast: false
+          - Propogating info to x507
+          - Propogating info to x514
+        Node x514 has BroadcastAddress metadata defined as false 
+          - Propogating info to x509
+        Writer x513 is broadcast: false
+          - Propogating info to x506
+          - Propogating info to x512
+        Node x512 has BroadcastAddress metadata defined as false 
+          - Propogating info to x509
+        Writer x511 is broadcast: false
+          - Propogating info to x505
+          - Propogating info to x510
+        Node x510 has BroadcastAddress metadata defined as false 
+          - Propogating info to x509
+        Node x509 has BroadcastAddress metadata defined as false 
+          - Propogating info to x508
+          - Writer x535, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to x743
+          - Propogating info to x527
+          - Propogating info to x532
+          - Propogating info to x526
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to b521
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to b504
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to x529
+          - Propogating info to x766
+          - Writer x534, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to x743
+          - Propogating info to x527
+          - Propogating info to x532
+          - Propogating info to x526
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to b521
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to b504
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to x529
+          - Propogating info to x766
+          - Writer x533, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to x743
+          - Propogating info to x527
+          - Propogating info to x532
+          - Propogating info to x526
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to b521
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to b504
+          - Propogating info to x767
+          - Propogating info to x768
+          - Propogating info to x765
+          - Propogating info to x529
+          - Propogating info to x766
+        Node x768 has BroadcastAddress metadata defined as false 
+          - Propogating info to b521
+        Node x767 has BroadcastAddress metadata defined as false 
+          - Propogating info to x526
+        Node x766 has BroadcastAddress metadata defined as false 
+          - Propogating info to x529
+        Node x765 has BroadcastAddress metadata defined as false 
+          - Propogating info to b504
+        Node x532 has BroadcastAddress metadata defined as false 
+          - Propogating info to x743
+          - Propogating info to x527
+        Node x743 has BroadcastAddress metadata defined as false 
+          - Propogating info to x742
+          - Propogating info to b503
+        Node x742 has BroadcastAddress metadata defined as false 
+          - Propogating info to b503
+        Node x529 has BroadcastAddress metadata defined as false 
+          - Propogating info to x764
+        Node x764 has BroadcastAddress metadata defined as false 
+          - Propogating info to x528
+        Node x527 has BroadcastAddress metadata defined as false 
+          - Propogating info to b520
+          - Propogating info to x522
+        Node x526 has BroadcastAddress metadata defined as false 
+          - Propogating info to x523
+          - Propogating info to x525
+        Node x525 has BroadcastAddress metadata defined as false 
+          - Propogating info to b520
+          - Propogating info to x524
+        Node x524 has BroadcastAddress metadata defined as false 
+          - Propogating info to x506
+        Node x523 has BroadcastAddress metadata defined as false 
+          - Propogating info to x522
+          - Propogating info to b520
+        Node x522 has BroadcastAddress metadata defined as false 
+          - Propogating info to x505
+          - Writer x578, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b561
+          - Propogating info to x773
+          - Propogating info to b562
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b552
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b543
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to x567
+          - Propogating info to x572
+          - Propogating info to x573
+          - Writer x577, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b561
+          - Propogating info to x773
+          - Propogating info to b562
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b552
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b543
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to x567
+          - Propogating info to x572
+          - Propogating info to x573
+          - Writer x576, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b561
+          - Propogating info to x773
+          - Propogating info to b562
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b552
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b543
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to x567
+          - Propogating info to x572
+          - Propogating info to x573
+          - Writer x575, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b561
+          - Propogating info to x773
+          - Propogating info to b562
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b552
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b543
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to x567
+          - Propogating info to x572
+          - Propogating info to x573
+          - Writer x574, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b561
+          - Propogating info to x773
+          - Propogating info to b562
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b552
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to b543
+          - Propogating info to x774
+          - Propogating info to x775
+          - Propogating info to x776
+          - Propogating info to x567
+          - Propogating info to x572
+          - Propogating info to x573
+        Node x776 has BroadcastAddress metadata defined as false 
+          - Propogating info to b543
+        Node x775 has BroadcastAddress metadata defined as false 
+          - Propogating info to b552
+        Node x774 has BroadcastAddress metadata defined as false 
+          - Propogating info to b562
+        Node x773 has BroadcastAddress metadata defined as false 
+          - Propogating info to b561
+        Node x573 has BroadcastAddress metadata defined as false 
+          - Propogating info to x567
+          - Propogating info to x572
+        Node x572 has BroadcastAddress metadata defined as false 
+          - Propogating info to x571
+          - Reader x571, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to x747
+          - Propogating info to x769
+          - Propogating info to x570
+          - Propogating info to b562
+          - Propogating info to x772
+          - Propogating info to x771
+          - Propogating info to x770
+          - Propogating info to b552
+          - Propogating info to x772
+          - Propogating info to x771
+          - Propogating info to x770
+          - Propogating info to b543
+          - Propogating info to x772
+          - Propogating info to x771
+          - Propogating info to x770
+        Node x570 has BroadcastAddress metadata defined as false 
+          - Propogating info to x747
+          - Propogating info to x769
+        Node x747 has BroadcastAddress metadata defined as false 
+          - Propogating info to x746
+          - Propogating info to b550
+        Node x746 has BroadcastAddress metadata defined as false 
+          - Propogating info to b550
+        Node x567 has BroadcastAddress metadata defined as false 
+          - Propogating info to x566
+          - Reader x566, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to x745
+          - Propogating info to x769
+          - Propogating info to x565
+          - Propogating info to b562
+          - Propogating info to x772
+          - Propogating info to x771
+          - Propogating info to x770
+          - Propogating info to b552
+          - Propogating info to x772
+          - Propogating info to x771
+          - Propogating info to x770
+          - Propogating info to b543
+          - Propogating info to x772
+          - Propogating info to x771
+          - Propogating info to x770
+        Node x772 has BroadcastAddress metadata defined as false 
+          - Propogating info to b562
+        Node x771 has BroadcastAddress metadata defined as false 
+          - Propogating info to b552
+        Node x770 has BroadcastAddress metadata defined as false 
+          - Propogating info to b543
+        Node x565 has BroadcastAddress metadata defined as false 
+          - Propogating info to x745
+          - Propogating info to x769
+        Node x769 has BroadcastAddress metadata defined as false 
+          - Propogating info to b561
+        Node x745 has BroadcastAddress metadata defined as false 
+          - Propogating info to x744
+          - Propogating info to b542
+        Node x744 has BroadcastAddress metadata defined as false 
+          - Propogating info to b542
+          - Writer x592, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to Const(0)
+          - Propogating info to x778
+          - Propogating info to x748
+          - Propogating info to x749
+        Node x749 has BroadcastAddress metadata defined as false 
+          - Propogating info to x778
+          - Propogating info to x748
+        Node x778 has BroadcastAddress metadata defined as false 
+          - Propogating info to x589
+        Node x589 has BroadcastAddress metadata defined as false 
+          - Propogating info to x588
+          - Reader x588, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to Const(2)
+        Node x748 has BroadcastAddress metadata defined as false 
+          - Propogating info to x777
+          - Propogating info to x586
+        Node x777 has BroadcastAddress metadata defined as false 
+          - Propogating info to x582
+        Node x586 has BroadcastAddress metadata defined as false 
+          - Propogating info to x585
+        Node x585 has BroadcastAddress metadata defined as false 
+          - Propogating info to x584
+          - Reader x584, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to Const(1)
+        Node x582 has BroadcastAddress metadata defined as false 
+          - Propogating info to x581
+          - Reader x581, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to Const(0)
+        Writer x604 is broadcast: false
+          - Propogating info to x596
+          - Propogating info to x602
+        Writer x603 is broadcast: false
+          - Propogating info to x595
+          - Propogating info to x601
+        Node x602 has BroadcastAddress metadata defined as false 
+          - Propogating info to x601
+        Node x601 has BroadcastAddress metadata defined as false 
+          - Propogating info to x599
+          - Propogating info to x600
+        Node x600 has BroadcastAddress metadata defined as false 
+          - Propogating info to x598
+        Node x599 has BroadcastAddress metadata defined as false 
+          - Propogating info to x598
+        Node x598 has BroadcastAddress metadata defined as false 
+          - Propogating info to x597
+          - Reader x597, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to Const(0)
+          - Writer x622, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to Const(0)
+          - Propogating info to x619
+          - Propogating info to x610
+          - Propogating info to x779
+          - Propogating info to x736
+          - Propogating info to x609
+          - Propogating info to x621
+          - Propogating info to x608
+          - Propogating info to x580
+          - Propogating info to x595
+          - Propogating info to x620
+          - Propogating info to x735
+          - Writer x638, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b626
+          - Propogating info to x786
+          - Propogating info to b627
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b552
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b543
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to x630
+          - Propogating info to x784
+          - Propogating info to x633
+          - Writer x637, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b626
+          - Propogating info to x786
+          - Propogating info to b627
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b552
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b543
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to x630
+          - Propogating info to x784
+          - Propogating info to x633
+          - Writer x636, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b626
+          - Propogating info to x786
+          - Propogating info to b627
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b552
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b543
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to x630
+          - Propogating info to x784
+          - Propogating info to x633
+          - Writer x635, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b626
+          - Propogating info to x786
+          - Propogating info to b627
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b552
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b543
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to x630
+          - Propogating info to x784
+          - Propogating info to x633
+          - Writer x634, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b626
+          - Propogating info to x786
+          - Propogating info to b627
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b552
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to b543
+          - Propogating info to x787
+          - Propogating info to x785
+          - Propogating info to x788
+          - Propogating info to x630
+          - Propogating info to x784
+          - Propogating info to x633
+        Node x788 has BroadcastAddress metadata defined as false 
+          - Propogating info to b543
+        Node x787 has BroadcastAddress metadata defined as false 
+          - Propogating info to b627
+        Node x786 has BroadcastAddress metadata defined as false 
+          - Propogating info to b626
+        Node x785 has BroadcastAddress metadata defined as false 
+          - Propogating info to b552
+        Node x633 has BroadcastAddress metadata defined as false 
+          - Propogating info to x630
+          - Propogating info to x784
+        Node x784 has BroadcastAddress metadata defined as false 
+          - Propogating info to x632
+        Node x632 has BroadcastAddress metadata defined as false 
+          - Propogating info to x631
+          - Reader x631, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to Const(0)
+          - Propogating info to b627
+          - Propogating info to b552
+          - Propogating info to b543
+          - Propogating info to b627
+          - Propogating info to b552
+          - Propogating info to b543
+          - Propogating info to b627
+          - Propogating info to b552
+          - Propogating info to b543
+        Node x630 has BroadcastAddress metadata defined as false 
+          - Propogating info to x629
+        Node x629 has BroadcastAddress metadata defined as false 
+          - Propogating info to x628
+          - Reader x628, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b626
+          - Propogating info to b627
+          - Propogating info to b552
+          - Propogating info to b543
+          - Propogating info to b627
+          - Propogating info to b552
+          - Propogating info to b543
+          - Propogating info to b627
+          - Propogating info to b552
+          - Propogating info to b543
+          - Writer x651, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b551
+          - Propogating info to x793
+          - Propogating info to b553
+          - Propogating info to x792
+          - Propogating info to x791
+          - Propogating info to b543
+          - Propogating info to x792
+          - Propogating info to x791
+          - Propogating info to x790
+          - Propogating info to x789
+          - Propogating info to x648
+          - Propogating info to x649
+          - Writer x650, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b551
+          - Propogating info to x793
+          - Propogating info to b553
+          - Propogating info to x792
+          - Propogating info to x791
+          - Propogating info to b543
+          - Propogating info to x792
+          - Propogating info to x791
+          - Propogating info to x790
+          - Propogating info to x789
+          - Propogating info to x648
+          - Propogating info to x649
+        Node x793 has BroadcastAddress metadata defined as false 
+          - Propogating info to b551
+        Node x792 has BroadcastAddress metadata defined as false 
+          - Propogating info to b553
+        Node x791 has BroadcastAddress metadata defined as false 
+          - Propogating info to b543
+        Node x649 has BroadcastAddress metadata defined as false 
+          - Propogating info to x790
+          - Propogating info to x789
+          - Propogating info to x648
+        Node x790 has BroadcastAddress metadata defined as false 
+          - Propogating info to x647
+        Node x789 has BroadcastAddress metadata defined as false 
+          - Propogating info to x641
+        Node x648 has BroadcastAddress metadata defined as false 
+          - Propogating info to x641
+          - Propogating info to x643
+        Node x647 has BroadcastAddress metadata defined as false 
+          - Propogating info to b550
+        Node x643 has BroadcastAddress metadata defined as false 
+          - Propogating info to x642
+          - Reader x642, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b551
+          - Propogating info to b553
+          - Propogating info to b543
+          - Propogating info to b553
+          - Propogating info to b543
+        Node x641 has BroadcastAddress metadata defined as false 
+          - Propogating info to x640
+          - Reader x640, lane 0 is NOT broadcast
+          - Propogating info to Const(0)
+          - Propogating info to b551
+          - Propogating info to b553
+          - Propogating info to b543
+          - Propogating info to b553
+          - Propogating info to b543
+        - Writer x666, lane 0 is NOT broadcast
+        - Propogating info to Const(0)
+        - Propogating info to x662
+        - Propogating info to x799
+        - Propogating info to b657
+        - Propogating info to x800
+        - Propogating info to x798
+        - Propogating info to b543
+        - Propogating info to x800
+        - Propogating info to x798
+        - Propogating info to x797
+        - Propogating info to x664
+        - Propogating info to x665
+      Node x800 has BroadcastAddress metadata defined as false 
+        - Propogating info to b657
+      Node x799 has BroadcastAddress metadata defined as false 
+        - Propogating info to x662
+      Node x798 has BroadcastAddress metadata defined as false 
+        - Propogating info to b543
+      Node x665 has BroadcastAddress metadata defined as false 
+        - Propogating info to x797
+        - Propogating info to x664
+      Node x797 has BroadcastAddress metadata defined as false 
+        - Propogating info to x659
+      Node x664 has BroadcastAddress metadata defined as false 
+        - Propogating info to x663
+        - Reader x663, lane 0 is NOT broadcast
+        - Propogating info to Const(0)
+        - Propogating info to x751
+        - Propogating info to x794
+        - Propogating info to x662
+        - Propogating info to b657
+        - Propogating info to x796
+        - Propogating info to x795
+        - Propogating info to b543
+        - Propogating info to x796
+        - Propogating info to x795
+      Node x796 has BroadcastAddress metadata defined as false 
+        - Propogating info to b657
+      Node x795 has BroadcastAddress metadata defined as false 
+        - Propogating info to b543
+      Node x662 has BroadcastAddress metadata defined as false 
+        - Propogating info to x751
+        - Propogating info to x794
+      Node x794 has BroadcastAddress metadata defined as false 
+        - Propogating info to b656
+      Node x751 has BroadcastAddress metadata defined as false 
+        - Propogating info to x750
+        - Propogating info to b542
+      Node x750 has BroadcastAddress metadata defined as false 
+        - Propogating info to b542
+      Node x659 has BroadcastAddress metadata defined as false 
+        - Propogating info to x658
+        - Reader x658, lane 0 is NOT broadcast
+        - Propogating info to Const(0)
+        - Propogating info to b656
+        - Propogating info to b657
+        - Propogating info to b543
+        - Propogating info to b657
+        - Propogating info to b543
+          Writer x697 is broadcast: false
+            - Propogating info to x678
+            - Propogating info to x687
+          Writer x696 is broadcast: false
+            - Propogating info to x677
+            - Propogating info to x684
+          Writer x695 is broadcast: false
+            - Propogating info to x676
+            - Propogating info to x683
+          Node x803 has BroadcastAddress metadata defined as false 
+            - Propogating info to x693
+          Node x693 has BroadcastAddress metadata defined as false 
+            - Propogating info to x470
+          Node x692 has BroadcastAddress metadata defined as false 
+            - Propogating info to x802
+            - Propogating info to x755
+          Node x802 has BroadcastAddress metadata defined as false 
+            - Propogating info to x691
+          Node x691 has BroadcastAddress metadata defined as false 
+            - Propogating info to x689
+            - Propogating info to x801
+          Node x801 has BroadcastAddress metadata defined as false 
+            - Propogating info to x690
+          Node x690 has BroadcastAddress metadata defined as false 
+            - Propogating info to x470
+          Node x689 has BroadcastAddress metadata defined as false 
+            - Propogating info to x754
+          Node x755 has BroadcastAddress metadata defined as false 
+            - Propogating info to x686
+          Node x687 has BroadcastAddress metadata defined as false 
+            - Propogating info to x686
+          Node x686 has BroadcastAddress metadata defined as false 
+            - Propogating info to x685
+          Node x685 has BroadcastAddress metadata defined as false 
+            - Propogating info to x683
+          Node x684 has BroadcastAddress metadata defined as false 
+            - Propogating info to x683
+          Node x683 has BroadcastAddress metadata defined as false 
+            - Propogating info to x753
+            - Propogating info to x681
+          Node x754 has BroadcastAddress metadata defined as false 
+            - Propogating info to x680
+          Node x681 has BroadcastAddress metadata defined as false 
+            - Propogating info to x680
+          Node x680 has BroadcastAddress metadata defined as false 
+            - Propogating info to x753
+          Node x753 has BroadcastAddress metadata defined as false 
+            - Propogating info to x752
+            - Propogating info to b674
+          Node x752 has BroadcastAddress metadata defined as false 
+            - Propogating info to b674
+          Node x807 has BroadcastAddress metadata defined as false 
+            - Propogating info to b703
+          Node x715 has BroadcastAddress metadata defined as false 
+            - Propogating info to x714
+            - Propogating info to x806
+          Node x806 has BroadcastAddress metadata defined as false 
+            - Propogating info to x708
+          Node x714 has BroadcastAddress metadata defined as false 
+            - Propogating info to x713
+            - Reader x713, lane 0 is NOT broadcast
+            - Propogating info to Const(0)
+            - Propogating info to x757
+            - Propogating info to x709
+            - Propogating info to x712
+            - Propogating info to x708
+            - Propogating info to x805
+            - Propogating info to x804
+            - Propogating info to b703
+            - Propogating info to x805
+            - Propogating info to x804
+          Node x805 has BroadcastAddress metadata defined as false 
+            - Propogating info to x708
+          Node x804 has BroadcastAddress metadata defined as false 
+            - Propogating info to b703
+          Node x712 has BroadcastAddress metadata defined as false 
+            - Propogating info to x757
+            - Propogating info to x709
+          Node x757 has BroadcastAddress metadata defined as false 
+            - Propogating info to x756
+            - Propogating info to b674
+          Node x756 has BroadcastAddress metadata defined as false 
+            - Propogating info to b674
+          Node x709 has BroadcastAddress metadata defined as false 
+            - Propogating info to b702
+            - Propogating info to x704
+          Node x708 has BroadcastAddress metadata defined as false 
+            - Propogating info to x705
+            - Propogating info to x707
+          Node x707 has BroadcastAddress metadata defined as false 
+            - Propogating info to b702
+            - Propogating info to x706
+          Node x706 has BroadcastAddress metadata defined as false 
+            - Propogating info to x677
+          Node x705 has BroadcastAddress metadata defined as false 
+            - Propogating info to x704
+            - Propogating info to b702
+          Node x704 has BroadcastAddress metadata defined as false 
+            - Propogating info to x676

@@ -1,0 +1,33 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Tue Jun  4 02:56:06 2024
+| Host         : lagos running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_high_fanout_nets -ascending -timing -load_types -file ./par_high_fanout_nets.rpt
+| Design       : design_1
+| Device       : xczu9eg
+---------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Fanout Summary
+-----------------
+
++------------------------------------------------------------------------+--------+-------------+-----------------+-----------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+
+|                                                                        |        |             |                 |                 |         Clock Enable        |          Set/Reset          |         Data & Other        |            Clock            |
++------------------------------------------------------------------------+--------+-------------+-----------------+-----------------+-------+----+----------------+-------+----+----------------+-------+----+----------------+-------+----+----------------+
+| Net Name                                                               | Fanout | Driver Type | Worst Slack(ns) | Worst Delay(ns) | Slice | IO | BRAM/DSP/OTHER | Slice | IO | BRAM/DSP/OTHER | Slice | IO | BRAM/DSP/OTHER | Slice | IO | BRAM/DSP/OTHER |
++------------------------------------------------------------------------+--------+-------------+-----------------+-----------------+-------+----+----------------+-------+----+----------------+-------+----+----------------+-------+----+----------------+
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[0]  |      1 | LUT3        |           7.201 |           0.018 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[10] |      1 | LUT3        |           6.717 |           0.016 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[11] |      1 | LUT3        |           7.175 |           0.030 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[12] |      1 | LUT3        |           7.328 |           0.030 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[13] |      1 | LUT3        |           7.041 |           0.030 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[14] |      1 | LUT3        |           7.203 |           0.030 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[15] |      1 | LUT3        |           7.355 |           0.016 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[16] |      1 | LUT3        |           7.088 |           0.015 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[17] |      1 | LUT3        |           7.404 |           0.030 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
+| SpatialIP_0/FringeZynq/AXI4LiteToRFBridgeZCU/d/RetimeWrapper_io_in[18] |      1 | LUT3        |           7.144 |           0.027 |     0 |  0 |              0 |     0 |  0 |              0 |     1 |  0 |              0 |     0 |  0 |              0 |
++------------------------------------------------------------------------+--------+-------------+-----------------+-----------------+-------+----+----------------+-------+----+----------------+-------+----+----------------+-------+----+----------------+
+
+

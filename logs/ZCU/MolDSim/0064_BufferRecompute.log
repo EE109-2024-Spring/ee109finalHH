@@ -1,0 +1,112 @@
+    Recomputing depth of x471
+      x566 <-> x534: LCA: x444 (stage: -1), coarse-dist: <None>
+      x534 <-> x534: LCA: x536 (stage: -1), coarse-dist: <None>
+    Recomputing depth of x472
+      x571 <-> x533: LCA: x444 (stage: -1), coarse-dist: <None>
+      x533 <-> x533: LCA: x536 (stage: -1), coarse-dist: <None>
+    Recomputing depth of x473
+      x663 <-> x535: LCA: x444 (stage: -1), coarse-dist: <None>
+      x535 <-> x535: LCA: x536 (stage: -1), coarse-dist: <None>
+        Recomputing depth of x505
+          x522 <-> x511: LCA: x537 (stage: -1), coarse-dist: <None>
+          x511 <-> x511: LCA: x516 (stage: -1), coarse-dist: <None>
+        Recomputing depth of x506
+          x524 <-> x513: LCA: x537 (stage: -1), coarse-dist: <None>
+          x513 <-> x513: LCA: x516 (stage: -1), coarse-dist: <None>
+        Recomputing depth of x507
+          x734 <-> x515: LCA: x537 (stage: -1), coarse-dist: <None>
+          x515 <-> x515: LCA: x516 (stage: -1), coarse-dist: <None>
+    Recomputing depth of x539
+      x713 <-> x666: LCA: x444 (stage: -1), coarse-dist: <None>
+      x666 <-> x666: LCA: x667 (stage: -1), coarse-dist: <None>
+      Recomputing depth of x544
+        x642 <-> x651: LCA: x652 (stage: -1), coarse-dist: <None>
+        x651 <-> x651: LCA: x652 (stage: -1), coarse-dist: <None>
+      Recomputing depth of x545
+        x658 <-> x650: LCA: x668 (stage: -1), coarse-dist: 1
+        x650 <-> x650: LCA: x652 (stage: -1), coarse-dist: <None>
+      x658 <-> x650 # LCA: x668 (stage: -1), Dist: Some(1)
+      x650 <-> x650 # LCA: x668 (stage: -1), Dist: Some(0)
+        Recomputing depth of x554
+          x581 <-> x575: LCA: x653 (stage: -1), coarse-dist: 1
+          x575 <-> x575: LCA: x579 (stage: -1), coarse-dist: <None>
+          x635 <-> x575: LCA: x653 (stage: -1), coarse-dist: 5
+          x581 <-> x635: LCA: x653 (stage: -1), coarse-dist: -4
+          x575 <-> x635: LCA: x653 (stage: -1), coarse-dist: -5
+          x635 <-> x635: LCA: x639 (stage: -1), coarse-dist: <None>
+        x581 <-> x575 # LCA: x653 (stage: -1), Dist: Some(1)
+        x575 <-> x575 # LCA: x653 (stage: -1), Dist: Some(0)
+        x635 <-> x575 # LCA: x653 (stage: -1), Dist: Some(5)
+        Recomputing depth of x555
+          x584 <-> x574: LCA: x653 (stage: -1), coarse-dist: 1
+          x574 <-> x574: LCA: x579 (stage: -1), coarse-dist: <None>
+          x634 <-> x574: LCA: x653 (stage: -1), coarse-dist: 5
+          x584 <-> x634: LCA: x653 (stage: -1), coarse-dist: -4
+          x574 <-> x634: LCA: x653 (stage: -1), coarse-dist: -5
+          x634 <-> x634: LCA: x639 (stage: -1), coarse-dist: <None>
+        x584 <-> x574 # LCA: x653 (stage: -1), Dist: Some(1)
+        x574 <-> x574 # LCA: x653 (stage: -1), Dist: Some(0)
+        x634 <-> x574 # LCA: x653 (stage: -1), Dist: Some(5)
+        Recomputing depth of x556
+          x588 <-> x578: LCA: x653 (stage: -1), coarse-dist: 1
+          x578 <-> x578: LCA: x579 (stage: -1), coarse-dist: <None>
+          x638 <-> x578: LCA: x653 (stage: -1), coarse-dist: 5
+          x588 <-> x638: LCA: x653 (stage: -1), coarse-dist: -4
+          x578 <-> x638: LCA: x653 (stage: -1), coarse-dist: -5
+          x638 <-> x638: LCA: x639 (stage: -1), coarse-dist: <None>
+        x588 <-> x578 # LCA: x653 (stage: -1), Dist: Some(1)
+        x578 <-> x578 # LCA: x653 (stage: -1), Dist: Some(0)
+        x638 <-> x578 # LCA: x653 (stage: -1), Dist: Some(5)
+        Recomputing depth of x557
+          x628 <-> x577: LCA: x653 (stage: -1), coarse-dist: 5
+          x577 <-> x577: LCA: x579 (stage: -1), coarse-dist: <None>
+          x637 <-> x577: LCA: x653 (stage: -1), coarse-dist: 5
+          x628 <-> x637: LCA: x639 (stage: -1), coarse-dist: <None>
+          x577 <-> x637: LCA: x653 (stage: -1), coarse-dist: -5
+          x637 <-> x637: LCA: x639 (stage: -1), coarse-dist: <None>
+        x628 <-> x577 # LCA: x653 (stage: -1), Dist: Some(5)
+        x577 <-> x577 # LCA: x653 (stage: -1), Dist: Some(0)
+        x637 <-> x577 # LCA: x653 (stage: -1), Dist: Some(5)
+        Recomputing depth of x558
+          x640 <-> x576: LCA: x653 (stage: -1), coarse-dist: 6
+          x576 <-> x576: LCA: x579 (stage: -1), coarse-dist: <None>
+          x636 <-> x576: LCA: x653 (stage: -1), coarse-dist: 5
+          x640 <-> x636: LCA: x653 (stage: -1), coarse-dist: 1
+          x576 <-> x636: LCA: x653 (stage: -1), coarse-dist: -5
+          x636 <-> x636: LCA: x639 (stage: -1), coarse-dist: <None>
+        x640 <-> x576 # LCA: x653 (stage: -1), Dist: Some(6)
+        x576 <-> x576 # LCA: x653 (stage: -1), Dist: Some(0)
+        x636 <-> x576 # LCA: x653 (stage: -1), Dist: Some(5)
+        Recomputing depth of x580
+          x597 <-> x592: LCA: x653 (stage: -1), coarse-dist: 1
+          x609 <-> x592: LCA: x653 (stage: -1), coarse-dist: 2
+          x592 <-> x592: LCA: x593 (stage: -1), coarse-dist: <None>
+        x597 <-> x592 # LCA: x653 (stage: -1), Dist: Some(1)
+        x609 <-> x592 # LCA: x653 (stage: -1), Dist: Some(2)
+        x592 <-> x592 # LCA: x653 (stage: -1), Dist: Some(0)
+        Recomputing depth of x594
+          x631 <-> x622: LCA: x653 (stage: -1), coarse-dist: 1
+          x622 <-> x622: LCA: x623 (stage: -1), coarse-dist: <None>
+        x631 <-> x622 # LCA: x653 (stage: -1), Dist: Some(1)
+        x622 <-> x622 # LCA: x653 (stage: -1), Dist: Some(0)
+        Recomputing depth of x595
+          x735 <-> x603: LCA: x653 (stage: -1), coarse-dist: 1
+          x608 <-> x603: LCA: x653 (stage: -1), coarse-dist: 1
+          x603 <-> x603: LCA: x605 (stage: -1), coarse-dist: <None>
+        x735 <-> x603 # LCA: x653 (stage: -1), Dist: Some(1)
+        x608 <-> x603 # LCA: x653 (stage: -1), Dist: Some(1)
+        x603 <-> x603 # LCA: x653 (stage: -1), Dist: Some(0)
+        Recomputing depth of x596
+          x736 <-> x604: LCA: x653 (stage: -1), coarse-dist: 1
+          x604 <-> x604: LCA: x605 (stage: -1), coarse-dist: <None>
+        x736 <-> x604 # LCA: x653 (stage: -1), Dist: Some(1)
+        x604 <-> x604 # LCA: x653 (stage: -1), Dist: Some(0)
+          Recomputing depth of x676
+            x704 <-> x695: LCA: x718 (stage: -1), coarse-dist: <None>
+            x695 <-> x695: LCA: x698 (stage: -1), coarse-dist: <None>
+          Recomputing depth of x677
+            x706 <-> x696: LCA: x718 (stage: -1), coarse-dist: <None>
+            x696 <-> x696: LCA: x698 (stage: -1), coarse-dist: <None>
+          Recomputing depth of x678
+            x737 <-> x697: LCA: x718 (stage: -1), coarse-dist: <None>
+            x697 <-> x697: LCA: x698 (stage: -1), coarse-dist: <None>

@@ -1,0 +1,1387 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Jun  4 02:28:18 2024
+# Process ID: 3044014
+# Current directory: /home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.runs/synth_1
+# Command line: vivado -log design_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1.tcl
+# Log file: /home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.runs/synth_1/design_1.vds
+# Journal file: /home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1.tcl -notrace
+Command: synth_design -top design_1 -part xczu9eg-ffvb1156-2-e -keep_equivalent_registers
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3044041 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 2300.688 ; gain = 0.000 ; free physical = 884921 ; free virtual = 1051679
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/design_1.v:13]
+INFO: [Synth 8-6157] synthesizing module 'SpatialIP' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:54289]
+INFO: [Synth 8-6157] synthesizing module 'AccelUnit' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:27094]
+INFO: [Synth 8-6157] synthesizing module 'SingleCounter' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:125]
+INFO: [Synth 8-6157] synthesizing module 'FF' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'FF' (1#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1]
+INFO: [Synth 8-6157] synthesizing module 'SRFF' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'SRFF' (2#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'SingleCounter' (3#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:125]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:187]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister' (4#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper' (5#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:187]
+INFO: [Synth 8-6157] synthesizing module 'RootController_sm' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:215]
+INFO: [Synth 8-6155] done synthesizing module 'RootController_sm' (6#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:215]
+INFO: [Synth 8-6157] synthesizing module 'RootController_kernelRootController_concrete1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:26488]
+INFO: [Synth 8-6157] synthesizing module 'x471_A_sram_0' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:800]
+INFO: [Synth 8-6157] synthesizing module 'Mem1D' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:711]
+INFO: [Synth 8-6157] synthesizing module 'SRAM' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:589]
+INFO: [Synth 8-6157] synthesizing module 'SRAMVerilogAWS' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:55105]
+	Parameter WORDS bound to: 300 - type: integer 
+	Parameter AWIDTH bound to: 9 - type: integer 
+	Parameter DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'SRAMVerilogAWS' (7#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:55105]
+INFO: [Synth 8-6155] done synthesizing module 'SRAM' (8#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:589]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_5' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:683]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized0' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 9 - type: integer 
+	Parameter STAGES bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized0' (8#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_5' (9#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:683]
+INFO: [Synth 8-6155] done synthesizing module 'Mem1D' (10#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:711]
+INFO: [Synth 8-6157] synthesizing module 'StickySelects' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:766]
+INFO: [Synth 8-6155] done synthesizing module 'StickySelects' (11#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:766]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_6' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:772]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized1' (11#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_6' (12#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:772]
+INFO: [Synth 8-6155] done synthesizing module 'x471_A_sram_0' (13#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:800]
+INFO: [Synth 8-6157] synthesizing module 'x538_outr_UnitPipe_DenseTransfer_sm' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:867]
+INFO: [Synth 8-6155] done synthesizing module 'x538_outr_UnitPipe_DenseTransfer_sm' (14#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:867]
+INFO: [Synth 8-6157] synthesizing module 'x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:5111]
+INFO: [Synth 8-6157] synthesizing module 'x475_fifo' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1605]
+INFO: [Synth 8-6157] synthesizing module 'CompactingCounter' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1315]
+INFO: [Synth 8-6157] synthesizing module 'FF_1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1252]
+INFO: [Synth 8-6155] done synthesizing module 'FF_1' (15#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1252]
+INFO: [Synth 8-6155] done synthesizing module 'CompactingCounter' (16#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1315]
+INFO: [Synth 8-6157] synthesizing module 'CompactingIncDincCtr' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1371]
+INFO: [Synth 8-6155] done synthesizing module 'CompactingIncDincCtr' (17#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1371]
+INFO: [Synth 8-6157] synthesizing module 'Mem1D_3' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1441]
+INFO: [Synth 8-6155] done synthesizing module 'Mem1D_3' (18#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1441]
+INFO: [Synth 8-6157] synthesizing module 'CompactingEnqNetwork' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1509]
+INFO: [Synth 8-6157] synthesizing module 'Compactor' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1503]
+INFO: [Synth 8-6155] done synthesizing module 'Compactor' (19#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1503]
+INFO: [Synth 8-6155] done synthesizing module 'CompactingEnqNetwork' (20#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1509]
+INFO: [Synth 8-6157] synthesizing module 'CompactingDeqNetwork' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1582]
+INFO: [Synth 8-6155] done synthesizing module 'CompactingDeqNetwork' (21#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1582]
+INFO: [Synth 8-6155] done synthesizing module 'x475_fifo' (22#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1605]
+INFO: [Synth 8-6157] synthesizing module 'x478_ctrchain' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1887]
+INFO: [Synth 8-6157] synthesizing module 'SingleCounter_1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1811]
+INFO: [Synth 8-6157] synthesizing module 'FF_3' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1752]
+INFO: [Synth 8-6155] done synthesizing module 'FF_3' (23#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1752]
+INFO: [Synth 8-6155] done synthesizing module 'SingleCounter_1' (24#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1811]
+INFO: [Synth 8-6155] done synthesizing module 'x478_ctrchain' (25#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1887]
+INFO: [Synth 8-6157] synthesizing module 'x499_inr_Foreach_sm' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2043]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_21' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1987]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized2' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized2' (25#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_21' (26#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:1987]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_25' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2015]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized3' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized3' (26#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_25' (27#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2015]
+INFO: [Synth 8-6155] done synthesizing module 'x499_inr_Foreach_sm' (28#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2043]
+INFO: [Synth 8-6157] synthesizing module 'x499_inr_Foreach_iiCtr' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2305]
+INFO: [Synth 8-6155] done synthesizing module 'x499_inr_Foreach_iiCtr' (29#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2305]
+INFO: [Synth 8-6157] synthesizing module 'x499_inr_Foreach_kernelx499_inr_Foreach_concrete1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2823]
+INFO: [Synth 8-6157] synthesizing module '_' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2387]
+INFO: [Synth 8-6157] synthesizing module 'fix2fixBox' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2381]
+INFO: [Synth 8-6155] done synthesizing module 'fix2fixBox' (30#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2381]
+INFO: [Synth 8-6155] done synthesizing module '_' (31#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2387]
+INFO: [Synth 8-6157] synthesizing module 'x739_sum' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2474]
+INFO: [Synth 8-6157] synthesizing module '__1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2408]
+INFO: [Synth 8-6157] synthesizing module 'fix2fixBox_1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2400]
+INFO: [Synth 8-6155] done synthesizing module 'fix2fixBox_1' (32#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2400]
+INFO: [Synth 8-6155] done synthesizing module '__1' (33#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2408]
+INFO: [Synth 8-6157] synthesizing module 'fix2fixBox_3' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2449]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_31' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2421]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized4' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized4' (33#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_31' (34#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2421]
+INFO: [Synth 8-6155] done synthesizing module 'fix2fixBox_3' (35#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2449]
+INFO: [Synth 8-6155] done synthesizing module 'x739_sum' (36#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2474]
+INFO: [Synth 8-6157] synthesizing module 'x485_sub' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2520]
+INFO: [Synth 8-6155] done synthesizing module 'x485_sub' (37#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2520]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_35' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2568]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized5' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 36 - type: integer 
+	Parameter STAGES bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized5' (37#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_35' (38#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2568]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_36' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2596]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized6' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 38 - type: integer 
+	Parameter STAGES bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized6' (38#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_36' (39#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2596]
+INFO: [Synth 8-6157] synthesizing module 'x491' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2634]
+INFO: [Synth 8-6157] synthesizing module 'fix2fixBox_13' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2624]
+INFO: [Synth 8-6155] done synthesizing module 'fix2fixBox_13' (40#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2624]
+INFO: [Synth 8-6155] done synthesizing module 'x491' (41#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2634]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_37' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2647]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized7' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 64 - type: integer 
+	Parameter STAGES bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized7' (41#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_37' (42#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2647]
+INFO: [Synth 8-6157] synthesizing module 'x493_sum' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2749]
+INFO: [Synth 8-6157] synthesizing module '__9' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2683]
+INFO: [Synth 8-6157] synthesizing module 'fix2fixBox_14' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2675]
+INFO: [Synth 8-6155] done synthesizing module 'fix2fixBox_14' (43#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2675]
+INFO: [Synth 8-6155] done synthesizing module '__9' (44#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2683]
+INFO: [Synth 8-6157] synthesizing module 'fix2fixBox_16' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2724]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_38' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2696]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized8' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 64 - type: integer 
+	Parameter STAGES bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized8' (44#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_38' (45#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2696]
+INFO: [Synth 8-6155] done synthesizing module 'fix2fixBox_16' (46#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2724]
+INFO: [Synth 8-6155] done synthesizing module 'x493_sum' (47#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2749]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_44' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2795]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized9' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized9' (47#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_44' (48#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2795]
+INFO: [Synth 8-6155] done synthesizing module 'x499_inr_Foreach_kernelx499_inr_Foreach_concrete1' (49#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:2823]
+INFO: [Synth 8-6157] synthesizing module 'x537_outr_Foreach_sm' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3244]
+INFO: [Synth 8-6155] done synthesizing module 'x537_outr_Foreach_sm' (50#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3244]
+INFO: [Synth 8-6157] synthesizing module 'x537_outr_Foreach_kernelx537_outr_Foreach_concrete1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:4652]
+INFO: [Synth 8-6157] synthesizing module 'x505_reg' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3566]
+INFO: [Synth 8-6155] done synthesizing module 'x505_reg' (51#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3566]
+INFO: [Synth 8-6157] synthesizing module 'x516_inr_UnitPipe_sm' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3625]
+INFO: [Synth 8-6155] done synthesizing module 'x516_inr_UnitPipe_sm' (52#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3625]
+INFO: [Synth 8-6157] synthesizing module 'x516_inr_UnitPipe_kernelx516_inr_UnitPipe_concrete1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3845]
+INFO: [Synth 8-6155] done synthesizing module 'x516_inr_UnitPipe_kernelx516_inr_UnitPipe_concrete1' (53#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3845]
+INFO: [Synth 8-6157] synthesizing module 'x519_ctrchain' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3968]
+INFO: [Synth 8-6157] synthesizing module 'SingleCounter_3' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3889]
+INFO: [Synth 8-6155] done synthesizing module 'SingleCounter_3' (54#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3889]
+INFO: [Synth 8-6155] done synthesizing module 'x519_ctrchain' (55#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:3968]
+INFO: [Synth 8-6157] synthesizing module 'x536_inr_Foreach_sm' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:4104]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_58' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:4076]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized10' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized10' (55#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_58' (56#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:4076]
+INFO: [Synth 8-6155] done synthesizing module 'x536_inr_Foreach_sm' (57#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:4104]
+INFO: [Synth 8-6157] synthesizing module 'x536_inr_Foreach_kernelx536_inr_Foreach_concrete1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:4359]
+INFO: [Synth 8-6155] done synthesizing module 'x536_inr_Foreach_kernelx536_inr_Foreach_concrete1' (58#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:4359]
+INFO: [Synth 8-6155] done synthesizing module 'x537_outr_Foreach_kernelx537_outr_Foreach_concrete1' (59#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:4652]
+INFO: [Synth 8-6155] done synthesizing module 'x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1' (60#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:5111]
+INFO: [Synth 8-6157] synthesizing module 'x668_outr_Foreach_sm' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:5592]
+INFO: [Synth 8-6155] done synthesizing module 'x668_outr_Foreach_sm' (61#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:5592]
+INFO: [Synth 8-6157] synthesizing module 'x668_outr_Foreach_kernelx668_outr_Foreach_concrete1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:23812]
+INFO: [Synth 8-6157] synthesizing module 'b542_chain' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6540]
+INFO: [Synth 8-6157] synthesizing module 'NBuf' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6452]
+INFO: [Synth 8-6157] synthesizing module 'NBufController' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6128]
+INFO: [Synth 8-6157] synthesizing module 'NBufCtr' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:5984]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_96' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:5956]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_96' (62#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:5956]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr' (63#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:5984]
+INFO: [Synth 8-6157] synthesizing module 'NBufCtr_2' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6063]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr_2' (64#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6063]
+INFO: [Synth 8-6155] done synthesizing module 'NBufController' (65#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6128]
+INFO: [Synth 8-6155] done synthesizing module 'NBuf' (66#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6452]
+INFO: [Synth 8-6155] done synthesizing module 'b542_chain' (67#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6540]
+INFO: [Synth 8-6157] synthesizing module 'b543_chain' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6732]
+INFO: [Synth 8-6157] synthesizing module 'NBuf_1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6644]
+INFO: [Synth 8-6157] synthesizing module 'FF_9' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6585]
+INFO: [Synth 8-6155] done synthesizing module 'FF_9' (68#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6585]
+INFO: [Synth 8-6155] done synthesizing module 'NBuf_1' (69#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6644]
+INFO: [Synth 8-6155] done synthesizing module 'b543_chain' (70#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6732]
+INFO: [Synth 8-6157] synthesizing module 'x544_accum_0' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6952]
+INFO: [Synth 8-6157] synthesizing module 'Mem1D_5' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6899]
+INFO: [Synth 8-6157] synthesizing module 'SRAM_4' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6777]
+INFO: [Synth 8-6157] synthesizing module 'SRAMVerilogAWS__parameterized0' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:55105]
+	Parameter WORDS bound to: 3 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'SRAMVerilogAWS__parameterized0' (70#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:55105]
+INFO: [Synth 8-6155] done synthesizing module 'SRAM_4' (71#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6777]
+INFO: [Synth 8-6157] synthesizing module 'RetimeWrapper_112' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6871]
+INFO: [Synth 8-6157] synthesizing module 'RetimeShiftRegister__parameterized11' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+	Parameter WIDTH bound to: 2 - type: integer 
+	Parameter STAGES bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RetimeShiftRegister__parameterized11' (71#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/RetimeShiftRegister.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_112' (72#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6871]
+INFO: [Synth 8-6155] done synthesizing module 'Mem1D_5' (73#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6899]
+INFO: [Synth 8-6155] done synthesizing module 'x544_accum_0' (74#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:6952]
+INFO: [Synth 8-6157] synthesizing module 'x545_accum_1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7018]
+INFO: [Synth 8-6155] done synthesizing module 'x545_accum_1' (75#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7018]
+INFO: [Synth 8-6157] synthesizing module 'x549_ctrchain' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7255]
+INFO: [Synth 8-6157] synthesizing module 'SingleCounter_6' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7179]
+INFO: [Synth 8-6157] synthesizing module 'FF_12' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7120]
+INFO: [Synth 8-6155] done synthesizing module 'FF_12' (76#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7120]
+INFO: [Synth 8-6155] done synthesizing module 'SingleCounter_6' (77#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7179]
+INFO: [Synth 8-6155] done synthesizing module 'x549_ctrchain' (78#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7255]
+INFO: [Synth 8-6157] synthesizing module 'x653_outr_Reduce_sm' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7355]
+INFO: [Synth 8-6155] done synthesizing module 'x653_outr_Reduce_sm' (79#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:7355]
+INFO: [Synth 8-6157] synthesizing module 'x653_outr_Reduce_kernelx653_outr_Reduce_concrete1' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:21156]
+INFO: [Synth 8-6157] synthesizing module 'b550_chain' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:10502]
+INFO: [Synth 8-6157] synthesizing module 'NBuf_2' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:9959]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'RetimeWrapper_178' (80#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:8339]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr_9' (81#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:8367]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr_11' (82#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:8446]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr_12' (83#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:8511]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr_13' (84#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:8590]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr_14' (85#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:8669]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr_15' (86#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:8748]
+INFO: [Synth 8-6155] done synthesizing module 'NBufCtr_16' (87#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:8827]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:12217]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:12223]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:12229]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 6 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 5 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 21 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 20 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mul_54_54_54_6_Unsigned_Use_Mults' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/synth/mul_54_54_54_6_Unsigned_Use_Mults.vhd:69]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/synth/mul_54_54_54_6_Unsigned_Use_Mults.vhd:72]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/synth/mul_54_54_54_6_Unsigned_Use_Mults.vhd:72]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynquplus - type: string 
+	Parameter C_HAS_CE bound to: 1 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 6 - type: integer 
+	Parameter C_A_WIDTH bound to: 54 - type: integer 
+	Parameter C_A_TYPE bound to: 1 - type: integer 
+	Parameter C_B_WIDTH bound to: 54 - type: integer 
+	Parameter C_B_TYPE bound to: 1 - type: integer 
+	Parameter C_OUT_HIGH bound to: 54 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_15' declared at '/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/hdl/mult_gen_v12_0_vh_rfs.vhd:21013' bound to instance 'U0' of component 'mult_gen_v12_0_15' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/synth/mul_54_54_54_6_Unsigned_Use_Mults.vhd:124]
+INFO: [Synth 8-256] done synthesizing module 'mul_54_54_54_6_Unsigned_Use_Mults' (133#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/synth/mul_54_54_54_6_Unsigned_Use_Mults.vhd:69]
+WARNING: [Synth 8-689] width (54) of port connection 'P' does not match port width (55) of module 'mul_54_54_54_6_Unsigned_Use_Mults' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:17070]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 6 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 12 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 103 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:18682]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 102 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'div_55_32_20_Signed_Fractional' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/div_55_32_20_Signed_Fractional/synth/div_55_32_20_Signed_Fractional.vhd:72]
+	Parameter C_XDEVICEFAMILY bound to: zynquplus - type: string 
+	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 20 - type: integer 
+	Parameter ALGORITHM_TYPE bound to: 1 - type: integer 
+	Parameter DIVISOR_WIDTH bound to: 32 - type: integer 
+	Parameter DIVIDEND_WIDTH bound to: 55 - type: integer 
+	Parameter SIGNED_B bound to: 1 - type: integer 
+	Parameter DIVCLK_SEL bound to: 1 - type: integer 
+	Parameter FRACTIONAL_B bound to: 1 - type: integer 
+	Parameter FRACTIONAL_WIDTH bound to: 2 - type: integer 
+	Parameter C_HAS_DIV_BY_ZERO bound to: 0 - type: integer 
+	Parameter C_THROTTLE_SCHEME bound to: 3 - type: integer 
+	Parameter C_TLAST_RESOLUTION bound to: 0 - type: integer 
+	Parameter C_HAS_S_AXIS_DIVISOR_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_S_AXIS_DIVISOR_TLAST bound to: 0 - type: integer 
+	Parameter C_S_AXIS_DIVISOR_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_DIVISOR_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_AXIS_DIVIDEND_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_S_AXIS_DIVIDEND_TLAST bound to: 0 - type: integer 
+	Parameter C_S_AXIS_DIVIDEND_TDATA_WIDTH bound to: 56 - type: integer 
+	Parameter C_S_AXIS_DIVIDEND_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_DOUT_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_M_AXIS_DOUT_TUSER_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'div_gen_v5_1_15' declared at '/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/div_55_32_20_Signed_Fractional/hdl/div_gen_v5_1_vh_rfs.vhd:13859' bound to instance 'U0' of component 'div_gen_v5_1_15' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/div_55_32_20_Signed_Fractional/synth/div_55_32_20_Signed_Fractional.vhd:146]
+INFO: [Synth 8-256] done synthesizing module 'div_55_32_20_Signed_Fractional' (169#1) [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/div_55_32_20_Signed_Fractional/synth/div_55_32_20_Signed_Fractional.vhd:72]
+WARNING: [Synth 8-689] width (55) of port connection 'm_axis_dout_tdata' does not match port width (64) of module 'div_55_32_20_Signed_Fractional' [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:18827]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 20 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 40 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 60 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 80 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 15 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter STAGES bound to: 14 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 14 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter STAGES bound to: 3 - type: integer 
+	Parameter WORDS bound to: 64 - type: integer 
+	Parameter AWIDTH bound to: 6 - type: integer 
+	Parameter DWIDTH bound to: 96 - type: integer 
+	Parameter WORDS bound to: 4 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter DWIDTH bound to: 32 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:29083]
+	Parameter WORDS bound to: 64 - type: integer 
+	Parameter AWIDTH bound to: 6 - type: integer 
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter WIDTH bound to: 40 - type: integer 
+	Parameter STAGES bound to: 1 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 40 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 16 - type: integer 
+WARNING: [Synth 8-7023] instance 'SpatialIP_0' of module 'SpatialIP' has 273 connections declared, but only 268 given [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/design_1.v:216]
+WARNING: [Synth 8-7023] instance 'axi_dwidth_converter_0' of module 'design_1_axi_dwidth_converter_0_0' has 76 connections declared, but only 74 given [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/design_1.v:485]
+WARNING: [Synth 8-7023] instance 'axi_dwidth_converter_1' of module 'design_1_axi_dwidth_converter_1_0' has 76 connections declared, but only 74 given [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/design_1.v:560]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'design_1_rst_ps8_0_99M_0' has 10 connections declared, but only 6 given [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/design_1.v:698]
+WARNING: [Synth 8-7023] instance 'zynq_ultra_ps_e_0' of module 'design_1_zynq_ultra_ps_e_0_0' has 164 connections declared, but only 129 given [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/design_1.v:705]
+WARNING: [Synth 8-3331] design s00_couplers_imp_1A7ZMW4 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1A7ZMW4 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design design_1_ps8_0_axi_periph_0 has unconnected port ACLK
+WARNING: [Synth 8-3331] design design_1_ps8_0_axi_periph_0 has unconnected port ARESETN
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[63]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[62]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[61]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[60]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[59]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[58]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[57]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[56]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[55]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[54]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[53]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[52]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[51]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[50]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[49]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[48]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[47]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[46]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[45]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[44]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[43]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[42]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[41]
+WARNING: [Synth 8-3331] design MAGToAXI4Bridge has unconnected port io_in_cmd_bits_addr[40]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_WSTRB[7]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_WSTRB[6]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_WSTRB[5]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_WSTRB[4]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design AXI4LiteToRFBridgeZCUVerilog has unconnected port S_AXI_ARPROT[0]
+WARNING: [Synth 8-3331] design AXICmdSplit has unconnected port io_in_cmd_bits_tag[8]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_0_cmd_bits_tag[7]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_0_cmd_bits_tag[6]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_0_cmd_bits_tag[5]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_0_cmd_bits_tag[4]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_0_cmd_bits_tag[3]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_0_cmd_bits_tag[2]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_0_cmd_bits_tag[1]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_0_cmd_bits_tag[0]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_1_cmd_bits_tag[7]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_1_cmd_bits_tag[6]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_1_cmd_bits_tag[5]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_1_cmd_bits_tag[4]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_1_cmd_bits_tag[3]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_1_cmd_bits_tag[2]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_1_cmd_bits_tag[1]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_app_1_cmd_bits_tag[0]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[31]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[30]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[29]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[28]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[27]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[26]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[25]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[24]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[23]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[22]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[21]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[20]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[19]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[18]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[17]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[16]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[15]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[14]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[13]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[12]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[11]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[10]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[9]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_rresp_bits_tag[8]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[31]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[30]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[29]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[28]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[27]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[26]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[25]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[24]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[23]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[22]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[21]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[20]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[19]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[18]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[17]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[16]
+WARNING: [Synth 8-3331] design StreamArbiter has unconnected port io_dram_wresp_bits_tag[15]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 2464.969 ; gain = 164.281 ; free physical = 884820 ; free virtual = 1051583
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 2479.812 ; gain = 179.125 ; free physical = 884865 ; free virtual = 1051628
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 2479.812 ; gain = 179.125 ; free physical = 884865 ; free virtual = 1051628
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 26384 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'zynq_ultra_ps_e_0'
+create_clock: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 3138.516 ; gain = 21.781 ; free physical = 884194 ; free virtual = 1050957
+Finished Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'zynq_ultra_ps_e_0'
+Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'ps8_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'ps8_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_axi_dwidth_converter_0_0/design_1_axi_dwidth_converter_0_0/design_1_axi_dwidth_converter_0_0_in_context.xdc] for cell 'axi_dwidth_converter_0'
+Finished Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_axi_dwidth_converter_0_0/design_1_axi_dwidth_converter_0_0/design_1_axi_dwidth_converter_0_0_in_context.xdc] for cell 'axi_dwidth_converter_0'
+Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_axi_dwidth_converter_1_0/design_1_axi_dwidth_converter_1_0/design_1_axi_dwidth_converter_0_0_in_context.xdc] for cell 'axi_dwidth_converter_1'
+Finished Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_axi_dwidth_converter_1_0/design_1_axi_dwidth_converter_1_0/design_1_axi_dwidth_converter_0_0_in_context.xdc] for cell 'axi_dwidth_converter_1'
+Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_0_in_context.xdc] for cell 'ps8_0_axi_periph/s00_couplers/auto_ds'
+Finished Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_0_in_context.xdc] for cell 'ps8_0_axi_periph/s00_couplers/auto_ds'
+Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_rst_ps8_0_99M_0/design_1_rst_ps8_0_99M_0/design_1_rst_ps8_0_99M_0_in_context.xdc] for cell 'rst_ps8_0_99M'
+Finished Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/design_1_rst_ps8_0_99M_0/design_1_rst_ps8_0_99M_0/design_1_rst_ps8_0_99M_0_in_context.xdc] for cell 'rst_ps8_0_99M'
+Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3138.516 ; gain = 0.000 ; free physical = 884192 ; free virtual = 1050954
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 50 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 50 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 3180.516 ; gain = 42.000 ; free physical = 884142 ; free virtual = 1050904
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 3180.516 ; gain = 879.828 ; free physical = 884793 ; free virtual = 1051556
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 3180.516 ; gain = 879.828 ; free physical = 884793 ; free virtual = 1051556
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x593_inr_UnitPipe_kernelx593_inr_UnitPipe_concrete1/x586_mul_1/x586_mul/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x593_inr_UnitPipe_kernelx593_inr_UnitPipe_concrete1/x748_1/fmamul_x748/x586_mul/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x593_inr_UnitPipe_kernelx593_inr_UnitPipe_concrete1/x749_1/fmamul_x748/x586_mul/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x639_inr_Foreach_kernelx639_inr_Foreach_concrete1/x630_mul_1/x586_mul/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x639_inr_Foreach_kernelx639_inr_Foreach_concrete1/x633_mul_1/x586_mul/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x621_inr_Switch_kernelx621_inr_Switch_concrete1/x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1/x611_div_1/x611_div/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x621_inr_Switch_kernelx621_inr_Switch_concrete1/x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1/x612_div_1/x611_div/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x621_inr_Switch_kernelx621_inr_Switch_concrete1/x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1/x613_div_1/x611_div/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x621_inr_Switch_kernelx621_inr_Switch_concrete1/x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1/x614_div_1/x611_div/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x621_inr_Switch_kernelx621_inr_Switch_concrete1/x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1/x615_div_1/x611_div/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x621_inr_Switch_kernelx621_inr_Switch_concrete1/x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1/x616_div_1/x611_div/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x621_inr_Switch_kernelx621_inr_Switch_concrete1/x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1/x617_div_1/x611_div/m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_ultra_ps_e_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ps8_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for axi_dwidth_converter_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for axi_dwidth_converter_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ps8_0_axi_periph/s00_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for rst_ps8_0_99M. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:17 ; elapsed = 00:01:23 . Memory (MB): peak = 3180.516 ; gain = 879.828 ; free physical = 884782 ; free virtual = 1051545
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register '_T_2106_reg' and it is trimmed from '64' to '32' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:37487]
+WARNING: [Synth 8-3936] Found unconnected internal register '_T_2070_reg' and it is trimmed from '64' to '32' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:37474]
+WARNING: [Synth 8-3936] Found unconnected internal register '_T_2097_reg' and it is trimmed from '64' to '32' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:37484]
+WARNING: [Synth 8-3936] Found unconnected internal register '_T_2085_reg' and it is trimmed from '64' to '32' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:37480]
+WARNING: [Synth 8-3936] Found unconnected internal register '_T_2076_reg' and it is trimmed from '64' to '32' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/SpatialIP.v:37476]
+INFO: [Synth 8-6904] The RAM "Mem1D_3:/_T_127_reg" of size (depth=16 x width=96) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "SRAMVerilogAWS__parameterized0:/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "SRAMVerilogAWS__parameterized1:/mem_reg" of size (depth=64 x width=96) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "SRAMVerilogAWS__parameterized2:/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "SRAMVerilogAWS__parameterized3:/mem_reg" of size (depth=64 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:27 ; elapsed = 00:01:36 . Memory (MB): peak = 3180.516 ; gain = 879.828 ; free physical = 884761 ; free virtual = 1051537
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_sm/done_0' (SRFF) to 'SpatialIP_0/accel/RootController_sm/done_1'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_sm/done_0' (SRFF) to 'SpatialIP_0/accel/RootController_sm/done_2'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_sm/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_sm/RetimeWrapper_2'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_sm/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_sm/RetimeWrapper_3'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_sm/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_sm/RetimeWrapper_5'
+INFO: [Synth 8-223] decloning instance 'x499_inr_Foreach_sm:/RetimeWrapper' (RetimeWrapper_21) to 'x499_inr_Foreach_sm:/RetimeWrapper_1'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1/x499_inr_Foreach_kernelx499_inr_Foreach_concrete1/RetimeWrapper_7' (RetimeWrapper_25) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1/x499_inr_Foreach_kernelx499_inr_Foreach_concrete1/RetimeWrapper_10'
+INFO: [Synth 8-223] decloning instance 'x537_outr_Foreach_sm:/done_0' (SRFF) to 'x537_outr_Foreach_sm:/done_1'
+INFO: [Synth 8-223] decloning instance 'x516_inr_UnitPipe_sm:/RetimeWrapper' (RetimeWrapper) to 'x516_inr_UnitPipe_sm:/RetimeWrapper_1'
+INFO: [Synth 8-223] decloning instance 'x536_inr_Foreach_sm:/RetimeWrapper' (RetimeWrapper_58) to 'x536_inr_Foreach_sm:/RetimeWrapper_1'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1/x537_outr_Foreach_kernelx537_outr_Foreach_concrete1/x536_inr_Foreach_kernelx536_inr_Foreach_concrete1/RetimeWrapper_5' (RetimeWrapper_6) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1/x537_outr_Foreach_kernelx537_outr_Foreach_concrete1/x536_inr_Foreach_kernelx536_inr_Foreach_concrete1/RetimeWrapper_6'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1/x537_outr_Foreach_kernelx537_outr_Foreach_concrete1/x536_inr_Foreach_kernelx536_inr_Foreach_concrete1/RetimeWrapper_5' (RetimeWrapper_6) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1/x537_outr_Foreach_kernelx537_outr_Foreach_concrete1/x536_inr_Foreach_kernelx536_inr_Foreach_concrete1/RetimeWrapper_7'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_sm/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_sm/RetimeWrapper_2'
+INFO: [Synth 8-223] decloning instance 'NBufController:/RetimeWrapper' (RetimeWrapper) to 'NBufController:/RetimeWrapper_2'
+INFO: [Synth 8-223] decloning instance 'NBufController:/RetimeWrapper' (RetimeWrapper) to 'NBufController:/RetimeWrapper_4'
+INFO: [Synth 8-223] decloning instance 'NBufController:/RetimeWrapper' (RetimeWrapper) to 'NBufController:/RetimeWrapper_6'
+INFO: [Synth 8-223] decloning instance 'NBufController:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController:/RetimeWrapper_3'
+INFO: [Synth 8-223] decloning instance 'NBufController:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController:/RetimeWrapper_5'
+INFO: [Synth 8-223] decloning instance 'NBufController:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController:/RetimeWrapper_7'
+INFO: [Synth 8-223] decloning instance 'NBufController:/NBufCtr' (NBufCtr) to 'NBufController:/statesInR_0'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_1'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_3' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_4'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_3' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_6'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_8' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_9'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_8' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/RetimeWrapper_11'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_sm/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_sm/RetimeWrapper_7'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_sm/RetimeWrapper_3' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_sm/RetimeWrapper_6'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_2'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_4'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_6'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_8'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_10'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_12'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_14'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_16'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_18'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_20'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_22'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_24'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_26'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_3'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_5'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_7'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_9'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_11'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_13'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_15'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_17'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_19'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_21'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_23'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_25'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_3:/RetimeWrapper_27'
+INFO: [Synth 8-223] decloning instance 'NBufController_3:/NBufCtr' (NBufCtr_9) to 'NBufController_3:/statesInR_0'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_1'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_3' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_4'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_3' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_6'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_7' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_8'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_7' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_10'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_11' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_12'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_11' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_14'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_15' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_16'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_15' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_18'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_19' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_20'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_19' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_22'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_24' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_25'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_24' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_27'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_29' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_30'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_29' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/RetimeWrapper_32'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_2'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_4'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_6'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_8'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_10'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_12'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_14'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_16'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_18'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_20'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_22'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_3'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_5'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_7'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_9'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_11'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_13'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_15'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_17'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_19'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_21'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/RetimeWrapper_1' (RetimeWrapper) to 'NBufController_5:/RetimeWrapper_23'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/NBufCtr' (NBufCtr_25) to 'NBufController_5:/statesInR_0'
+INFO: [Synth 8-223] decloning instance 'NBufController_5:/NBufCtr_1' (NBufCtr_26) to 'NBufController_5:/statesInR_5'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper_2'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper_4'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper_6'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper_8'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper_10'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper_12'
+INFO: [Synth 8-223] decloning instance 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper' (RetimeWrapper) to 'SpatialIP_0/accel/RootController_kernelRootController_concrete1/x668_outr_Foreach_kernelx668_outr_Foreach_concrete1/x653_outr_Reduce_kernelx653_outr_Reduce_concrete1/x558_tmp_4/ctrl/RetimeWrapper_14'
+INFO: [Common 17-14] Message 'Synth 8-223' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+
+Report RTL Partitions: 
++------+-------------------------------------------------------------+------------+----------+
+|      |RTL Partition                                                |Replication |Instances |
++------+-------------------------------------------------------------+------------+----------+
+|1     |div_55_32_20_Signed_Fractional                               |           7|     14077|
+|2     |x611_div__xdcDup__1__GC0                                     |           1|        84|
+|3     |x611_div__xdcDup__2__GC0                                     |           1|        84|
+|4     |x611_div__xdcDup__3__GC0                                     |           1|        84|
+|5     |x611_div__xdcDup__4__GC0                                     |           1|        84|
+|6     |x611_div__xdcDup__5__GC0                                     |           1|        84|
+|7     |x611_div__xdcDup__6__GC0                                     |           1|        84|
+|8     |x611_div__GC0                                                |           1|        84|
+|9     |x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1__GC0 |           1|     16844|
+|10    |x621_inr_Switch_kernelx621_inr_Switch_concrete1__GC0         |           1|       933|
+|11    |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB0      |           1|     25219|
+|12    |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB1      |           1|     18517|
+|13    |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB2      |           1|     14872|
+|14    |x668_outr_Foreach_kernelx668_outr_Foreach_concrete1__GC0     |           1|      6473|
+|15    |RootController_kernelRootController_concrete1__GC0           |           1|     10501|
+|16    |AccelUnit__GC0                                               |           1|       443|
+|17    |DRAMArbiter                                                  |           2|     17816|
+|18    |RegFile__GB0                                                 |           1|     32785|
+|19    |RegFile__GB1                                                 |           1|      9582|
+|20    |Fringe__GC0                                                  |           1|       401|
+|21    |FringeZynq__GC0                                              |           1|       221|
+|22    |design_1__GC0                                                |           1|      3335|
++------+-------------------------------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2520 (col length:168)
+BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "x668_outr_Foreach_kernelx668_outr_Foreach_concrete1i_13/x544_accum_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x668_outr_Foreach_kernelx668_outr_Foreach_concrete1i_13/x545_accum_1/SRAM_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x668_outr_Foreach_kernelx668_outr_Foreach_concrete1i_13/x545_accum_1/SRAM/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "design_1/x544_accum_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "design_1/x545_accum_1/SRAM_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "design_1/x545_accum_1/SRAM/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (x668_outr_Foreach_kernelx668_outr_Foreach_concrete1i_13/\x545_accum_1/ctrl/RetimeWrapper_1/sr/sr_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (x668_outr_Foreach_kernelx668_outr_Foreach_concrete1i_13/\b542_chain/nbufFF/ctrl/RetimeWrapper_1/sr/sr_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (x668_outr_Foreach_kernelx668_outr_Foreach_concrete1i_13/\b543_chain/nbufFF/ctrl/RetimeWrapper_1/sr/sr_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (x668_outr_Foreach_kernelx668_outr_Foreach_concrete1i_13/\RetimeWrapper/sr/sr_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][37] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][38] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][40] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][41] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][42] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][43] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][44] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][45] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][46] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][47] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][48] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][49] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][50] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][51] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][52] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][53] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][56] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][57] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][59] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][60] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][61] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][62] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_36/\RetimeWrapper/sr/sr_reg[0][63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FringeZynqi_19/\AXI4LiteToRFBridgeZCU/d/axi_bresp_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FringeZynqi_19/\AXI4LiteToRFBridgeZCU/d/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FringeZynqi_19/\AXI4LiteToRFBridgeZCU/d/axi_rresp_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FringeZynqi_19/\AXI4LiteToRFBridgeZCU/d/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][37] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][38] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][40] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][41] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][42] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][43] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][44] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][45] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][46] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][47] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][48] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][49] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][50] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][51] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][52] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][53] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][56] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][57] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (regsi_17/regs_34/\RetimeWrapper/sr/sr_reg[0][59] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3936] Found unconnected internal register 'i_nonzero_fract.i_synth/i_algo_r2_or_lutmult.i_nonzero_fract.i_sdivider/signed_output.remd_fract.cmp_remd/twos_comp/i_reg_arch_simp.i_q.q_i_reg' and it is trimmed from '3' to '2' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/div_55_32_20_Signed_Fractional/hdl/div_gen_v5_1_vh_rfs.vhd:6305]
+INFO: [Synth 8-3936] Found unconnected internal register 'i_nonzero_fract.i_synth/i_algo_r2_or_lutmult.i_nonzero_fract.i_sdivider/signed_output.cmp_quot/twos_comp/i_reg_arch_simp.i_q.q_i_reg' and it is trimmed from '57' to '55' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/div_55_32_20_Signed_Fractional/hdl/div_gen_v5_1_vh_rfs.vhd:6305]
+INFO: [Synth 8-3936] Found unconnected internal register 'i_nonzero_fract.i_synth/i_algo_r2_or_lutmult.i_nonzero_fract.i_sdivider/sgned_input.cmp_divisor/twos_comp/i_reg_arch_simp.i_q.q_i_reg' and it is trimmed from '33' to '32' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/div_55_32_20_Signed_Fractional/hdl/div_gen_v5_1_vh_rfs.vhd:6305]
+INFO: [Synth 8-3936] Found unconnected internal register 'i_nonzero_fract.i_synth/i_algo_r2_or_lutmult.i_nonzero_fract.i_sdivider/sgned_input.cmp_dividend/twos_comp/i_reg_arch_simp.i_q.q_i_reg' and it is trimmed from '56' to '55' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/div_55_32_20_Signed_Fractional/hdl/div_gen_v5_1_vh_rfs.vhd:6305]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3936] Found unconnected internal register 'gDSP.gDSP_only.iDSP/use_prim.appDSP48[2].bppDSP48[1].need_output_delay.output_delay/d1.dout_i_reg' and it is trimmed from '17' to '4' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/hdl/mult_gen_v12_0_vh_rfs.vhd:4173]
+INFO: [Synth 8-3936] Found unconnected internal register 'gDSP.gDSP_only.iDSP/use_prim.appDSP48[2].bppDSP48[1].need_output_delay.output_delay/d1.dout_i_reg' and it is trimmed from '17' to '4' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/hdl/mult_gen_v12_0_vh_rfs.vhd:4173]
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/\SRAM/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/\SRAM_1/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/\SRAM_2/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/\SRAM_3/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/\SRAM_4/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/\SRAM_5/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/\SRAM/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/\SRAM_1/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/\SRAM_2/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/\SRAM_3/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/\SRAM_4/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/\SRAM_5/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-3936] Found unconnected internal register 'gDSP.gDSP_only.iDSP/use_prim.appDSP48[2].bppDSP48[1].need_output_delay.output_delay/d1.dout_i_reg' and it is trimmed from '17' to '4' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/hdl/mult_gen_v12_0_vh_rfs.vhd:4173]
+INFO: [Synth 8-3936] Found unconnected internal register 'gDSP.gDSP_only.iDSP/use_prim.appDSP48[2].bppDSP48[1].need_output_delay.output_delay/d1.dout_i_reg' and it is trimmed from '17' to '4' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/hdl/mult_gen_v12_0_vh_rfs.vhd:4173]
+INFO: [Synth 8-3936] Found unconnected internal register 'gDSP.gDSP_only.iDSP/use_prim.appDSP48[2].bppDSP48[1].need_output_delay.output_delay/d1.dout_i_reg' and it is trimmed from '17' to '4' bits. [/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.srcs/sources_1/ip/mul_54_54_54_6_Unsigned_Use_Mults/hdl/mult_gen_v12_0_vh_rfs.vhd:4173]
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_3/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_4/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_5/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_6/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/SRAM/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/SRAM_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/SRAM_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/SRAM_3/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/SRAM_4/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x557_tmp_3/SRAM_5/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/SRAM/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/SRAM_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/SRAM_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/SRAM_3/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/SRAM_4/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x555_tmp_1/SRAM_5/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_3/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_4/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_5/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM_6/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x558_tmp_4/SRAM/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[6].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[6].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[7].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[7].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.runt_srl_loop.i_fdre) is unused and will be removed from module mult_gen_v12_0_15_viv.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[6].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[6].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[7].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[7].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.runt_srl_loop.i_fdre) is unused and will be removed from module mult_gen_v12_0_15_viv__8.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[6].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[6].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[7].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[7].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.runt_srl_loop.i_fdre) is unused and will be removed from module mult_gen_v12_0_15_viv__7.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[6].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[6].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[7].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[7].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.runt_srl_loop.i_fdre) is unused and will be removed from module mult_gen_v12_0_15_viv__6.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.extra_dsp.need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[0].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[1].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[2].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[3].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[4].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre0) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/use_prim.iBdelx[2].iBdely[2].need_delay_line.Bdelay/dN_hlutnm.srl_loop[5].i_fdre1) is unused and will be removed from module mult_gen_v12_0_15_viv__5.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/\SRAM/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/\SRAM_1/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/\SRAM_2/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/\SRAM_3/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/\SRAM_4/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/\SRAM_5/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/\SRAM/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/\SRAM_1/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/\SRAM_2/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/\SRAM_3/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/\SRAM_4/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/\SRAM_5/Mem1D /SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/SRAM/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/SRAM_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/SRAM_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/SRAM_3/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/SRAM_4/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x554_tmp_0/SRAM_5/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/SRAM/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/SRAM_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/SRAM_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/SRAM_3/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/SRAM_4/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x556_tmp_2/SRAM_5/Mem1D/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=3 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1/x475_fifo/m_0/_T_127_reg" of size (depth=16 x width=96) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+RAM Pipeline Warning: Read Address Register Found For RAM x475_fifo/m_0/_T_127_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-6904] The RAM "x538_outr_UnitPipe_DenseTransfer_kernelx538_outr_UnitPipe_DenseTransfer_concrete1/x475_fifo/m_0/_T_127_reg" of size (depth=16 x width=96) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+RAM Pipeline Warning: Read Address Register Found For RAM x475_fifo/m_0/_T_127_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_0/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_1/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_2/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_3/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_4/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_5/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_6/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_7/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_8/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_9/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_10/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_11/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_12/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_13/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_14/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/\rdata/FIFOVec /fifos_15/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-6014] Unused sequential element rdata/FIFOVec_1/fifos_0/SRAM/SRAMVerilogAWS/mem_reg was removed. 
+INFO: [Synth 8-6904] The RAM "StreamControllerLoad/cmd/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=64 x width=96) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerStore/\wdata/FIFOVec /fifos_0/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerStore/\wdata/FIFOVec /fifos_1/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerStore/\wdata/FIFOVec /fifos_2/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerStore/\wdata/FIFOVec /fifos_3/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerStore/\wdata/FIFOVec /fifos_4/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerStore/\wdata/FIFOVec /fifos_5/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerStore/\wdata/FIFOVec /fifos_6/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "StreamControllerStore/\wdata/FIFOVec /fifos_7/SRAM/SRAMVerilogAWS/mem_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Common 17-14] Message 'Synth 8-6904' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[31] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[30] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[29] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[28] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[27] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[26] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[25] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[24] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[23] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[22] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[21] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[20] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[19] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[18] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[17] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[16] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[15] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[14] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[13] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[12] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[11] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[10] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[9] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[8] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[7] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[6] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[5] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[4] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[3] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[2] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_18[1] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[31] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[30] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[29] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[28] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[27] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[26] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[25] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[24] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[23] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[22] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[21] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[20] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[19] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[18] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[17] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[16] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[15] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[14] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[13] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[12] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[11] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[10] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[9] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[8] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[7] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[6] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[5] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[4] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[3] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[2] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_20[1] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[31] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[30] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[29] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[28] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[27] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[26] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[25] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[24] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[23] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[22] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[21] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[20] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[19] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[18] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[17] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[16] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[15] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[14] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[13] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[12] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[11] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[10] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[9] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[8] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[7] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[6] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[5] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[4] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[3] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[2] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_22[1] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_26[31] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_26[30] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_26[29] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_26[28] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_26[27] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_26[26] driven by constant 0
+WARNING: [Synth 8-3917] design DRAMArbiter has port io_debugSignals_26[25] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:56 ; elapsed = 00:02:55 . Memory (MB): peak = 3180.516 ; gain = 879.828 ; free physical = 880231 ; free virtual = 1047066
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance RootController_kernelRootController_concrete1i_14/i_1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance RootController_kernelRootController_concrete1i_14/i_2/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance RootController_kernelRootController_concrete1i_14/i_3/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance RootController_kernelRootController_concrete1i_14/i_4/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++------+-------------------------------------------------------------+------------+----------+
+|      |RTL Partition                                                |Replication |Instances |
++------+-------------------------------------------------------------+------------+----------+
+|1     |div_55_32_20_Signed_Fractional                               |           7|     13460|
+|2     |x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1__GC0 |           1|     19336|
+|3     |x621_inr_Switch_kernelx621_inr_Switch_concrete1__GC0         |           1|       523|
+|4     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB0      |           1|     10860|
+|5     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB1      |           1|      6932|
+|6     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB2      |           1|      4232|
+|7     |x668_outr_Foreach_kernelx668_outr_Foreach_concrete1__GC0     |           1|      3368|
+|8     |RootController_kernelRootController_concrete1__GC0           |           1|      6661|
+|9     |AccelUnit__GC0                                               |           1|       250|
+|10    |DRAMArbiter                                                  |           2|     10911|
+|11    |RegFile__GB0                                                 |           1|      3599|
+|12    |RegFile__GB1                                                 |           1|      3290|
+|13    |Fringe__GC0                                                  |           1|       213|
+|14    |FringeZynq__GC0                                              |           1|       159|
+|15    |design_1__GC0                                                |           1|      3335|
++------+-------------------------------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'zynq_ultra_ps_e_0/pl_clk0' to pin 'zynq_ultra_ps_e_0/bbstub_pl_clk0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'zynq_ultra_ps_e_0/pl_clk1' to pin 'zynq_ultra_ps_e_0/bbstub_pl_clk1/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:27 ; elapsed = 00:03:50 . Memory (MB): peak = 3180.516 ; gain = 879.828 ; free physical = 879668 ; free virtual = 1046539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:39 ; elapsed = 00:04:04 . Memory (MB): peak = 3180.516 ; gain = 879.828 ; free physical = 879605 ; free virtual = 1046478
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------------------------------------------+------------+----------+
+|      |RTL Partition                                                |Replication |Instances |
++------+-------------------------------------------------------------+------------+----------+
+|1     |div_55_32_20_Signed_Fractional                               |           7|     13460|
+|2     |x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1__GC0 |           1|     19333|
+|3     |x621_inr_Switch_kernelx621_inr_Switch_concrete1__GC0         |           1|       522|
+|4     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB0      |           1|     11109|
+|5     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB1      |           1|      6931|
+|6     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB2      |           1|      4228|
+|7     |x668_outr_Foreach_kernelx668_outr_Foreach_concrete1__GC0     |           1|      3352|
+|8     |RootController_kernelRootController_concrete1__GC0           |           1|      6135|
+|9     |AccelUnit__GC0                                               |           1|       250|
+|10    |DRAMArbiter                                                  |           1|     10424|
+|11    |RegFile__GB0                                                 |           1|      2390|
+|12    |RegFile__GB1                                                 |           1|      2910|
+|13    |Fringe__GC0                                                  |           1|       213|
+|14    |FringeZynq__GC0                                              |           1|       159|
+|15    |design_1__GC0                                                |           1|      3335|
+|16    |DRAMArbiter__1                                               |           1|      2219|
++------+-------------------------------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance RootController_kernelRootController_concrete1i_14/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance RootController_kernelRootController_concrete1i_14/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance RootController_kernelRootController_concrete1i_14/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance RootController_kernelRootController_concrete1i_14/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:54 ; elapsed = 00:05:19 . Memory (MB): peak = 3180.516 ; gain = 879.828 ; free physical = 877082 ; free virtual = 1043963
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------------------------------------------+------------+----------+
+|      |RTL Partition                                                |Replication |Instances |
++------+-------------------------------------------------------------+------------+----------+
+|1     |div_55_32_20_Signed_Fractional                               |           7|      9667|
+|2     |x619_inr_SwitchCase_kernelx619_inr_SwitchCase_concrete1__GC0 |           1|     10980|
+|3     |x621_inr_Switch_kernelx621_inr_Switch_concrete1__GC0         |           1|       262|
+|4     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB0      |           1|      7283|
+|5     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB1      |           1|      3757|
+|6     |x653_outr_Reduce_kernelx653_outr_Reduce_concrete1__GCB2      |           1|      2059|
+|7     |x668_outr_Foreach_kernelx668_outr_Foreach_concrete1__GC0     |           1|      1502|
+|8     |RootController_kernelRootController_concrete1__GC0           |           1|      3040|
+|9     |AccelUnit__GC0                                               |           1|       133|
+|10    |DRAMArbiter                                                  |           1|      6235|
+|11    |RegFile__GB0                                                 |           1|       804|
+|12    |RegFile__GB1                                                 |           1|      1424|
+|13    |Fringe__GC0                                                  |           1|       101|
+|14    |FringeZynq__GC0                                              |           1|       126|
+|15    |design_1__GC0                                                |           1|      3335|
+|16    |DRAMArbiter__1                                               |           1|      1797|
++------+-------------------------------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance SpatialIP_0/accel/RootController_kernelRootController_concrete1/x471_A_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance SpatialIP_0/accel/RootController_kernelRootController_concrete1/x472_A_sram_1/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance SpatialIP_0/accel/RootController_kernelRootController_concrete1/x473_A_sram_2/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance SpatialIP_0/accel/RootController_kernelRootController_concrete1/x539_out_sram_0/Mem1D/SRAM/SRAMVerilogAWS/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:03 ; elapsed = 00:05:31 . Memory (MB): peak = 3190.449 ; gain = 889.762 ; free physical = 876981 ; free virtual = 1043902
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:03 ; elapsed = 00:05:32 . Memory (MB): peak = 3190.449 ; gain = 889.762 ; free physical = 876981 ; free virtual = 1043902
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:27 ; elapsed = 00:05:55 . Memory (MB): peak = 3264.152 ; gain = 963.465 ; free physical = 876877 ; free virtual = 1043798
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:27 ; elapsed = 00:05:56 . Memory (MB): peak = 3264.152 ; gain = 963.465 ; free physical = 876877 ; free virtual = 1043798
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:31 ; elapsed = 00:06:00 . Memory (MB): peak = 3264.152 ; gain = 963.465 ; free physical = 876880 ; free virtual = 1043801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:31 ; elapsed = 00:06:00 . Memory (MB): peak = 3264.152 ; gain = 963.465 ; free physical = 876880 ; free virtual = 1043801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------------------------+----------+
+|      |BlackBox name                     |Instances |
++------+----------------------------------+----------+
+|1     |design_1_axi_dwidth_converter_0_0 |         1|
+|2     |design_1_axi_dwidth_converter_1_0 |         1|
+|3     |design_1_rst_ps8_0_99M_0          |         1|
+|4     |design_1_zynq_ultra_ps_e_0_0      |         1|
+|5     |design_1_auto_ds_0                |         1|
+|6     |design_1_auto_pc_0                |         1|
++------+----------------------------------+----------+
+
+Report Cell Usage: 
++------+----------------------------------+------+
+|      |Cell                              |Count |
++------+----------------------------------+------+
+|1     |design_1_auto_ds_0                |     1|
+|2     |design_1_auto_pc_0                |     1|
+|3     |design_1_axi_dwidth_converter_0_0 |     1|
+|4     |design_1_axi_dwidth_converter_1_0 |     1|
+|5     |design_1_rst_ps8_0_99M_0          |     1|
+|6     |design_1_zynq_ultra_ps_e_0_0      |     1|
+|7     |CARRY8                            |   643|
+|8     |DSP_ALU                           |    15|
+|9     |DSP_ALU_1                         |    20|
+|10    |DSP_ALU_2                         |     5|
+|11    |DSP_A_B_DATA                      |     5|
+|12    |DSP_A_B_DATA_1                    |    20|
+|13    |DSP_A_B_DATA_2                    |     5|
+|14    |DSP_A_B_DATA_3                    |     5|
+|15    |DSP_A_B_DATA_4                    |     5|
+|16    |DSP_C_DATA                        |    40|
+|17    |DSP_MULTIPLIER                    |    30|
+|18    |DSP_MULTIPLIER_1                  |    10|
+|19    |DSP_M_DATA                        |    15|
+|20    |DSP_M_DATA_1                      |    25|
+|21    |DSP_OUTPUT                        |    20|
+|22    |DSP_OUTPUT_1                      |    20|
+|23    |DSP_PREADD                        |    40|
+|24    |DSP_PREADD_DATA                   |    30|
+|25    |DSP_PREADD_DATA_1                 |    10|
+|26    |LUT1                              |  2038|
+|27    |LUT2                              |  5807|
+|28    |LUT3                              | 16447|
+|29    |LUT4                              |  1810|
+|30    |LUT5                              |  2253|
+|31    |LUT6                              |  1976|
+|32    |MUXCY                             | 13167|
+|33    |MUXF7                             |   262|
+|34    |MUXF8                             |    65|
+|35    |RAM32M16                          |   221|
+|36    |RAM64M8                           |    22|
+|37    |RAMB18E2                          |     4|
+|38    |SRL16E                            |   627|
+|39    |SRLC32E                           |   255|
+|40    |XORCY                             | 13167|
+|41    |FDRE                              | 41782|
+|42    |FDSE                              |    59|
++------+----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:31 ; elapsed = 00:06:00 . Memory (MB): peak = 3264.152 ; gain = 963.465 ; free physical = 876880 ; free virtual = 1043801
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 226 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:44 ; elapsed = 00:05:21 . Memory (MB): peak = 3268.062 ; gain = 266.672 ; free physical = 883973 ; free virtual = 1050894
+Synthesis Optimization Complete : Time (s): cpu = 00:03:33 ; elapsed = 00:06:02 . Memory (MB): peak = 3268.062 ; gain = 967.375 ; free physical = 883987 ; free virtual = 1050897
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 27587 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3673.574 ; gain = 0.000 ; free physical = 883635 ; free virtual = 1050545
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2278 instances were transformed.
+  (CARRY4) => CARRY8: 1995 instances
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 40 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 221 instances
+  RAM64M8 => RAM64M8 (RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E): 22 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+656 Infos, 220 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:04:46 ; elapsed = 00:07:27 . Memory (MB): peak = 3673.574 ; gain = 2285.141 ; free physical = 883855 ; free virtual = 1050765
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3673.574 ; gain = 0.000 ; free physical = 883855 ; free virtual = 1050765
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/hhollen/ee109finalHH/gen/ZCU/MolDSim/verilog-zcu/project_1/project_1.runs/synth_1/design_1.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3697.586 ; gain = 24.012 ; free physical = 883844 ; free virtual = 1050774
+INFO: [runtcl-4] Executing : report_utilization -file design_1_utilization_synth.rpt -pb design_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  4 02:36:32 2024...

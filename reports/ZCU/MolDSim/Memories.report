@@ -1,0 +1,1407 @@
+---------------------------
+Estimated Total Memories: 
+---------------------------
+  Regs: 48.0
+  Slices: 48.0
+  RAM36: 13.0
+---------------------------
+
+
+
+---------------------------------------------------------------------
+Name: x596
+Type: Reg[Bit]
+Src:  ProjectTemplate.scala:44:24
+Src:  	    force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]}(Pass 21)
+---------------------------------------------------------------------
+Symbol:     x596 = RegNew(Const(false))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    2
+     Padding:  List()
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x604 = RegWrite(x596,x602,Set()) {}
+             force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]}(Pass 21)(Pass 21) (ProjectTemplate.scala:44:24)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+           - Mux Port #0: 
+             x736 = RegRead(x596) {}
+             force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]}(Pass 21)(Pass 21) (ProjectTemplate.scala:44:24)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x605: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x604: RegWrite
+  x621: Switch (-1) [Level: InnerControl, Loop: Single, Schedule: Fork]
+    x736: RegRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x506
+Type: Reg[Fix[TRUE,_32,_0]]
+Src:  ProjectTemplate.scala:21:14
+Src:        A_sram load A_dram
+---------------------------------------------------------------------
+Symbol:     x506 = RegNew(Const(0))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List()
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x513 = RegWrite(x506,x512,Set()) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x524 = RegRead(x506) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x537: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Sequenced]
+  x516: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x513: RegWrite
+  x536: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x524: RegRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x476
+Type: StreamIn[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:21:14
+Src:        A_sram load A_dram
+---------------------------------------------------------------------
+Symbol:     x476 = StreamInNew(BurstDataBus())
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x528 = StreamInBankedRead(x476,ArrayBuffer(Set(b521, b504))) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x536: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+  x528: StreamInBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: r_0 (x580)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:36:28
+Src:  	    val r = SRAM[T](1)
+---------------------------------------------------------------------
+Symbol:     x580 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    3
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x592 = SRAMBankedWrite(x580,Vector(x749),Vector(List(Const(0))),Vector(Const(0)),Vector(Set())) {}
+             r(0) = (tmp(0)*tmp(0)) + (tmp(1)*tmp(1)) + (tmp(2)*tmp(2)) (ProjectTemplate.scala:37:18)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+           - Mux Port #0: 
+             x597 = SRAMBankedRead(x580,Vector(List(Const(0))),Vector(Const(0)),Vector(Set()),Vec[Fix[TRUE,_10,_22]]) {}
+             force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]} (ProjectTemplate.scala:44:29)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         2 [Type:WR]:
+         2 [Type:RD]:
+           - Mux Port #0: 
+             x609 = SRAMBankedRead(x580,Vector(List(Const(0))),Vector(Const(0)),Vector(Set(x608)),Vec[Fix[TRUE,_10,_22]]) {}
+             force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]} (ProjectTemplate.scala:44:77)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x593: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x592: SRAMBankedWrite
+  x605: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x597: SRAMBankedRead
+  x621: Switch (-1) [Level: InnerControl, Loop: Single, Schedule: Fork]
+    x609: SRAMBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: out_sram_0 (x539)
+Type: SRAM2[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:23:29
+Src:        val out_sram = SRAM[T](N,3)
+---------------------------------------------------------------------
+Symbol:     x539 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+  Regs: 12.0
+  Slices: 12.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: BRAM
+     Depth:    1
+     Padding:  List(0, 0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0,1}: Cyclic: N=1, B=1, alpha=<1,1>, P=<1,1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x666 = SRAMBankedWrite(x539,Vector(x665),Vector(List(Const(0))),Vector(x799),Vector(Set(x800, x798))) {}
+             out_sram(i, k) = accum(k) + A_sram(i,k) (ProjectTemplate.scala:51:28)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x713 = SRAMBankedRead(x539,Vector(List(Const(0))),Vector(x712),Vector(Set(x805, x804)),Vec[Fix[TRUE,_10,_22]]) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x444: AccelScope (-1) [Level: OuterControl, Loop: Single, Schedule: Sequenced]
+  x668: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+    x667: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+      x666: SRAMBankedWrite
+  x724: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Streaming]
+    x723: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Sequenced]
+      x718: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Sequenced]
+        x717: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+          x713: SRAMBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x474
+Type: StreamOut[BurstCmd]
+Src:  ProjectTemplate.scala:21:14
+Src:        A_sram load A_dram
+---------------------------------------------------------------------
+Symbol:     x474 = StreamOutNew(BurstCmdBus)
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x496 = StreamOutBankedWrite(x474,ArrayBuffer(x494),ArrayBuffer(Set(x760, x761))) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+
+
+
+Control Tree: 
+x499: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Sequenced]
+  x496: StreamOutBankedWrite
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x671
+Type: StreamIn[Bit]
+Src:  ProjectTemplate.scala:54:16
+Src:        out_host store out_sram
+---------------------------------------------------------------------
+Symbol:     x671 = StreamInNew(BurstAckBus)
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x720 = StreamInBankedRead(x671,ArrayBuffer(Set())) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x722: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+  x720: StreamInBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x475
+Type: FIFO[IssuedCmd]
+Src:  ProjectTemplate.scala:21:14
+Src:        A_sram load A_dram
+---------------------------------------------------------------------
+Symbol:     x475 = FIFONew(Const(16))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x498 = FIFOBankedEnq(x475,ArrayBuffer(x497),ArrayBuffer(Set(Const(true), x761))) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x508 = FIFOBankedDeq(x475,ArrayBuffer(Set(Const(true))),Vec[IssuedCmd]) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x538: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Streaming]
+  x499: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Sequenced]
+    x498: FIFOBankedEnq
+  x537: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Sequenced]
+    x516: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+      x508: FIFOBankedDeq
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: tmp_3 (x557)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:34:30
+Src:  	    val tmp = SRAM[T](3).buffer
+---------------------------------------------------------------------
+Symbol:     x557 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    6
+     Padding:  List(0)
+     Accum:    Fold
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x577 = SRAMBankedWrite(x557,Vector(x573),Vector(List(Const(0))),Vector(x773),Vector(Set(x774, x775, x776))) {}
+             Foreach(0 until 3){k=> tmp(k) = A_sram(i,k) - A_sram(j,k)} (ProjectTemplate.scala:35:43)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+         2 [Type:WR]:
+         2 [Type:RD]:
+         3 [Type:WR]:
+         3 [Type:RD]:
+         4 [Type:WR]:
+         4 [Type:RD]:
+         5 [Type:WR]:
+           - Mux Port #0: 
+             x637 = SRAMBankedWrite(x557,Vector(x633),Vector(List(Const(0))),Vector(x786),Vector(Set(x787, x785, x788))) {}
+             tmp(k) = tmp(k)*dt*force(0) (ProjectTemplate.scala:46:21)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         5 [Type:RD]:
+           - Mux Port #0: 
+             x628 = SRAMBankedRead(x557,Vector(List(Const(0))),Vector(b626),Vector(Set(b627, b552, b543)),Vec[Fix[TRUE,_10,_22]]) {}
+             tmp(k) = tmp(k)*dt*force(0) (ProjectTemplate.scala:46:26)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x579: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x577: SRAMBankedWrite
+  x639: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x628: SRAMBankedRead
+    x637: SRAMBankedWrite
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x505
+Type: Reg[Fix[TRUE,_32,_0]]
+Src:  ProjectTemplate.scala:21:14
+Src:        A_sram load A_dram
+---------------------------------------------------------------------
+Symbol:     x505 = RegNew(Const(0))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List()
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x511 = RegWrite(x505,x510,Set()) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x522 = RegRead(x505) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x537: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Sequenced]
+  x516: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x511: RegWrite
+  x536: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x522: RegRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: accum_1 (x545)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:30:30
+Src:  	  val accum = SRAM[T](3)
+---------------------------------------------------------------------
+Symbol:     x545 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    2
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x650 = SRAMBankedWrite(x545,Vector(x649),Vector(List(Const(0))),Vector(x793),Vector(Set(x792, x791))) {}
+             }{_+_} (ProjectTemplate.scala:49:10)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+           - Mux Port #0: 
+             x658 = SRAMBankedRead(x545,Vector(List(Const(0))),Vector(b656),Vector(Set(b657, b543)),Vec[Fix[TRUE,_10,_22]]) {}
+             out_sram(i, k) = accum(k) + A_sram(i,k) (ProjectTemplate.scala:51:35)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x668: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+    x652: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+      x650: SRAMBankedWrite
+  x667: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x658: SRAMBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: tmp_0 (x554)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:34:30
+Src:  	    val tmp = SRAM[T](3).buffer
+---------------------------------------------------------------------
+Symbol:     x554 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    6
+     Padding:  List(0)
+     Accum:    Fold
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x575 = SRAMBankedWrite(x554,Vector(x573),Vector(List(Const(0))),Vector(x773),Vector(Set(x774, x775, x776))) {}
+             Foreach(0 until 3){k=> tmp(k) = A_sram(i,k) - A_sram(j,k)} (ProjectTemplate.scala:35:43)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+           - Mux Port #0: 
+             x581 = SRAMBankedRead(x554,Vector(List(Const(0))),Vector(Const(0)),Vector(Set()),Vec[Fix[TRUE,_10,_22]]) {}
+             r(0) = (tmp(0)*tmp(0)) + (tmp(1)*tmp(1)) + (tmp(2)*tmp(2)) (ProjectTemplate.scala:37:24)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         2 [Type:WR]:
+         2 [Type:RD]:
+         3 [Type:WR]:
+         3 [Type:RD]:
+         4 [Type:WR]:
+         4 [Type:RD]:
+         5 [Type:WR]:
+           - Mux Port #0: 
+             x635 = SRAMBankedWrite(x554,Vector(x633),Vector(List(Const(0))),Vector(x786),Vector(Set(x787, x785, x788))) {}
+             tmp(k) = tmp(k)*dt*force(0) (ProjectTemplate.scala:46:21)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         5 [Type:RD]:
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x579: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x575: SRAMBankedWrite
+  x593: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x581: SRAMBankedRead
+  x639: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x635: SRAMBankedWrite
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: tmp_2 (x556)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:34:30
+Src:  	    val tmp = SRAM[T](3).buffer
+---------------------------------------------------------------------
+Symbol:     x556 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    6
+     Padding:  List(0)
+     Accum:    Fold
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x578 = SRAMBankedWrite(x556,Vector(x573),Vector(List(Const(0))),Vector(x773),Vector(Set(x774, x775, x776))) {}
+             Foreach(0 until 3){k=> tmp(k) = A_sram(i,k) - A_sram(j,k)} (ProjectTemplate.scala:35:43)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+           - Mux Port #0: 
+             x588 = SRAMBankedRead(x556,Vector(List(Const(0))),Vector(Const(2)),Vector(Set()),Vec[Fix[TRUE,_10,_22]]) {}
+             r(0) = (tmp(0)*tmp(0)) + (tmp(1)*tmp(1)) + (tmp(2)*tmp(2)) (ProjectTemplate.scala:37:60)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         2 [Type:WR]:
+         2 [Type:RD]:
+         3 [Type:WR]:
+         3 [Type:RD]:
+         4 [Type:WR]:
+         4 [Type:RD]:
+         5 [Type:WR]:
+           - Mux Port #0: 
+             x638 = SRAMBankedWrite(x556,Vector(x633),Vector(List(Const(0))),Vector(x786),Vector(Set(x787, x785, x788))) {}
+             tmp(k) = tmp(k)*dt*force(0) (ProjectTemplate.scala:46:21)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         5 [Type:RD]:
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x579: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x578: SRAMBankedWrite
+  x593: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x588: SRAMBankedRead
+  x639: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x638: SRAMBankedWrite
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x595
+Type: Reg[Bit]
+Src:  ProjectTemplate.scala:44:43
+Src:  	    force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]}(Pass 21)
+---------------------------------------------------------------------
+Symbol:     x595 = RegNew(Const(false))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    2
+     Padding:  List()
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x603 = RegWrite(x595,x601,Set()) {}
+             force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]}(Pass 21)(Pass 21) (ProjectTemplate.scala:44:43)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+           - Mux Port #0: 
+             x735 = RegRead(x595) {}
+             force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]}(Pass 21)(Pass 21) (ProjectTemplate.scala:44:43)
+               Directly Banked: false
+               Port: <offset: 1, castgroup: (1), broadcast: (0)>
+
+             x608 = RegRead(x595) {}
+             force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]}(Pass 21)(Pass 21) (ProjectTemplate.scala:44:43)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x605: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x603: RegWrite
+  x621: Switch (-1) [Level: InnerControl, Loop: Single, Schedule: Fork]
+    x735: RegRead
+    x608: RegRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: A_sram_0 (x471)
+Type: SRAM2[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:19:27
+Src:        val A_sram = SRAM[T](N, 3)
+---------------------------------------------------------------------
+Symbol:     x471 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+  Regs: 12.0
+  Slices: 12.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: BRAM
+     Depth:    1
+     Padding:  List(0, 0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0,1}: Cyclic: N=1, B=1, alpha=<1,1>, P=<1,1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x534 = SRAMBankedWrite(x471,Vector(x766),Vector(List(Const(0))),Vector(x532),Vector(Set(x767, x768, x765))) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x566 = SRAMBankedRead(x471,Vector(List(Const(0))),Vector(x565),Vector(Set(x772, x771, x770)),Vec[Fix[TRUE,_10,_22]]) {}
+             Foreach(0 until 3){k=> tmp(k) = A_sram(i,k) - A_sram(j,k)} (ProjectTemplate.scala:35:51)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x444: AccelScope (-1) [Level: OuterControl, Loop: Single, Schedule: Sequenced]
+  x538: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Streaming]
+    x537: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Sequenced]
+      x536: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+        x534: SRAMBankedWrite
+  x668: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+    x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+      x579: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+        x566: SRAMBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: force_0 (x594)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:40:32
+Src:              val force = SRAM[T](1)
+---------------------------------------------------------------------
+Symbol:     x594 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    2
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x622 = SRAMBankedWrite(x594,Vector(x621),Vector(List(Const(0))),Vector(Const(0)),Vector(Set())) {}
+             force(0) = if (r(0) > 0.to[T] && r(0) > 1.to[T]) {((100.to[T])/r(0)/r(0)/r(0)/r(0)/r(0))-((10.to[T])/r(0)/r(0))} else {90.to[T]} (ProjectTemplate.scala:44:22)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+           - Mux Port #0: 
+             x631 = SRAMBankedRead(x594,Vector(List(Const(0))),Vector(Const(0)),Vector(Set(b627, b552, b543)),Vec[Fix[TRUE,_10,_22]]) {}
+             tmp(k) = tmp(k)*dt*force(0) (ProjectTemplate.scala:46:38)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x623: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x622: SRAMBankedWrite
+  x639: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x631: SRAMBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x677
+Type: Reg[Fix[TRUE,_32,_0]]
+Src:  ProjectTemplate.scala:54:16
+Src:        out_host store out_sram
+---------------------------------------------------------------------
+Symbol:     x677 = RegNew(Const(0))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List()
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x696 = RegWrite(x677,x684,Set()) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x706 = RegRead(x677) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x718: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Sequenced]
+  x698: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x696: RegWrite
+  x717: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x706: RegRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: A_sram_1 (x472)
+Type: SRAM2[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:19:27
+Src:        val A_sram = SRAM[T](N, 3)
+---------------------------------------------------------------------
+Symbol:     x472 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+  Regs: 12.0
+  Slices: 12.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: BRAM
+     Depth:    1
+     Padding:  List(0, 0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0,1}: Cyclic: N=1, B=1, alpha=<1,1>, P=<1,1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x533 = SRAMBankedWrite(x472,Vector(x766),Vector(List(Const(0))),Vector(x532),Vector(Set(x767, x768, x765))) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x571 = SRAMBankedRead(x472,Vector(List(Const(0))),Vector(x570),Vector(Set(x772, x771, x770)),Vec[Fix[TRUE,_10,_22]]) {}
+             Foreach(0 until 3){k=> tmp(k) = A_sram(i,k) - A_sram(j,k)} (ProjectTemplate.scala:35:65)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x444: AccelScope (-1) [Level: OuterControl, Loop: Single, Schedule: Sequenced]
+  x538: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Streaming]
+    x537: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Sequenced]
+      x536: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+        x533: SRAMBankedWrite
+  x668: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+    x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+      x579: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+        x571: SRAMBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x669
+Type: StreamOut[BurstCmd]
+Src:  ProjectTemplate.scala:54:16
+Src:        out_host store out_sram
+---------------------------------------------------------------------
+Symbol:     x669 = StreamOutNew(BurstCmdBus)
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x694 = StreamOutBankedWrite(x669,ArrayBuffer(x692),ArrayBuffer(Set(x803))) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+
+
+
+Control Tree: 
+x698: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+  x694: StreamOutBankedWrite
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: tmp_4 (x558)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:34:30
+Src:  	    val tmp = SRAM[T](3).buffer
+---------------------------------------------------------------------
+Symbol:     x558 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    7
+     Padding:  List(0)
+     Accum:    Fold
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x576 = SRAMBankedWrite(x558,Vector(x573),Vector(List(Const(0))),Vector(x773),Vector(Set(x774, x775, x776))) {}
+             Foreach(0 until 3){k=> tmp(k) = A_sram(i,k) - A_sram(j,k)} (ProjectTemplate.scala:35:43)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+         2 [Type:WR]:
+         2 [Type:RD]:
+         3 [Type:WR]:
+         3 [Type:RD]:
+         4 [Type:WR]:
+         4 [Type:RD]:
+         5 [Type:WR]:
+           - Mux Port #0: 
+             x636 = SRAMBankedWrite(x558,Vector(x633),Vector(List(Const(0))),Vector(x786),Vector(Set(x787, x785, x788))) {}
+             tmp(k) = tmp(k)*dt*force(0) (ProjectTemplate.scala:46:21)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         5 [Type:RD]:
+         6 [Type:WR]:
+         6 [Type:RD]:
+           - Mux Port #0: 
+             x640 = SRAMBankedRead(x558,Vector(List(Const(0))),Vector(b551),Vector(Set(b553, b543)),Vec[Fix[TRUE,_10,_22]]) {}
+             }{_+_} (ProjectTemplate.scala:49:10)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x579: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x576: SRAMBankedWrite
+  x639: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x636: SRAMBankedWrite
+  x652: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x640: SRAMBankedRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: accum_0 (x544)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:30:30
+Src:  	  val accum = SRAM[T](3)
+---------------------------------------------------------------------
+Symbol:     x544 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List(0)
+     Accum:    Buffer
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x651 = SRAMBankedWrite(x544,Vector(x649),Vector(List(Const(0))),Vector(x793),Vector(Set(x792, x791))) {}
+             }{_+_} (ProjectTemplate.scala:49:10)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x642 = SRAMBankedRead(x544,Vector(List(Const(0))),Vector(b551),Vector(Set(b553, b543)),Vec[Fix[TRUE,_10,_22]]) {}
+             }{_+_} (ProjectTemplate.scala:49:10)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x652: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+  x642: SRAMBankedRead
+  x651: SRAMBankedWrite
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x507
+Type: Reg[Fix[TRUE,_32,_0]]
+Src:  ProjectTemplate.scala:21:14
+Src:        A_sram load A_dram
+---------------------------------------------------------------------
+Symbol:     x507 = RegNew(Const(0))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List()
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x515 = RegWrite(x507,x514,Set()) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x734 = RegRead(x507) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x537: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Sequenced]
+  x516: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x515: RegWrite
+  x536: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x734: RegRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x678
+Type: Reg[Fix[TRUE,_32,_0]]
+Src:  ProjectTemplate.scala:54:16
+Src:        out_host store out_sram
+---------------------------------------------------------------------
+Symbol:     x678 = RegNew(Const(0))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List()
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x697 = RegWrite(x678,x687,Set()) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x737 = RegRead(x678) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x718: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Sequenced]
+  x698: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x697: RegWrite
+  x717: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x737: RegRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: tmp_1 (x555)
+Type: SRAM1[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:34:30
+Src:  	    val tmp = SRAM[T](3).buffer
+---------------------------------------------------------------------
+Symbol:     x555 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    6
+     Padding:  List(0)
+     Accum:    Fold
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x574 = SRAMBankedWrite(x555,Vector(x573),Vector(List(Const(0))),Vector(x773),Vector(Set(x774, x775, x776))) {}
+             Foreach(0 until 3){k=> tmp(k) = A_sram(i,k) - A_sram(j,k)} (ProjectTemplate.scala:35:43)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+         1 [Type:WR]:
+         1 [Type:RD]:
+           - Mux Port #0: 
+             x584 = SRAMBankedRead(x555,Vector(List(Const(0))),Vector(Const(1)),Vector(Set()),Vec[Fix[TRUE,_10,_22]]) {}
+             r(0) = (tmp(0)*tmp(0)) + (tmp(1)*tmp(1)) + (tmp(2)*tmp(2)) (ProjectTemplate.scala:37:42)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         2 [Type:WR]:
+         2 [Type:RD]:
+         3 [Type:WR]:
+         3 [Type:RD]:
+         4 [Type:WR]:
+         4 [Type:RD]:
+         5 [Type:WR]:
+           - Mux Port #0: 
+             x634 = SRAMBankedWrite(x555,Vector(x633),Vector(List(Const(0))),Vector(x786),Vector(Set(x787, x785, x788))) {}
+             tmp(k) = tmp(k)*dt*force(0) (ProjectTemplate.scala:46:21)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         5 [Type:RD]:
+         M [Type:WR]:
+         M [Type:RD]:
+
+
+
+Control Tree: 
+x653: UnrolledReduce (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+  x579: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x574: SRAMBankedWrite
+  x593: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x584: SRAMBankedRead
+  x639: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x634: SRAMBankedWrite
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x670
+Type: StreamOut[Tup2[Fix[TRUE,_10,_22],Bit]]
+Src:  ProjectTemplate.scala:54:16
+Src:        out_host store out_sram
+---------------------------------------------------------------------
+Symbol:     x670 = StreamOutNew(BurstFullDataBus())
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List(0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0}: Cyclic: N=1, B=1, alpha=<1>, P=<1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x716 = StreamOutBankedWrite(x670,ArrayBuffer(x715),ArrayBuffer(Set(x807))) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+
+
+
+Control Tree: 
+x717: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+  x716: StreamOutBankedWrite
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: x676
+Type: Reg[Fix[TRUE,_32,_0]]
+Src:  ProjectTemplate.scala:54:16
+Src:        out_host store out_sram
+---------------------------------------------------------------------
+Symbol:     x676 = RegNew(Const(0))
+Instances: 1
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: LUTs
+     Depth:    1
+     Padding:  List()
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {}: Cyclic: N=1, B=1, alpha=<>, P=<> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x695 = RegWrite(x676,x683,Set()) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x704 = RegRead(x676) {}
+             out_host store out_sram (ProjectTemplate.scala:54:16)
+               Directly Banked: false
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x718: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Sequenced]
+  x698: UnitPipe (-1) [Level: InnerControl, Loop: Single, Schedule: Sequenced]
+    x695: RegWrite
+  x717: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+    x704: RegRead
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+Name: A_sram_2 (x473)
+Type: SRAM2[Fix[TRUE,_10,_22]]
+Src:  ProjectTemplate.scala:19:27
+Src:        val A_sram = SRAM[T](N, 3)
+---------------------------------------------------------------------
+Symbol:     x473 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]])
+Instances: 1
+  RAM36: 1.0
+  Regs: 12.0
+  Slices: 12.0
+
+
+Instance Summary: 
+  #0: Banked
+     Resource: BRAM
+     Depth:    1
+     Padding:  List(0, 0)
+     Accum:    None
+     Banks:    1 <Flat>
+       Dims {0,1}: Cyclic: N=1, B=1, alpha=<1,1>, P=<1,1> (1 solutions, 0 checks)
+     Ports: 
+         0 [Type:WR]:
+           - Mux Port #0: 
+             x535 = SRAMBankedWrite(x473,Vector(x766),Vector(List(Const(0))),Vector(x532),Vector(Set(x767, x768, x765))) {}
+             A_sram load A_dram (ProjectTemplate.scala:21:14)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+         0 [Type:RD]:
+           - Mux Port #0: 
+             x663 = SRAMBankedRead(x473,Vector(List(Const(0))),Vector(x662),Vector(Set(x796, x795)),Vec[Fix[TRUE,_10,_22]]) {}
+             out_sram(i, k) = accum(k) + A_sram(i,k) (ProjectTemplate.scala:51:47)
+               Directly Banked: true
+               Port: <offset: 0, castgroup: (0), broadcast: (0)>
+
+
+
+
+Control Tree: 
+x444: AccelScope (-1) [Level: OuterControl, Loop: Single, Schedule: Sequenced]
+  x538: UnitPipe (-1) [Level: OuterControl, Loop: Single, Schedule: Streaming]
+    x537: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Sequenced]
+      x536: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+        x535: SRAMBankedWrite
+  x668: UnrolledForeach (-1) [Level: OuterControl, Loop: Looped, Schedule: Pipelined]
+    x667: UnrolledForeach (-1) [Level: InnerControl, Loop: Looped, Schedule: Pipelined]
+      x663: SRAMBankedRead
+---------------------------------------------------------------------
+
+
+
+

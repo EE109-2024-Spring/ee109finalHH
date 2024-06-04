@@ -1,0 +1,626 @@
+  x444 = AccelScope(Block(Const(())))
+    x538 = UnitPipe(Set(),Block(Const(())),None)
+      x499 = UnrolledForeach(Set(),x478,Block(Const(())),List(List(b479)),List(List(b480)),None)
+      Working on pipeLatencies of result Vector(Const(()), x492, x498, x495, x496), schedule Vector(x738, x739, x482, x483, x740, x485, x486, x487, x488, x489, x741, x491, x492, x758, x493, x759, x494, x495, x760, x761, x496, x762, x763, x497, x498)
+      Memories with both reads and writes in this scope: Set()
+      Done finding cycles: Vector(), Map()
+      Computing fullDFS: Const(())
+      Computing fullDFS: x492
+      cur: x492, inReduce: false, latency: 0.0
+      Computing fullDFS: x498
+      Computing fullDFS: x761
+      cur: x761, inReduce: false, latency: 0.0
+      Computing fullDFS: x497
+      Computing fullDFS: x489
+      Computing fullDFS: x488
+      Computing fullDFS: x487
+      Computing fullDFS: x485
+      Computing fullDFS: x739
+      Computing fullDFS: x738
+      cur: x738, inReduce: false, latency: 0.2
+      Computing fullDFS: x483
+      Computing fullDFS: x482
+      Computing fullDFS: x762
+      Computing fullDFS: x486
+      Computing fullDFS: x763
+      Computing fullDFS: x495
+      cur: x495, inReduce: false, latency: 0.0
+      Computing fullDFS: x496
+      Computing fullDFS: x494
+      Computing fullDFS: x741
+      Computing fullDFS: x759
+      Computing fullDFS: x493
+      Computing fullDFS: x491
+      Computing fullDFS: x740
+      Computing fullDFS: x758
+      Computing fullDFS: x760
+      Cycles: Map()
+      cycles are Vector()
+         stm: x738, None
+         stm: x739, None
+         stm: x482, None
+         stm: x483, None
+         stm: x740, None
+         stm: x485, None
+         stm: x486, None
+         stm: x487, None
+         stm: x488, None
+         stm: x489, None
+         stm: x741, None
+         stm: x491, None
+         stm: x492, None
+         stm: x758, None
+         stm: x493, None
+         stm: x759, None
+         stm: x494, None
+         stm: x495, None
+         stm: x760, None
+         stm: x761, None
+         stm: x496, None
+         stm: x762, None
+         stm: x763, None
+         stm: x497, None
+         stm: x498, None
+       - Latency:  5.0
+       - Interval: 1.0 (1.0 bbox)
+       - Iter Diff: None (from ArrayBuffer())
+      x537 = UnrolledForeach(Set(),x502,Block(Const(())),List(List(b503)),List(List(b504)),None)
+        x516 = UnitPipe(Set(b504),Block(Const(())),None)
+        Working on pipeLatencies of result Vector(Const(()), x511, x515, x508, x513), schedule Vector(x508, x509, x510, x511, x512, x513, x514, x515)
+        Memories with both reads and writes in this scope: Set()
+        Done finding cycles: Vector(), Map()
+        Computing fullDFS: Const(())
+        Computing fullDFS: x511
+        Computing fullDFS: x510
+        Computing fullDFS: x509
+        Computing fullDFS: x508
+        cur: x508, inReduce: false, latency: 0.0
+        Computing fullDFS: x515
+        Computing fullDFS: x514
+        Computing fullDFS: x513
+        Computing fullDFS: x512
+        Cycles: Map()
+        cycles are Vector()
+           stm: x508, None
+           stm: x509, None
+           stm: x510, None
+           stm: x511, None
+           stm: x512, None
+           stm: x513, None
+           stm: x514, None
+           stm: x515, None
+         - Latency:  1.0
+         - Interval: 1.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+        x536 = UnrolledForeach(Set(b504),x519,Block(Const(())),List(List(b520)),List(List(b521)),None)
+        Working on pipeLatencies of result Vector(Const(()), x533, x534, x522, x535, x524, x528), schedule Vector(x522, x523, x524, x525, x526, x527, x528, x764, x529, x742, x743, x532, x765, x766, x767, x768, x533, x534, x535)
+        Memories with both reads and writes in this scope: Set()
+        Done finding cycles: Vector(), Map()
+        Computing fullDFS: Const(())
+        Computing fullDFS: x533
+        Computing fullDFS: x532
+        Computing fullDFS: x527
+        Computing fullDFS: x522
+        cur: x522, inReduce: false, latency: 0.0
+        Computing fullDFS: x743
+        Computing fullDFS: x742
+        cur: x742, inReduce: false, latency: 0.2
+        Computing fullDFS: x765
+        cur: x765, inReduce: false, latency: 0.0
+        Computing fullDFS: x766
+        Computing fullDFS: x529
+        Computing fullDFS: x764
+        Computing fullDFS: x528
+        cur: x528, inReduce: false, latency: 1.0
+        Computing fullDFS: x767
+        Computing fullDFS: x526
+        Computing fullDFS: x523
+        Computing fullDFS: x525
+        Computing fullDFS: x524
+        cur: x524, inReduce: false, latency: 0.0
+        Computing fullDFS: x768
+        cur: x768, inReduce: false, latency: 0.0
+        Computing fullDFS: x534
+        Computing fullDFS: x535
+        Cycles: Map()
+        cycles are Vector()
+           stm: x522, None
+           stm: x523, None
+           stm: x524, None
+           stm: x525, None
+           stm: x526, None
+           stm: x527, None
+           stm: x528, None
+           stm: x764, None
+           stm: x529, None
+           stm: x742, None
+           stm: x743, None
+           stm: x532, None
+           stm: x765, None
+           stm: x766, None
+           stm: x767, None
+           stm: x768, None
+           stm: x533, None
+           stm: x534, None
+           stm: x535, None
+         - Latency:  3.2
+         - Interval: 1.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+       - Interval: 1.0
+     - Interval: 5.0
+    x668 = UnrolledForeach(Set(),x541,Block(Const(())),List(List(b542)),List(List(b543)),None)
+      x653 = UnrolledReduce(Set(b543),x547,Block((x544) => Const(())),List(List(b550)),List(List(b552)),None)
+        x579 = UnrolledForeach(Set(b552, b543),x560,Block(Const(())),List(List(b561)),List(List(b562)),None)
+        Working on pipeLatencies of result Vector(Const(()), x574, x566, x578, x577, x576, x571, x575), schedule Vector(x744, x745, x769, x565, x770, x771, x772, x566, x567, x746, x747, x570, x571, x572, x573, x773, x774, x775, x776, x574, x575, x576, x577, x578)
+        Memories with both reads and writes in this scope: Set()
+        Done finding cycles: Vector(), Map()
+        Computing fullDFS: Const(())
+        Computing fullDFS: x574
+        Computing fullDFS: x573
+        Computing fullDFS: x567
+        Computing fullDFS: x566
+        Computing fullDFS: x565
+        Computing fullDFS: x745
+        Computing fullDFS: x744
+        cur: x744, inReduce: false, latency: 0.2
+        Computing fullDFS: x769
+        cur: x769, inReduce: false, latency: 0.0
+        Computing fullDFS: x770
+        cur: x770, inReduce: false, latency: 0.0
+        Computing fullDFS: x771
+        cur: x771, inReduce: false, latency: 0.0
+        Computing fullDFS: x772
+        cur: x772, inReduce: false, latency: 0.0
+        Computing fullDFS: x572
+        Computing fullDFS: x571
+        Computing fullDFS: x570
+        Computing fullDFS: x747
+        Computing fullDFS: x746
+        cur: x746, inReduce: false, latency: 0.2
+        Computing fullDFS: x773
+        cur: x773, inReduce: false, latency: 0.0
+        Computing fullDFS: x774
+        cur: x774, inReduce: false, latency: 0.0
+        Computing fullDFS: x775
+        cur: x775, inReduce: false, latency: 0.0
+        Computing fullDFS: x776
+        cur: x776, inReduce: false, latency: 0.0
+        Computing fullDFS: x578
+        Computing fullDFS: x577
+        Computing fullDFS: x576
+        Computing fullDFS: x575
+        Cycles: Map()
+        cycles are Vector()
+           stm: x744, None
+           stm: x745, None
+           stm: x769, None
+           stm: x565, None
+           stm: x770, None
+           stm: x771, None
+           stm: x772, None
+           stm: x566, None
+           stm: x567, None
+           stm: x746, None
+           stm: x747, None
+           stm: x570, None
+           stm: x571, None
+           stm: x572, None
+           stm: x573, None
+           stm: x773, None
+           stm: x774, None
+           stm: x775, None
+           stm: x776, None
+           stm: x574, None
+           stm: x575, None
+           stm: x576, None
+           stm: x577, None
+           stm: x578, None
+         - Latency:  6.2
+         - Interval: 1.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+        x593 = UnitPipe(Set(b552, b543),Block(Const(())),None)
+        Working on pipeLatencies of result Vector(Const(()), x584, x581, x588, x592), schedule Vector(x581, x582, x584, x585, x586, x777, x748, x588, x589, x778, x749, x592)
+        Memories with both reads and writes in this scope: Set()
+        Done finding cycles: Vector(), Map()
+        Computing fullDFS: Const(())
+        Computing fullDFS: x584
+        cur: x584, inReduce: false, latency: 2.0
+        Computing fullDFS: x581
+        cur: x581, inReduce: false, latency: 2.0
+        Computing fullDFS: x588
+        cur: x588, inReduce: false, latency: 2.0
+        Computing fullDFS: x592
+        Computing fullDFS: x749
+        Computing fullDFS: x748
+        Computing fullDFS: x586
+        Computing fullDFS: x585
+        Computing fullDFS: x777
+        Computing fullDFS: x582
+        Computing fullDFS: x778
+        Computing fullDFS: x589
+        Cycles: Map()
+        cycles are Vector()
+           stm: x581, None
+           stm: x582, None
+           stm: x584, None
+           stm: x585, None
+           stm: x586, None
+           stm: x777, None
+           stm: x748, None
+           stm: x588, None
+           stm: x589, None
+           stm: x778, None
+           stm: x749, None
+           stm: x592, None
+         - Latency:  21.0
+         - Interval: 1.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+        x605 = UnitPipe(Set(b552, b543),Block(Const(())),None)
+        Working on pipeLatencies of result Vector(Const(()), x597, x603, x604), schedule Vector(x597, x598, x599, x600, x601, x602, x603, x604)
+        Memories with both reads and writes in this scope: Set()
+        Done finding cycles: Vector(), Map()
+        Computing fullDFS: Const(())
+        Computing fullDFS: x597
+        cur: x597, inReduce: false, latency: 2.0
+        Computing fullDFS: x603
+        Computing fullDFS: x601
+        Computing fullDFS: x599
+        Computing fullDFS: x598
+        Computing fullDFS: x600
+        Computing fullDFS: x604
+        Computing fullDFS: x602
+        Cycles: Map()
+        cycles are Vector()
+           stm: x597, None
+           stm: x598, None
+           stm: x599, None
+           stm: x600, None
+           stm: x601, None
+           stm: x602, None
+           stm: x603, None
+           stm: x604, None
+         - Latency:  3.8
+         - Interval: 1.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+        x621 = Switch(List(x735, x736),Block(x620))
+        Working on pipeLatencies of result Vector(x620, x619, x618, x608, x609, Const(90)), schedule Vector(x619, x620, x608, x609, x610, x611, x779, x612, x780, x613, x781, x614, x782, x615, x616, x617, x783, x618)
+        Memories with both reads and writes in this scope: Set()
+        Done finding cycles: Vector(), Map()
+        Computing fullDFS: x620
+        cur: x620, inReduce: false, latency: 0.0
+        Computing fullDFS: x619
+        Computing fullDFS: x608
+        cur: x608, inReduce: false, latency: 0.0
+        Computing fullDFS: x609
+        Computing fullDFS: x618
+        Computing fullDFS: x615
+        Computing fullDFS: x614
+        Computing fullDFS: x613
+        Computing fullDFS: x612
+        Computing fullDFS: x611
+        Computing fullDFS: x610
+        Computing fullDFS: x779
+        Computing fullDFS: x780
+        Computing fullDFS: x781
+        Computing fullDFS: x782
+        Computing fullDFS: x783
+        Computing fullDFS: x617
+        Computing fullDFS: x616
+        Computing fullDFS: Const(90)
+        Cycles: Map()
+        cycles are Vector()
+           stm: x619, None
+           stm: x620, None
+         - Latency:  103.0
+         - Interval: 1.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+        x623 = UnitPipe(Set(b552, b543),Block(Const(())),None)
+        Working on pipeLatencies of result Vector(Const(()), x622), schedule Vector(x622)
+        Memories with both reads and writes in this scope: Set()
+        Done finding cycles: Vector(), Map()
+        Computing fullDFS: Const(())
+        Computing fullDFS: x622
+        cur: x622, inReduce: false, latency: 1.0
+        Cycles: Map()
+        cycles are Vector()
+           stm: x622, None
+         - Latency:  1.0
+         - Interval: 1.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+        x639 = UnrolledForeach(Set(b552, b543),x625,Block(Const(())),List(List(b626)),List(List(b627)),None)
+        Working on pipeLatencies of result Vector(x628, Const(()), x638, x634, x637, x631, x636, x635), schedule Vector(x628, x629, x630, x631, x632, x784, x633, x785, x786, x787, x788, x634, x635, x636, x637, x638)
+        Memories with both reads and writes in this scope: Set(x557)
+        NonConflictSets(x628, x637): Set()
+        NonConflictSets(x628, x637): Set()
+        Found Cycle: x628, x637
+        Exclusions: Set() Set() 
+        Done finding cycles: Vector(AccumTriple(x557,x628,x637)), Map(x630 -> List(AccumTriple(x557,x628,x637)), x633 -> List(AccumTriple(x557,x628,x637)), x629 -> List(AccumTriple(x557,x628,x637)), x637 -> List(AccumTriple(x557,x628,x637)), x628 -> List(AccumTriple(x557,x628,x637)))
+        Computing fullDFS: x628
+        cur: x628, inReduce: true, latency: 2.0
+        Known Cycles: List(AccumTriple(x557,x628,x637))
+        Computing fullDFS: Const(())
+        Computing fullDFS: x638
+        Computing fullDFS: x633
+        Computing fullDFS: x630
+        Computing fullDFS: x629
+        Computing fullDFS: x784
+        Computing fullDFS: x632
+        Computing fullDFS: x631
+        cur: x631, inReduce: false, latency: 2.0
+        Computing fullDFS: x785
+        cur: x785, inReduce: false, latency: 0.0
+        Computing fullDFS: x786
+        cur: x786, inReduce: false, latency: 0.0
+        Computing fullDFS: x787
+        cur: x787, inReduce: false, latency: 0.0
+        Computing fullDFS: x788
+        cur: x788, inReduce: false, latency: 0.0
+        Computing fullDFS: x634
+        Computing fullDFS: x637
+        Computing fullDFS: x636
+        Computing fullDFS: x635
+        Cycle #0: write: x637, cycle: x628, x628, x629, x630, x633, x637
+        Cycles: Map(x636 -> Vector(x628, x629, x630, x633, x636), x630 -> Vector(x628, x629, x630), x633 -> Vector(x628, x629, x630, x633), x635 -> Vector(x628, x629, x630, x633, x635), x638 -> Vector(x628, x629, x630, x633, x638), x629 -> Vector(x628, x629), x634 -> Vector(x628, x629, x630, x633, x634), x637 -> Vector(x628, x628, x629, x630, x633, x637), x628 -> List(x628))
+        pseudo cycles for x557:
+        Access: x628 -> Ports: Some(Map(0 -> Map(List() -> Port(Some(5),0,0,Vector(0),Vector(0)))))
+        First Port: Map(List() -> Port(Some(5),0,0,Vector(0),Vector(0)))
+        Pushing x628 = SRAMBankedRead(x557,Vector(List(Const(0))),Vector(b626),Vector(Set(b627, b552, b543)),Vec[Fix[TRUE,_10,_22]]) by 0.0 to 2.0 due to muxing.
+        Access: x637 -> Ports: Some(Map(0 -> Map(List() -> Port(Some(5),0,0,Vector(0),Vector(0)))))
+        First Port: Map(List() -> Port(Some(5),0,0,Vector(0),Vector(0)))
+        Pushing x637 = SRAMBankedWrite(x557,Vector(x633),Vector(List(Const(0))),Vector(x786),Vector(Set(x787, x785, x788))) by 0.0 to 15.0 due to muxing.
+        cycles are Vector(AAACycle(Vector(x628),x557,1.0), AAACycle(Vector(x637),x557,1.0), WARCycle(x628,x637,x557,Vector(x628, x628, x629, x630, x633, x637),15.0,spatial.node.AccumMarker$Unknown$@254f8341,-1))
+           stm: x628, None
+           stm: x629, None
+           stm: x630, None
+           stm: x631, None
+           stm: x632, None
+           stm: x784, None
+           stm: x633, None
+           stm: x785, None
+           stm: x786, None
+           stm: x787, None
+           stm: x788, None
+           stm: x634, None
+           stm: x635, None
+           stm: x636, None
+           stm: x637, None
+           stm: x638, None
+         - Latency:  15.0
+         - Interval: 15.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+        x652 = UnrolledForeach(Set(),x549,Block(Const(())),Vector(List(b551)),Vector(List(b553)),None)
+        Working on pipeLatencies of result Vector(Const(()), x651, x650, x642, x640), schedule Vector(x640, x641, x642, x643, x647, x648, x789, x790, x649, x791, x792, x793, x650, x651)
+        Memories with both reads and writes in this scope: Set(x544)
+        NonConflictSets(x642, x651): Set()
+        NonConflictSets(x642, x651): Set()
+        Found Cycle: x642, x651
+        Exclusions: Set() Set() 
+        Done finding cycles: Vector(AccumTriple(x544,x642,x651)), Map(x648 -> List(AccumTriple(x544,x642,x651)), x651 -> List(AccumTriple(x544,x642,x651)), x642 -> List(AccumTriple(x544,x642,x651)), x649 -> List(AccumTriple(x544,x642,x651)), x643 -> List(AccumTriple(x544,x642,x651)))
+        Computing fullDFS: Const(())
+        Computing fullDFS: x651
+        Computing fullDFS: x642
+        cur: x642, inReduce: true, latency: 2.0
+        Known Cycles: List(AccumTriple(x544,x642,x651))
+        Computing fullDFS: x649
+        Computing fullDFS: x648
+        Computing fullDFS: x641
+        Computing fullDFS: x640
+        cur: x640, inReduce: false, latency: 2.0
+        Computing fullDFS: x643
+        Computing fullDFS: x789
+        Computing fullDFS: x790
+        Computing fullDFS: x647
+        cur: x647, inReduce: false, latency: 0.2
+        Computing fullDFS: x791
+        cur: x791, inReduce: false, latency: 0.0
+        Computing fullDFS: x792
+        cur: x792, inReduce: false, latency: 0.0
+        Computing fullDFS: x793
+        cur: x793, inReduce: false, latency: 0.0
+        Computing fullDFS: x650
+        Cycle #0: write: x651, cycle: x642, x642, x643, x648, x649, x651
+        Cycles: Map(x648 -> Vector(x642, x643, x648), x651 -> Vector(x642, x642, x643, x648, x649, x651), x642 -> List(x642), x650 -> Vector(x642, x643, x648, x649, x650), x649 -> Vector(x642, x643, x648, x649), x643 -> Vector(x642, x643))
+        pseudo cycles for x544:
+        Access: x642 -> Ports: Some(Map(0 -> Map(List() -> Port(Some(0),0,0,Vector(0),Vector(0)))))
+        First Port: Map(List() -> Port(Some(0),0,0,Vector(0),Vector(0)))
+        Pushing x642 = SRAMBankedRead(x544,Vector(List(Const(0))),Vector(b551),Vector(Set(b553, b543)),Vec[Fix[TRUE,_10,_22]]) by 0.0 to 2.0 due to muxing.
+        Access: x651 -> Ports: Some(Map(0 -> Map(List() -> Port(Some(0),0,0,Vector(0),Vector(0)))))
+        First Port: Map(List() -> Port(Some(0),0,0,Vector(0),Vector(0)))
+        Pushing x651 = SRAMBankedWrite(x544,Vector(x649),Vector(List(Const(0))),Vector(x793),Vector(Set(x792, x791))) by 0.0 to 4.5 due to muxing.
+        cycles are Vector(AAACycle(Vector(x642),x544,1.0), AAACycle(Vector(x651),x544,1.0), WARCycle(x642,x651,x544,Vector(x642, x642, x643, x648, x649, x651),4.0,spatial.node.AccumMarker$Unknown$@254f8341,-1))
+           stm: x640, None
+           stm: x641, None
+           stm: x642, Some(0)
+           stm: x643, None
+           stm: x647, None
+           stm: x648, None
+           stm: x789, None
+           stm: x790, None
+           stm: x649, None
+           stm: x791, None
+           stm: x792, None
+           stm: x793, None
+           stm: x650, None
+           stm: x651, None
+         - Latency:  4.5
+         - Interval: 4.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer(0))
+       - Interval: 15.0
+      x667 = UnrolledForeach(Set(b543),x655,Block(Const(())),List(List(b656)),List(List(b657)),None)
+      Working on pipeLatencies of result Vector(Const(()), x658, x663, x666), schedule Vector(x658, x659, x750, x751, x794, x662, x795, x796, x663, x664, x797, x665, x798, x799, x800, x666)
+      Memories with both reads and writes in this scope: Set()
+      Done finding cycles: Vector(), Map()
+      Computing fullDFS: Const(())
+      Computing fullDFS: x658
+      cur: x658, inReduce: false, latency: 2.0
+      Computing fullDFS: x663
+      Computing fullDFS: x662
+      Computing fullDFS: x751
+      Computing fullDFS: x750
+      cur: x750, inReduce: false, latency: 0.2
+      Computing fullDFS: x794
+      cur: x794, inReduce: false, latency: 0.0
+      Computing fullDFS: x795
+      cur: x795, inReduce: false, latency: 0.0
+      Computing fullDFS: x796
+      cur: x796, inReduce: false, latency: 0.0
+      Computing fullDFS: x666
+      Computing fullDFS: x665
+      Computing fullDFS: x664
+      Computing fullDFS: x797
+      Computing fullDFS: x659
+      Computing fullDFS: x798
+      cur: x798, inReduce: false, latency: 0.0
+      Computing fullDFS: x799
+      Computing fullDFS: x800
+      cur: x800, inReduce: false, latency: 0.0
+      Cycles: Map()
+      cycles are Vector()
+         stm: x658, None
+         stm: x659, None
+         stm: x750, None
+         stm: x751, None
+         stm: x794, None
+         stm: x662, None
+         stm: x795, None
+         stm: x796, None
+         stm: x663, None
+         stm: x664, None
+         stm: x797, None
+         stm: x665, None
+         stm: x798, None
+         stm: x799, None
+         stm: x800, None
+         stm: x666, None
+       - Latency:  6.2
+       - Interval: 1.0 (1.0 bbox)
+       - Iter Diff: None (from ArrayBuffer())
+     - Interval: 15.0
+    x724 = UnitPipe(Set(),Block(Const(())),None)
+      x723 = UnrolledForeach(Set(),x673,Block(Const(())),List(List(b674)),List(List(b675)),None)
+        x718 = UnitPipe(Set(b675),Block(Const(())),None)
+          x698 = UnitPipe(Set(),Block(Const(())),None)
+          Working on pipeLatencies of result Vector(Const(()), x693, x697, x694, x695, x690, x696), schedule Vector(x752, x753, x680, x681, x754, x683, x684, x685, x686, x687, x755, x689, x690, x801, x691, x802, x692, x693, x803, x694, x695, x696, x697)
+          Memories with both reads and writes in this scope: Set()
+          Done finding cycles: Vector(), Map()
+          Computing fullDFS: Const(())
+          Computing fullDFS: x693
+          cur: x693, inReduce: false, latency: 0.0
+          Computing fullDFS: x697
+          Computing fullDFS: x687
+          Computing fullDFS: x686
+          Computing fullDFS: x685
+          Computing fullDFS: x683
+          Computing fullDFS: x753
+          Computing fullDFS: x752
+          cur: x752, inReduce: false, latency: 0.2
+          Computing fullDFS: x681
+          Computing fullDFS: x680
+          Computing fullDFS: x694
+          Computing fullDFS: x692
+          Computing fullDFS: x755
+          Computing fullDFS: x802
+          Computing fullDFS: x691
+          Computing fullDFS: x689
+          Computing fullDFS: x754
+          Computing fullDFS: x801
+          Computing fullDFS: x690
+          cur: x690, inReduce: false, latency: 0.0
+          Computing fullDFS: x803
+          Computing fullDFS: x695
+          Computing fullDFS: x696
+          Computing fullDFS: x684
+          Cycles: Map()
+          cycles are Vector()
+             stm: x752, None
+             stm: x753, None
+             stm: x680, None
+             stm: x681, None
+             stm: x754, None
+             stm: x683, None
+             stm: x684, None
+             stm: x685, None
+             stm: x686, None
+             stm: x687, None
+             stm: x755, None
+             stm: x689, None
+             stm: x690, None
+             stm: x801, None
+             stm: x691, None
+             stm: x802, None
+             stm: x692, None
+             stm: x693, None
+             stm: x803, None
+             stm: x694, None
+             stm: x695, None
+             stm: x696, None
+             stm: x697, None
+           - Latency:  5.0
+           - Interval: 1.0 (1.0 bbox)
+           - Iter Diff: None (from ArrayBuffer())
+          x717 = UnrolledForeach(Set(),x701,Block(Const(())),List(List(b702)),List(List(b703)),None)
+          Working on pipeLatencies of result Vector(Const(()), x706, x713, x704, x716), schedule Vector(x704, x705, x706, x707, x708, x709, x756, x757, x712, x804, x805, x713, x714, x806, x715, x807, x716)
+          Memories with both reads and writes in this scope: Set()
+          Done finding cycles: Vector(), Map()
+          Computing fullDFS: Const(())
+          Computing fullDFS: x706
+          cur: x706, inReduce: false, latency: 0.0
+          Computing fullDFS: x713
+          Computing fullDFS: x712
+          Computing fullDFS: x709
+          Computing fullDFS: x704
+          cur: x704, inReduce: false, latency: 0.0
+          Computing fullDFS: x757
+          Computing fullDFS: x756
+          cur: x756, inReduce: false, latency: 0.2
+          Computing fullDFS: x804
+          cur: x804, inReduce: false, latency: 0.0
+          Computing fullDFS: x805
+          Computing fullDFS: x708
+          Computing fullDFS: x705
+          Computing fullDFS: x707
+          Computing fullDFS: x716
+          Computing fullDFS: x715
+          Computing fullDFS: x714
+          Computing fullDFS: x806
+          Computing fullDFS: x807
+          cur: x807, inReduce: false, latency: 0.0
+          Cycles: Map()
+          cycles are Vector()
+             stm: x704, None
+             stm: x705, None
+             stm: x706, None
+             stm: x707, None
+             stm: x708, None
+             stm: x709, None
+             stm: x756, None
+             stm: x757, None
+             stm: x712, None
+             stm: x804, None
+             stm: x805, None
+             stm: x713, None
+             stm: x714, None
+             stm: x806, None
+             stm: x715, None
+             stm: x807, None
+             stm: x716, None
+           - Latency:  4.2
+           - Interval: 1.0 (1.0 bbox)
+           - Iter Diff: None (from ArrayBuffer())
+         - Interval: 1.0
+        x722 = UnitPipe(Set(b675),Block(Const(())),None)
+        Working on pipeLatencies of result Vector(Const(()), x720), schedule Vector(x720)
+        Memories with both reads and writes in this scope: Set()
+        Done finding cycles: Vector(), Map()
+        Computing fullDFS: Const(())
+        Computing fullDFS: x720
+        cur: x720, inReduce: false, latency: 1.0
+        Cycles: Map()
+        cycles are Vector()
+           stm: x720, None
+         - Latency:  1.0
+         - Interval: 1.0 (1.0 bbox)
+         - Iter Diff: None (from ArrayBuffer())
+       - Interval: 1.0
+     - Interval: 1.0
+   - Interval: 15.0

@@ -1,0 +1,1794 @@
+  x462 = OpenCSVFile(Const("/home/hhollen/ee109finalHH/mol_arr100.csv"),false) [ctrl: Host, inner: false]
+  x463 = ReadTokens(x462,Const(",")) [ctrl: Host, inner: false]
+  x464 = CloseCSVFile(x462) [ctrl: Host, inner: false]
+  x467 = ArrayMap(x463,Block((x463,b5) => x465),Block((x465) => x466)) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x467
+      used Set(x463, b5)
+      
+    - x463 = ReadTokens(x462,Const(","))
+    - b5
+    x465 = ArrayApply(x463,b5) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x467
+      used Set()
+      
+    Uses [Block: Host]:
+      consumer x467
+      used Set(x465)
+      
+    - x465 = ArrayApply(x463,b5)
+    x466 = TextToFix(x465,TRUE,_10,_22) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x467
+      used Set()
+      
+  x468 = DRAMHostNew(List(Const(100), Const(3)),Const(0)) [ctrl: Host, inner: false]
+  x469 = SetMem(x468,x467) [ctrl: Host, inner: false]
+  x470 = DRAMHostNew(List(Const(100), Const(3)),Const(0)) [ctrl: Host, inner: false]
+  x444 = AccelScope(Block(Const(()))) [ctrl: x444 (stage: -1), inner: false]
+    Pending: 
+    Inputs:  
+    Uses:    
+    Transient: false
+    Outer: true
+    x471 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [ctrl: x444 (stage: -1), inner: false]
+      Pending: 
+      Inputs:  Const(100), Const(3)
+      Uses:    
+      Transient: false
+      Outer: true
+    x472 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [ctrl: x444 (stage: -1), inner: false]
+      Pending: 
+      Inputs:  Const(100), Const(3)
+      Uses:    
+      Transient: false
+      Outer: true
+    x473 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [ctrl: x444 (stage: -1), inner: false]
+      Pending: 
+      Inputs:  Const(100), Const(3)
+      Uses:    
+      Transient: false
+      Outer: true
+    x538 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x538 (stage: -1), inner: false]
+      Pending: 
+      Inputs:  
+      Uses:    
+      Transient: false
+      Outer: true
+      x474 = StreamOutNew(BurstCmdBus) [ctrl: x538 (stage: -1), inner: false]
+        Pending: 
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x475 = FIFONew(Const(16)) [ctrl: x538 (stage: -1), inner: false]
+        Pending: 
+        Inputs:  Const(16)
+        Uses:    
+        Transient: false
+        Outer: true
+      x476 = StreamInNew(BurstDataBus()) [ctrl: x538 (stage: -1), inner: false]
+        Pending: 
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x477 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x499 (stage: -1), inner: true]
+        Pending: 
+        Inputs:  Const(0), Const(100), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x477 [ctrl: x499 (stage: -1), block: x538 (block: 0)]
+      x478 = CounterChainNew(List(x477)) [ctrl: x499 (stage: -1), inner: true]
+        Pending: x477 -> Set(x477)
+        Inputs:  x477
+        Uses:    x477
+        Transient: false
+        Outer: true
+        Uses [Block: x538 (block: 0)]:
+          consumer x478
+          used Set(x477)
+          
+        - x477 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+        Adding direct (x478 x499 (block: -1)) to uses for x477
+      x499 = UnrolledForeach(Set(),x478,Block(Const(())),List(List(b479)),List(List(b480)),None) [ctrl: x499 (stage: -1), inner: true]
+        Pending: x477 -> Set(x477)
+        Inputs:  b479, b480, x478
+        Uses:    
+        Transient: false
+        Outer: true
+        x481 = FixMul(b479,Const(3)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  b479, Const(3)
+          Uses:    
+          Transient: false
+          Outer: false
+        x482 = FixDivSRA(x481,Const(4)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x481, Const(4)
+          Uses:    
+          Transient: false
+          Outer: false
+        x483 = FixSLA(x482,Const(4)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x482, Const(4)
+          Uses:    
+          Transient: false
+          Outer: false
+        x484 = FixSLA(x483,Const(2)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x483, Const(2)
+          Uses:    
+          Transient: false
+          Outer: false
+        x485 = FixSub(x481,x483) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x481, x483
+          Uses:    
+          Transient: false
+          Outer: false
+        x486 = FixAdd(x485,Const(3)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x485, Const(3)
+          Uses:    
+          Transient: false
+          Outer: false
+        x487 = FixAdd(x485,Const(18)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x485, Const(18)
+          Uses:    
+          Transient: false
+          Outer: false
+        x488 = FixDivSRA(x487,Const(4)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x487, Const(4)
+          Uses:    
+          Transient: false
+          Outer: false
+        x489 = FixSLA(x488,Const(4)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x488, Const(4)
+          Uses:    
+          Transient: false
+          Outer: false
+        x490 = FixSLA(x489,Const(2)) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x489, Const(2)
+          Uses:    
+          Transient: false
+          Outer: false
+        x491 = FixToFix(x484,TRUE,_64,_0) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477)
+          Inputs:  x484
+          Uses:    
+          Transient: true
+          Outer: false
+          Adding pending: x491 [ctrl: x499 (stage: -1), block: x499 (block: 0)]
+        x492 = DRAMAddress(x468) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477), x491 -> Set(x491)
+          Inputs:  x468
+          Uses:    
+          Transient: false
+          Outer: false
+        x493 = FixAdd(x491,x492) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477), x491 -> Set(x491)
+          Inputs:  x491, x492
+          Uses:    x491
+          Transient: false
+          Outer: false
+          Uses [Block: x499 (block: 0)]:
+            consumer x493
+            used Set(x491)
+            
+          - x491 = FixToFix(x484,TRUE,_64,_0)
+          Adding direct (x493 x499 (block: 0)) to uses for x491
+        x494 = SimpleStruct(ArrayBuffer((offset,x493), (size,x490), (isLoad,Const(true)))) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477), x491 -> Set(x491)
+          Inputs:  x493, x490, Const(true)
+          Uses:    
+          Transient: true
+          Outer: false
+          Adding pending: x494 [ctrl: x499 (stage: -1), block: x499 (block: 0)]
+        x495 = DRAMIsAlloc(x468) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  x468
+          Uses:    
+          Transient: false
+          Outer: false
+        x496 = StreamOutBankedWrite(x474,ArrayBuffer(x494),ArrayBuffer(Set(x495, b480))) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  x474, x494, x495, b480
+          Uses:    x494
+          Transient: false
+          Outer: false
+          Uses [Block: x499 (block: 0)]:
+            consumer x496
+            used Set(x494)
+            
+          - x494 = SimpleStruct(ArrayBuffer((offset,x493), (size,x490), (isLoad,Const(true))))
+          Adding direct (x496 x499 (block: 0)) to uses for x494
+        x497 = SimpleStruct(ArrayBuffer((size,x489), (start,x485), (end,x486))) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  x489, x485, x486
+          Uses:    
+          Transient: true
+          Outer: false
+          Adding pending: x497 [ctrl: x499 (stage: -1), block: x499 (block: 0)]
+        x498 = FIFOBankedEnq(x475,ArrayBuffer(x497),ArrayBuffer(Set(Const(true), b480))) [ctrl: x499 (stage: -1), inner: true]
+          Pending: x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  x475, x497, Const(true), b480
+          Uses:    x497
+          Transient: false
+          Outer: false
+          Uses [Block: x499 (block: 0)]:
+            consumer x498
+            used Set(x497)
+            
+          - x497 = SimpleStruct(ArrayBuffer((size,x489), (start,x485), (end,x486)))
+          Adding direct (x498 x499 (block: 0)) to uses for x497
+      x500 = FringeDenseLoad(x468,x474,x476) [ctrl: x538 (stage: -1), inner: false]
+        Pending: x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+        Inputs:  x468, x474, x476
+        Uses:    
+        Transient: false
+        Outer: true
+      x501 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x537 (stage: -1), inner: false]
+        Pending: x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+        Inputs:  Const(0), Const(100), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x501 [ctrl: x537 (stage: -1), block: x538 (block: 0)]
+      x502 = CounterChainNew(List(x501)) [ctrl: x537 (stage: -1), inner: false]
+        Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+        Inputs:  x501
+        Uses:    x501
+        Transient: false
+        Outer: true
+        Uses [Block: x538 (block: 0)]:
+          consumer x502
+          used Set(x501)
+          
+        - x501 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+        Adding direct (x502 x537 (block: -1)) to uses for x501
+      x537 = UnrolledForeach(Set(),x502,Block(Const(())),List(List(b503)),List(List(b504)),None) [ctrl: x537 (stage: -1), inner: false]
+        Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+        Inputs:  b504, b503, x502
+        Uses:    
+        Transient: false
+        Outer: true
+        x505 = RegNew(Const(0)) [ctrl: x537 (stage: -1), inner: false]
+          Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x506 = RegNew(Const(0)) [ctrl: x537 (stage: -1), inner: false]
+          Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x507 = RegNew(Const(0)) [ctrl: x537 (stage: -1), inner: false]
+          Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  Const(0)
+          Uses:    
+          Transient: false
+          Outer: true
+        x516 = UnitPipe(Set(b504),Block(Const(())),None) [ctrl: x516 (stage: -1), inner: true]
+          Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  b504
+          Uses:    
+          Transient: false
+          Outer: true
+          x508 = FIFOBankedDeq(x475,ArrayBuffer(Set(Const(true))),Vec[IssuedCmd]) [ctrl: x516 (stage: -1), inner: true]
+            Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x475, Const(true)
+            Uses:    
+            Transient: false
+            Outer: false
+          x509 = VecApply(x508,0) [ctrl: x516 (stage: -1), inner: true]
+            Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x508
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x509 [ctrl: x516 (stage: -1), block: x516 (block: 0)]
+          x510 = FieldApply(x509,start) [ctrl: x516 (stage: -1), inner: true]
+            Pending: x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x509
+            Uses:    x509
+            Transient: true
+            Outer: false
+            Uses [Block: x516 (block: 0)]:
+              consumer x510
+              used Set(x509)
+              
+            - x509 = VecApply(x508,0)
+            Adding direct (x510 x516 (block: 0)) to uses for x509
+            Adding pending: x510 [ctrl: x516 (stage: -1), block: x516 (block: 0)]
+          x511 = RegWrite(x505,x510,Set()) [ctrl: x516 (stage: -1), inner: true]
+            Pending: x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x505, x510
+            Uses:    x510
+            Transient: false
+            Outer: false
+            Uses [Block: x516 (block: 0)]:
+              consumer x511
+              used Set(x510)
+              
+            - x510 = FieldApply(x509,start)
+            Adding direct (x511 x516 (block: 0)) to uses for x510
+          x512 = FieldApply(x509,end) [ctrl: x516 (stage: -1), inner: true]
+            Pending: x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x497 -> Set(x497), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x509
+            Uses:    x509
+            Transient: true
+            Outer: false
+            Uses [Block: x516 (block: 0)]:
+              consumer x512
+              used Set(x509)
+              
+            - x509 = VecApply(x508,0)
+            Adding direct (x512 x516 (block: 0)) to uses for x509
+            Adding pending: x512 [ctrl: x516 (stage: -1), block: x516 (block: 0)]
+          x513 = RegWrite(x506,x512,Set()) [ctrl: x516 (stage: -1), inner: true]
+            Pending: x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x506, x512
+            Uses:    x512
+            Transient: false
+            Outer: false
+            Uses [Block: x516 (block: 0)]:
+              consumer x513
+              used Set(x512)
+              
+            - x512 = FieldApply(x509,end)
+            Adding direct (x513 x516 (block: 0)) to uses for x512
+          x514 = FieldApply(x509,size) [ctrl: x516 (stage: -1), inner: true]
+            Pending: x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x509
+            Uses:    x509
+            Transient: true
+            Outer: false
+            Uses [Block: x516 (block: 0)]:
+              consumer x514
+              used Set(x509)
+              
+            - x509 = VecApply(x508,0)
+            Adding direct (x514 x516 (block: 0)) to uses for x509
+            Adding pending: x514 [ctrl: x516 (stage: -1), block: x516 (block: 0)]
+          x515 = RegWrite(x507,x514,Set()) [ctrl: x516 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x507, x514
+            Uses:    x514
+            Transient: false
+            Outer: false
+            Uses [Block: x516 (block: 0)]:
+              consumer x515
+              used Set(x514)
+              
+            - x514 = FieldApply(x509,size)
+            Adding direct (x515 x516 (block: 0)) to uses for x514
+        x517 = RegRead(x507) [ctrl: x536 (stage: -1), inner: true]
+          Pending: x514 -> Set(x514), x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  x507
+          Uses:    
+          Transient: true
+          Outer: true
+          Adding pending: x517 [ctrl: x536 (stage: -1), block: x537 (block: 0)]
+        x518 = CounterNew(Const(0),x517,Const(1),Const(1)) [ctrl: x536 (stage: -1), inner: true]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  Const(0), x517, Const(1)
+          Uses:    x517
+          Transient: false
+          Outer: true
+          Node is propagating reader of:
+          - x517 = RegRead(x507)
+        x519 = CounterChainNew(List(x518)) [ctrl: x536 (stage: -1), inner: true]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  x518
+          Uses:    x517, x518
+          Transient: false
+          Outer: true
+          Uses [Block: x537 (block: 0)]:
+            consumer x519
+            used Set(x517, x518)
+            
+          - x517 = RegRead(x507)
+          - x518 = CounterNew(Const(0),x517,Const(1),Const(1))
+          Adding direct (x519 x536 (block: -1)) to uses for x517
+          Adding direct (x519 x536 (block: -1)) to uses for x518
+          Adding pending (x518 x536 (block: -1)) to uses for x517
+        x536 = UnrolledForeach(Set(b504),x519,Block(Const(())),List(List(b520)),List(List(b521)),None) [ctrl: x536 (stage: -1), inner: true]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+          Inputs:  b504, x519, b520, b521
+          Uses:    
+          Transient: false
+          Outer: true
+          x522 = RegRead(x505) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x510 -> Set(x510), x501 -> Set(x501), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x505
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x522 [ctrl: x536 (stage: -1), block: x536 (block: 0)]
+          x523 = FixLeq(x522,b520) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x510 -> Set(x510), x501 -> Set(x501), x522 -> Set(x522), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x522, b520
+            Uses:    x522
+            Transient: false
+            Outer: false
+            Uses [Block: x536 (block: 0)]:
+              consumer x523
+              used Set(x522)
+              
+            - x522 = RegRead(x505)
+            Adding direct (x523 x536 (block: 0)) to uses for x522
+          x524 = RegRead(x506) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x510 -> Set(x510), x501 -> Set(x501), x522 -> Set(x522), x477 -> Set(x477), x512 -> Set(x512), x497 -> Set(x497), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x506
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x524 [ctrl: x536 (stage: -1), block: x536 (block: 0)]
+          x525 = FixLst(b520,x524) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  b520, x524
+            Uses:    x524
+            Transient: false
+            Outer: false
+            Uses [Block: x536 (block: 0)]:
+              consumer x525
+              used Set(x524)
+              
+            - x524 = RegRead(x506)
+            Adding direct (x525 x536 (block: 0)) to uses for x524
+          x526 = And(x523,x525) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x523, x525
+            Uses:    
+            Transient: false
+            Outer: false
+          x527 = FixSub(b520,x522) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  b520, x522
+            Uses:    x522
+            Transient: false
+            Outer: false
+            Uses [Block: x536 (block: 0)]:
+              consumer x527
+              used Set(x522)
+              
+            - x522 = RegRead(x505)
+            Adding direct (x527 x536 (block: 0)) to uses for x522
+          x528 = StreamInBankedRead(x476,ArrayBuffer(Set(b521, b504))) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x476, b521, b504
+            Uses:    
+            Transient: false
+            Outer: false
+          x529 = VecApply(x528,0) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494)
+            Inputs:  x528
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x529 [ctrl: x536 (stage: -1), block: x536 (block: 0)]
+          x531 = FixMul(b503,Const(3)) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b503, Const(3)
+            Uses:    
+            Transient: false
+            Outer: false
+          x532 = FixAdd(x531,x527) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x531, x527
+            Uses:    
+            Transient: false
+            Outer: false
+          x533 = SRAMBankedWrite(x472,Vector(x529),Vector(List(Const(0))),Vector(x532),Vector(Set(x526, b521, b504))) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x472, b504, x529, x526, Const(0), b521, x532
+            Uses:    x529
+            Transient: false
+            Outer: false
+            Uses [Block: x536 (block: 0)]:
+              consumer x533
+              used Set(x529)
+              
+            - x529 = VecApply(x528,0)
+            Adding direct (x533 x536 (block: 0)) to uses for x529
+          x534 = SRAMBankedWrite(x471,Vector(x529),Vector(List(Const(0))),Vector(x532),Vector(Set(x526, b521, b504))) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b504, x529, x471, x526, Const(0), b521, x532
+            Uses:    x529
+            Transient: false
+            Outer: false
+            Uses [Block: x536 (block: 0)]:
+              consumer x534
+              used Set(x529)
+              
+            - x529 = VecApply(x528,0)
+            Adding direct (x534 x536 (block: 0)) to uses for x529
+          x535 = SRAMBankedWrite(x473,Vector(x529),Vector(List(Const(0))),Vector(x532),Vector(Set(x526, b521, b504))) [ctrl: x536 (stage: -1), inner: true]
+            Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b504, x529, x526, Const(0), b521, x473, x532
+            Uses:    x529
+            Transient: false
+            Outer: false
+            Uses [Block: x536 (block: 0)]:
+              consumer x535
+              used Set(x529)
+              
+            - x529 = VecApply(x528,0)
+            Adding direct (x535 x536 (block: 0)) to uses for x529
+    x539 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [ctrl: x444 (stage: -1), inner: false]
+      Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+      Inputs:  Const(100), Const(3)
+      Uses:    
+      Transient: false
+      Outer: true
+    x540 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x668 (stage: -1), inner: false]
+      Pending: x514 -> Set(x514), x517 -> Set(x517), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+      Inputs:  Const(0), Const(100), Const(1)
+      Uses:    
+      Transient: false
+      Outer: true
+      Adding pending: x540 [ctrl: x668 (stage: -1), block: x444 (block: 0)]
+    x541 = CounterChainNew(List(x540)) [ctrl: x668 (stage: -1), inner: false]
+      Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+      Inputs:  x540
+      Uses:    x540
+      Transient: false
+      Outer: true
+      Uses [Block: x444 (block: 0)]:
+        consumer x541
+        used Set(x540)
+        
+      - x540 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+      Adding direct (x541 x668 (block: -1)) to uses for x540
+    x668 = UnrolledForeach(Set(),x541,Block(Const(())),List(List(b542)),List(List(b543)),None) [ctrl: x668 (stage: -1), inner: false]
+      Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+      Inputs:  b542, x541, b543
+      Uses:    
+      Transient: false
+      Outer: true
+      x544 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x668 (stage: -1), inner: false]
+        Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+        Inputs:  Const(3)
+        Uses:    
+        Transient: false
+        Outer: true
+      x545 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x668 (stage: -1), inner: false]
+        Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+        Inputs:  Const(3)
+        Uses:    
+        Transient: false
+        Outer: true
+      x546 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x653 (stage: -1), inner: false]
+        Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+        Inputs:  Const(0), Const(100), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x546 [ctrl: x653 (stage: -1), block: x668 (block: 0)]
+      x547 = CounterChainNew(List(x546)) [ctrl: x653 (stage: -1), inner: false]
+        Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+        Inputs:  x546
+        Uses:    x546
+        Transient: false
+        Outer: true
+        Uses [Block: x668 (block: 0)]:
+          consumer x547
+          used Set(x546)
+          
+        - x546 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+        Adding direct (x547 x653 (block: -1)) to uses for x546
+      x548 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [ctrl: x652 (stage: -1), inner: true]
+        Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+        Inputs:  Const(0), Const(3), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x548 [ctrl: x652 (stage: -1), block: x668 (block: 0)]
+      x549 = CounterChainNew(Vector(x548)) [ctrl: x652 (stage: -1), inner: true]
+        Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+        Inputs:  x548
+        Uses:    x548
+        Transient: false
+        Outer: true
+        Uses [Block: x668 (block: 0)]:
+          consumer x549
+          used Set(x548)
+          
+        - x548 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+        Adding direct (x549 x652 (block: -1)) to uses for x548
+      x653 = UnrolledReduce(Set(b543),x547,Block((x544) => x652),List(List(b550)),List(List(b552)),None) [ctrl: x653 (stage: -1), inner: false]
+        Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+        Inputs:  b550, x547, b552, b543
+        Uses:    
+        Transient: false
+        Outer: true
+        Uses [Block: x653 (block: 0)]:
+          consumer x653
+          used Set(x544)
+          
+        - x544 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+        x554 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  Const(3)
+          Uses:    
+          Transient: false
+          Outer: true
+        x555 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  Const(3)
+          Uses:    
+          Transient: false
+          Outer: true
+        x556 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  Const(3)
+          Uses:    
+          Transient: false
+          Outer: true
+        x557 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  Const(3)
+          Uses:    
+          Transient: false
+          Outer: true
+        x558 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  Const(3)
+          Uses:    
+          Transient: false
+          Outer: true
+        x559 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [ctrl: x579 (stage: -1), inner: true]
+          Pending: x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  Const(0), Const(3), Const(1)
+          Uses:    
+          Transient: false
+          Outer: true
+          Adding pending: x559 [ctrl: x579 (stage: -1), block: x653 (block: 0)]
+        x560 = CounterChainNew(List(x559)) [ctrl: x579 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  x559
+          Uses:    x559
+          Transient: false
+          Outer: true
+          Uses [Block: x653 (block: 0)]:
+            consumer x560
+            used Set(x559)
+            
+          - x559 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+          Adding direct (x560 x579 (block: -1)) to uses for x559
+        x579 = UnrolledForeach(Set(b552, b543),x560,Block(Const(())),List(List(b561)),List(List(b562)),None) [ctrl: x579 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  b561, b562, b552, b543, x560
+          Uses:    
+          Transient: false
+          Outer: true
+          x564 = FixMul(b542,Const(3)) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b542, Const(3)
+            Uses:    
+            Transient: false
+            Outer: false
+          x565 = FixAdd(x564,b561) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x564, b561
+            Uses:    
+            Transient: false
+            Outer: false
+          x566 = SRAMBankedRead(x471,Vector(List(Const(0))),Vector(x565),Vector(Set(b562, b552, b543)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x565, x471, b562, Const(0), b552, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x567 = VecApply(x566,0) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x566
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x567 [ctrl: x579 (stage: -1), block: x579 (block: 0)]
+          x569 = FixMul(b550,Const(3)) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b550, Const(3)
+            Uses:    
+            Transient: false
+            Outer: false
+          x570 = FixAdd(x569,b561) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x569, b561
+            Uses:    
+            Transient: false
+            Outer: false
+          x571 = SRAMBankedRead(x472,Vector(List(Const(0))),Vector(x570),Vector(Set(b562, b552, b543)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x472, x570, b562, Const(0), b552, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x572 = VecApply(x571,0) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x571
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x572 [ctrl: x579 (stage: -1), block: x579 (block: 0)]
+          x573 = FixSub(x567,x572) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x567, x572
+            Uses:    x567, x572
+            Transient: false
+            Outer: false
+            Uses [Block: x579 (block: 0)]:
+              consumer x573
+              used Set(x567, x572)
+              
+            - x567 = VecApply(x566,0)
+            - x572 = VecApply(x571,0)
+            Adding direct (x573 x579 (block: 0)) to uses for x567
+            Adding direct (x573 x579 (block: 0)) to uses for x572
+          x574 = SRAMBankedWrite(x555,Vector(x573),Vector(List(Const(0))),Vector(b561),Vector(Set(b562, b552, b543))) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x555, b561, x573, b562, Const(0), b552, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x575 = SRAMBankedWrite(x554,Vector(x573),Vector(List(Const(0))),Vector(b561),Vector(Set(b562, b552, b543))) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b561, x554, x573, b562, Const(0), b552, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x576 = SRAMBankedWrite(x558,Vector(x573),Vector(List(Const(0))),Vector(b561),Vector(Set(b562, b552, b543))) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b561, x558, x573, b562, Const(0), b552, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x577 = SRAMBankedWrite(x557,Vector(x573),Vector(List(Const(0))),Vector(b561),Vector(Set(b562, b552, b543))) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b561, x573, b562, Const(0), b552, x557, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x578 = SRAMBankedWrite(x556,Vector(x573),Vector(List(Const(0))),Vector(b561),Vector(Set(b562, b552, b543))) [ctrl: x579 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  b561, x573, b562, Const(0), b552, x556, b543
+            Uses:    
+            Transient: false
+            Outer: false
+        x580 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  Const(1)
+          Uses:    
+          Transient: false
+          Outer: true
+        x593 = UnitPipe(Set(b552, b543),Block(Const(())),None) [ctrl: x593 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+          Inputs:  b552, b543
+          Uses:    
+          Transient: false
+          Outer: true
+          x581 = SRAMBankedRead(x554,Vector(List(Const(0))),Vector(Const(0)),Vector(Set()),Vec[Fix[TRUE,_10,_22]]) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x554, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+          x582 = VecApply(x581,0) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x581
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x582 [ctrl: x593 (stage: -1), block: x593 (block: 0)]
+          x583 = FixMul(x582,x582) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x582
+            Uses:    x582
+            Transient: false
+            Outer: false
+            Uses [Block: x593 (block: 0)]:
+              consumer x583
+              used Set(x582)
+              
+            - x582 = VecApply(x581,0)
+            Adding direct (x583 x593 (block: 0)) to uses for x582
+          x584 = SRAMBankedRead(x555,Vector(List(Const(0))),Vector(Const(1)),Vector(Set()),Vec[Fix[TRUE,_10,_22]]) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x555, Const(0), Const(1)
+            Uses:    
+            Transient: false
+            Outer: false
+          x585 = VecApply(x584,0) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x584
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x585 [ctrl: x593 (stage: -1), block: x593 (block: 0)]
+          x586 = FixMul(x585,x585) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x585
+            Uses:    x585
+            Transient: false
+            Outer: false
+            Uses [Block: x593 (block: 0)]:
+              consumer x586
+              used Set(x585)
+              
+            - x585 = VecApply(x584,0)
+            Adding direct (x586 x593 (block: 0)) to uses for x585
+          x587 = FixAdd(x583,x586) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x583, x586
+            Uses:    
+            Transient: false
+            Outer: false
+          x588 = SRAMBankedRead(x556,Vector(List(Const(0))),Vector(Const(2)),Vector(Set()),Vec[Fix[TRUE,_10,_22]]) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x556, Const(0), Const(2)
+            Uses:    
+            Transient: false
+            Outer: false
+          x589 = VecApply(x588,0) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x529 -> Set(x529)
+            Inputs:  x588
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x589 [ctrl: x593 (stage: -1), block: x593 (block: 0)]
+          x590 = FixMul(x589,x589) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x589
+            Uses:    x589
+            Transient: false
+            Outer: false
+            Uses [Block: x593 (block: 0)]:
+              consumer x590
+              used Set(x589)
+              
+            - x589 = VecApply(x588,0)
+            Adding direct (x590 x593 (block: 0)) to uses for x589
+          x591 = FixAdd(x587,x590) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x587, x590
+            Uses:    
+            Transient: false
+            Outer: false
+          x592 = SRAMBankedWrite(x580,Vector(x591),Vector(List(Const(0))),Vector(Const(0)),Vector(Set())) [ctrl: x593 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x580, x591, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+        x594 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]]) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+          Inputs:  Const(1)
+          Uses:    
+          Transient: false
+          Outer: true
+        x595 = RegNew(Const(false)) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+          Inputs:  Const(false)
+          Uses:    
+          Transient: false
+          Outer: true
+        x596 = RegNew(Const(false)) [ctrl: x653 (stage: -1), inner: false]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+          Inputs:  Const(false)
+          Uses:    
+          Transient: false
+          Outer: true
+        x605 = UnitPipe(Set(b552, b543),Block(Const(())),None) [ctrl: x605 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+          Inputs:  b552, b543
+          Uses:    
+          Transient: false
+          Outer: true
+          x597 = SRAMBankedRead(x580,Vector(List(Const(0))),Vector(Const(0)),Vector(Set()),Vec[Fix[TRUE,_10,_22]]) [ctrl: x605 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x580, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+          x598 = VecApply(x597,0) [ctrl: x605 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x597
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x598 [ctrl: x605 (stage: -1), block: x605 (block: 0)]
+          x599 = FixLst(Const(0),x598) [ctrl: x605 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  Const(0), x598
+            Uses:    x598
+            Transient: false
+            Outer: false
+            Uses [Block: x605 (block: 0)]:
+              consumer x599
+              used Set(x598)
+              
+            - x598 = VecApply(x597,0)
+            Adding direct (x599 x605 (block: 0)) to uses for x598
+          x600 = FixLst(Const(1),x598) [ctrl: x605 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  Const(1), x598
+            Uses:    x598
+            Transient: false
+            Outer: false
+            Uses [Block: x605 (block: 0)]:
+              consumer x600
+              used Set(x598)
+              
+            - x598 = VecApply(x597,0)
+            Adding direct (x600 x605 (block: 0)) to uses for x598
+          x601 = And(x599,x600) [ctrl: x605 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x599, x600
+            Uses:    
+            Transient: false
+            Outer: false
+          x602 = Not(x601) [ctrl: x605 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x601
+            Uses:    
+            Transient: false
+            Outer: false
+          x603 = RegWrite(x595,x601,Set()) [ctrl: x605 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x595, x601
+            Uses:    
+            Transient: false
+            Outer: false
+          x604 = RegWrite(x596,x602,Set()) [ctrl: x605 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x529 -> Set(x529)
+            Inputs:  x596, x602
+            Uses:    
+            Transient: false
+            Outer: false
+        x606 = RegRead(x596) [ctrl: x621 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x585 -> Set(x585), x540 -> Set(x540), x546 -> Set(x546), x501 -> Set(x501), x510 -> Set(x510), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x509 -> Set(x509), x518 -> Set(x517, x518), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x529 -> Set(x529)
+          Inputs:  x596
+          Uses:    
+          Transient: true
+          Outer: true
+          Adding pending: x606 [ctrl: x621 (stage: -1), block: x653 (block: 0)]
+        x607 = RegRead(x595) [ctrl: x621 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x529 -> Set(x529)
+          Inputs:  x595
+          Uses:    
+          Transient: true
+          Outer: true
+          Adding pending: x607 [ctrl: x621 (stage: -1), block: x653 (block: 0)]
+        x621 = Switch(List(x607, x606),Block(x620)) [ctrl: x621 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x529 -> Set(x529)
+          Inputs:  x607, x606
+          Uses:    x607, x606
+          Transient: false
+          Outer: true
+          Uses [Block: x621 (block: -1)]:
+            consumer x621
+            used Set(x607, x606)
+            
+          - x607 = RegRead(x595)
+          - x606 = RegRead(x596)
+          Adding direct (x621 x621 (block: -1)) to uses for x607
+          Adding direct (x621 x621 (block: -1)) to uses for x606
+          Uses [Block: x621 (block: 0)]:
+            consumer x621
+            used Set()
+            
+          x619 = SwitchCase(Block(x618)) [ctrl: x619 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x529 -> Set(x529)
+            Inputs:  
+            Uses:    
+            Transient: false
+            Outer: true
+            Uses [Block: x619 (block: 0)]:
+              consumer x619
+              used Set()
+              
+            x608 = RegRead(x595) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x529 -> Set(x529)
+              Inputs:  x595
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x608 [ctrl: x619 (stage: -1), block: x619 (block: 0)]
+            x609 = SRAMBankedRead(x580,Vector(List(Const(0))),Vector(Const(0)),Vector(Set(x608)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x529 -> Set(x529)
+              Inputs:  x580, Const(0), x608
+              Uses:    x608
+              Transient: false
+              Outer: false
+              Uses [Block: x619 (block: 0)]:
+                consumer x609
+                used Set(x608)
+                
+              - x608 = RegRead(x595)
+              Adding direct (x609 x619 (block: 0)) to uses for x608
+            x610 = VecApply(x609,0) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x529 -> Set(x529)
+              Inputs:  x609
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x610 [ctrl: x619 (stage: -1), block: x619 (block: 0)]
+            x611 = FixDiv(Const(100),x610) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  Const(100), x610
+              Uses:    x610
+              Transient: false
+              Outer: false
+              Uses [Block: x619 (block: 0)]:
+                consumer x611
+                used Set(x610)
+                
+              - x610 = VecApply(x609,0)
+              Adding direct (x611 x619 (block: 0)) to uses for x610
+            x612 = FixDiv(x611,x610) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x611, x610
+              Uses:    x610
+              Transient: false
+              Outer: false
+              Uses [Block: x619 (block: 0)]:
+                consumer x612
+                used Set(x610)
+                
+              - x610 = VecApply(x609,0)
+              Adding direct (x612 x619 (block: 0)) to uses for x610
+            x613 = FixDiv(x612,x610) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x612, x610
+              Uses:    x610
+              Transient: false
+              Outer: false
+              Uses [Block: x619 (block: 0)]:
+                consumer x613
+                used Set(x610)
+                
+              - x610 = VecApply(x609,0)
+              Adding direct (x613 x619 (block: 0)) to uses for x610
+            x614 = FixDiv(x613,x610) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x613, x610
+              Uses:    x610
+              Transient: false
+              Outer: false
+              Uses [Block: x619 (block: 0)]:
+                consumer x614
+                used Set(x610)
+                
+              - x610 = VecApply(x609,0)
+              Adding direct (x614 x619 (block: 0)) to uses for x610
+            x615 = FixDiv(x614,x610) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x614, x610
+              Uses:    x610
+              Transient: false
+              Outer: false
+              Uses [Block: x619 (block: 0)]:
+                consumer x615
+                used Set(x610)
+                
+              - x610 = VecApply(x609,0)
+              Adding direct (x615 x619 (block: 0)) to uses for x610
+            x616 = FixDiv(Const(10),x610) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  Const(10), x610
+              Uses:    x610
+              Transient: false
+              Outer: false
+              Uses [Block: x619 (block: 0)]:
+                consumer x616
+                used Set(x610)
+                
+              - x610 = VecApply(x609,0)
+              Adding direct (x616 x619 (block: 0)) to uses for x610
+            x617 = FixDiv(x616,x610) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x616, x610
+              Uses:    x610
+              Transient: false
+              Outer: false
+              Uses [Block: x619 (block: 0)]:
+                consumer x617
+                used Set(x610)
+                
+              - x610 = VecApply(x609,0)
+              Adding direct (x617 x619 (block: 0)) to uses for x610
+            x618 = FixSub(x615,x617) [ctrl: x619 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x615, x617
+              Uses:    
+              Transient: false
+              Outer: false
+            Uses [Block: x619 (block: 0)]:
+              consumer x619
+              used Set()
+              
+          x620 = SwitchCase(Block(Const(90))) [ctrl: x620 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  
+            Uses:    
+            Transient: false
+            Outer: true
+          Uses [Block: x621 (block: 0)]:
+            consumer x621
+            used Set()
+            
+        x623 = UnitPipe(Set(b552, b543),Block(Const(())),None) [ctrl: x623 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  b552, b543
+          Uses:    
+          Transient: false
+          Outer: true
+          x622 = SRAMBankedWrite(x594,Vector(x621),Vector(List(Const(0))),Vector(Const(0)),Vector(Set())) [ctrl: x623 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x594, x621, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+        x624 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [ctrl: x639 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  Const(0), Const(3), Const(1)
+          Uses:    
+          Transient: false
+          Outer: true
+          Adding pending: x624 [ctrl: x639 (stage: -1), block: x653 (block: 0)]
+        x625 = CounterChainNew(List(x624)) [ctrl: x639 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  x624
+          Uses:    x624
+          Transient: false
+          Outer: true
+          Uses [Block: x653 (block: 0)]:
+            consumer x625
+            used Set(x624)
+            
+          - x624 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+          Adding direct (x625 x639 (block: -1)) to uses for x624
+        x639 = UnrolledForeach(Set(b552, b543),x625,Block(Const(())),List(List(b626)),List(List(b627)),None) [ctrl: x639 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  x625, b552, b626, b627, b543
+          Uses:    
+          Transient: false
+          Outer: true
+          x628 = SRAMBankedRead(x557,Vector(List(Const(0))),Vector(b626),Vector(Set(b627, b552, b543)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  Const(0), b552, b626, x557, b627, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x629 = VecApply(x628,0) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x628
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x629 [ctrl: x639 (stage: -1), block: x639 (block: 0)]
+          x630 = FixMul(x629,Const(0.099999904632568359375)) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x629, Const(0.099999904632568359375)
+            Uses:    x629
+            Transient: false
+            Outer: false
+            Uses [Block: x639 (block: 0)]:
+              consumer x630
+              used Set(x629)
+              
+            - x629 = VecApply(x628,0)
+            Adding direct (x630 x639 (block: 0)) to uses for x629
+          x631 = SRAMBankedRead(x594,Vector(List(Const(0))),Vector(Const(0)),Vector(Set(b627, b552, b543)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  Const(0), b552, x594, b627, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x632 = VecApply(x631,0) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x631
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x632 [ctrl: x639 (stage: -1), block: x639 (block: 0)]
+          x633 = FixMul(x630,x632) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x630, x632
+            Uses:    x632
+            Transient: false
+            Outer: false
+            Uses [Block: x639 (block: 0)]:
+              consumer x633
+              used Set(x632)
+              
+            - x632 = VecApply(x631,0)
+            Adding direct (x633 x639 (block: 0)) to uses for x632
+          x634 = SRAMBankedWrite(x555,Vector(x633),Vector(List(Const(0))),Vector(b626),Vector(Set(b627, b552, b543))) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x555, x633, Const(0), b552, b626, b627, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x635 = SRAMBankedWrite(x554,Vector(x633),Vector(List(Const(0))),Vector(b626),Vector(Set(b627, b552, b543))) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x554, x633, Const(0), b552, b626, b627, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x636 = SRAMBankedWrite(x558,Vector(x633),Vector(List(Const(0))),Vector(b626),Vector(Set(b627, b552, b543))) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x633, x558, Const(0), b552, b626, b627, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x637 = SRAMBankedWrite(x557,Vector(x633),Vector(List(Const(0))),Vector(b626),Vector(Set(b627, b552, b543))) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x633, Const(0), b552, b626, x557, b627, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x638 = SRAMBankedWrite(x556,Vector(x633),Vector(List(Const(0))),Vector(b626),Vector(Set(b627, b552, b543))) [ctrl: x639 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x633, Const(0), b552, b626, b627, x556, b543
+            Uses:    
+            Transient: false
+            Outer: false
+        x652 = UnrolledForeach(Set(),x549,Block(Const(())),Vector(List(b551)),Vector(List(b553)),None) [ctrl: x652 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  b551, b553, x549
+          Uses:    
+          Transient: false
+          Outer: true
+          x640 = SRAMBankedRead(x558,Vector(List(Const(0))),Vector(b551),Vector(Set(b553, b543)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  b551, x558, Const(0), b553, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x641 = VecApply(x640,0) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x640
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x641 [ctrl: x652 (stage: -1), block: x652 (block: 0)]
+          x642 = SRAMBankedRead(x544,Vector(List(Const(0))),Vector(b551),Vector(Set(b553, b543)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  b551, Const(0), b553, x544, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x643 = VecApply(x642,0) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x642
+            Uses:    
+            Transient: true
+            Outer: false
+            Adding pending: x643 [ctrl: x652 (stage: -1), block: x652 (block: 0)]
+          x647 = FixEql(b550,Const(0)) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  b550, Const(0)
+            Uses:    
+            Transient: false
+            Outer: false
+          x648 = FixAdd(x641,x643) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x641, x643
+            Uses:    x641, x643
+            Transient: false
+            Outer: false
+            Uses [Block: x652 (block: 0)]:
+              consumer x648
+              used Set(x641, x643)
+              
+            - x641 = VecApply(x640,0)
+            - x643 = VecApply(x642,0)
+            Adding direct (x648 x652 (block: 0)) to uses for x641
+            Adding direct (x648 x652 (block: 0)) to uses for x643
+          x649 = Mux(x647,x641,x648) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x647, x641, x648
+            Uses:    x641
+            Transient: false
+            Outer: false
+            Uses [Block: x652 (block: 0)]:
+              consumer x649
+              used Set(x641)
+              
+            - x641 = VecApply(x640,0)
+            Adding direct (x649 x652 (block: 0)) to uses for x641
+          x650 = SRAMBankedWrite(x545,Vector(x649),Vector(List(Const(0))),Vector(b551),Vector(Set(b553, b543))) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  b551, x545, Const(0), x649, b553, b543
+            Uses:    
+            Transient: false
+            Outer: false
+          x651 = SRAMBankedWrite(x544,Vector(x649),Vector(List(Const(0))),Vector(b551),Vector(Set(b553, b543))) [ctrl: x652 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  b551, Const(0), x649, b553, x544, b543
+            Uses:    
+            Transient: false
+            Outer: false
+        Uses [Block: x653 (block: 0)]:
+          consumer x653
+          used Set()
+          
+      x654 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [ctrl: x667 (stage: -1), inner: true]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  Const(0), Const(3), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x654 [ctrl: x667 (stage: -1), block: x668 (block: 0)]
+      x655 = CounterChainNew(List(x654)) [ctrl: x667 (stage: -1), inner: true]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  x654
+        Uses:    x654
+        Transient: false
+        Outer: true
+        Uses [Block: x668 (block: 0)]:
+          consumer x655
+          used Set(x654)
+          
+        - x654 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+        Adding direct (x655 x667 (block: -1)) to uses for x654
+      x667 = UnrolledForeach(Set(b543),x655,Block(Const(())),List(List(b656)),List(List(b657)),None) [ctrl: x667 (stage: -1), inner: true]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  x655, b657, b656, b543
+        Uses:    
+        Transient: false
+        Outer: true
+        x658 = SRAMBankedRead(x545,Vector(List(Const(0))),Vector(b656),Vector(Set(b657, b543)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x667 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  b657, x545, Const(0), b656, b543
+          Uses:    
+          Transient: false
+          Outer: false
+        x659 = VecApply(x658,0) [ctrl: x667 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  x658
+          Uses:    
+          Transient: true
+          Outer: false
+          Adding pending: x659 [ctrl: x667 (stage: -1), block: x667 (block: 0)]
+        x661 = FixMul(b542,Const(3)) [ctrl: x667 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  b542, Const(3)
+          Uses:    
+          Transient: false
+          Outer: false
+        x662 = FixAdd(x661,b656) [ctrl: x667 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  x661, b656
+          Uses:    
+          Transient: false
+          Outer: false
+        x663 = SRAMBankedRead(x473,Vector(List(Const(0))),Vector(x662),Vector(Set(b657, b543)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x667 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  b657, x662, Const(0), x473, b543
+          Uses:    
+          Transient: false
+          Outer: false
+        x664 = VecApply(x663,0) [ctrl: x667 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  x663
+          Uses:    
+          Transient: true
+          Outer: false
+          Adding pending: x664 [ctrl: x667 (stage: -1), block: x667 (block: 0)]
+        x665 = FixAdd(x659,x664) [ctrl: x667 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  x659, x664
+          Uses:    x659, x664
+          Transient: false
+          Outer: false
+          Uses [Block: x667 (block: 0)]:
+            consumer x665
+            used Set(x659, x664)
+            
+          - x659 = VecApply(x658,0)
+          - x664 = VecApply(x663,0)
+          Adding direct (x665 x667 (block: 0)) to uses for x659
+          Adding direct (x665 x667 (block: 0)) to uses for x664
+        x666 = SRAMBankedWrite(x539,Vector(x665),Vector(List(Const(0))),Vector(x662),Vector(Set(b657, b543))) [ctrl: x667 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  x665, b657, x662, Const(0), x539, b543
+          Uses:    
+          Transient: false
+          Outer: false
+    x724 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x724 (stage: -1), inner: false]
+      Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+      Inputs:  
+      Uses:    
+      Transient: false
+      Outer: true
+      x669 = StreamOutNew(BurstCmdBus) [ctrl: x724 (stage: -1), inner: false]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x670 = StreamOutNew(BurstFullDataBus()) [ctrl: x724 (stage: -1), inner: false]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x671 = StreamInNew(BurstAckBus) [ctrl: x724 (stage: -1), inner: false]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  
+        Uses:    
+        Transient: false
+        Outer: true
+      x672 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [ctrl: x723 (stage: -1), inner: false]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  Const(0), Const(100), Const(1)
+        Uses:    
+        Transient: false
+        Outer: true
+        Adding pending: x672 [ctrl: x723 (stage: -1), block: x724 (block: 0)]
+      x673 = CounterChainNew(List(x672)) [ctrl: x723 (stage: -1), inner: false]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  x672
+        Uses:    x672
+        Transient: false
+        Outer: true
+        Uses [Block: x724 (block: 0)]:
+          consumer x673
+          used Set(x672)
+          
+        - x672 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+        Adding direct (x673 x723 (block: -1)) to uses for x672
+      x723 = UnrolledForeach(Set(),x673,Block(Const(())),List(List(b674)),List(List(b675)),None) [ctrl: x723 (stage: -1), inner: false]
+        Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+        Inputs:  b674, b675, x673
+        Uses:    
+        Transient: false
+        Outer: true
+        x718 = UnitPipe(Set(b675),Block(Const(())),None) [ctrl: x718 (stage: -1), inner: false]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  b675
+          Uses:    
+          Transient: false
+          Outer: true
+          x676 = RegNew(Const(0)) [ctrl: x718 (stage: -1), inner: false]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  Const(0)
+            Uses:    
+            Transient: false
+            Outer: true
+          x677 = RegNew(Const(0)) [ctrl: x718 (stage: -1), inner: false]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  Const(0)
+            Uses:    
+            Transient: false
+            Outer: true
+          x678 = RegNew(Const(0)) [ctrl: x718 (stage: -1), inner: false]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  Const(0)
+            Uses:    
+            Transient: false
+            Outer: true
+          x698 = UnitPipe(Set(),Block(Const(())),None) [ctrl: x698 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  
+            Uses:    
+            Transient: false
+            Outer: true
+            x679 = FixMul(b674,Const(3)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  b674, Const(3)
+              Uses:    
+              Transient: false
+              Outer: false
+            x680 = FixDivSRA(x679,Const(4)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x679, Const(4)
+              Uses:    
+              Transient: false
+              Outer: false
+            x681 = FixSLA(x680,Const(4)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x680, Const(4)
+              Uses:    
+              Transient: false
+              Outer: false
+            x682 = FixSLA(x681,Const(2)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x681, Const(2)
+              Uses:    
+              Transient: false
+              Outer: false
+            x683 = FixSub(x679,x681) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x679, x681
+              Uses:    
+              Transient: false
+              Outer: false
+            x684 = FixAdd(x683,Const(3)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x683, Const(3)
+              Uses:    
+              Transient: false
+              Outer: false
+            x685 = FixAdd(x683,Const(18)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x683, Const(18)
+              Uses:    
+              Transient: false
+              Outer: false
+            x686 = FixDivSRA(x685,Const(4)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x685, Const(4)
+              Uses:    
+              Transient: false
+              Outer: false
+            x687 = FixSLA(x686,Const(4)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x686, Const(4)
+              Uses:    
+              Transient: false
+              Outer: false
+            x688 = FixSLA(x687,Const(2)) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x687, Const(2)
+              Uses:    
+              Transient: false
+              Outer: false
+            x689 = FixToFix(x682,TRUE,_64,_0) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x682
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x689 [ctrl: x698 (stage: -1), block: x698 (block: 0)]
+            x690 = DRAMAddress(x470) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x470
+              Uses:    
+              Transient: false
+              Outer: false
+            x691 = FixAdd(x689,x690) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x689, x690
+              Uses:    x689
+              Transient: false
+              Outer: false
+              Uses [Block: x698 (block: 0)]:
+                consumer x691
+                used Set(x689)
+                
+              - x689 = FixToFix(x682,TRUE,_64,_0)
+              Adding direct (x691 x698 (block: 0)) to uses for x689
+            x692 = SimpleStruct(ArrayBuffer((offset,x691), (size,x688), (isLoad,Const(false)))) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x691, x688, Const(false)
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x692 [ctrl: x698 (stage: -1), block: x698 (block: 0)]
+            x693 = DRAMIsAlloc(x470) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x470
+              Uses:    
+              Transient: false
+              Outer: false
+            x694 = StreamOutBankedWrite(x669,ArrayBuffer(x692),ArrayBuffer(Set(x693))) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x669, x692, x693
+              Uses:    x692
+              Transient: false
+              Outer: false
+              Uses [Block: x698 (block: 0)]:
+                consumer x694
+                used Set(x692)
+                
+              - x692 = SimpleStruct(ArrayBuffer((offset,x691), (size,x688), (isLoad,Const(false))))
+              Adding direct (x694 x698 (block: 0)) to uses for x692
+            x695 = RegWrite(x676,x683,Set()) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x676, x683
+              Uses:    
+              Transient: false
+              Outer: false
+            x696 = RegWrite(x677,x684,Set()) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x677, x684
+              Uses:    
+              Transient: false
+              Outer: false
+            x697 = RegWrite(x678,x687,Set()) [ctrl: x698 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x678, x687
+              Uses:    
+              Transient: false
+              Outer: false
+          x699 = RegRead(x678) [ctrl: x717 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x678
+            Uses:    
+            Transient: true
+            Outer: true
+            Adding pending: x699 [ctrl: x717 (stage: -1), block: x718 (block: 0)]
+          x700 = CounterNew(Const(0),x699,Const(1),Const(1)) [ctrl: x717 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  Const(0), x699, Const(1)
+            Uses:    x699
+            Transient: false
+            Outer: true
+            Node is propagating reader of:
+            - x699 = RegRead(x678)
+          x701 = CounterChainNew(List(x700)) [ctrl: x717 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x700
+            Uses:    x699, x700
+            Transient: false
+            Outer: true
+            Uses [Block: x718 (block: 0)]:
+              consumer x701
+              used Set(x699, x700)
+              
+            - x699 = RegRead(x678)
+            - x700 = CounterNew(Const(0),x699,Const(1),Const(1))
+            Adding direct (x701 x717 (block: -1)) to uses for x699
+            Adding direct (x701 x717 (block: -1)) to uses for x700
+            Adding pending (x700 x717 (block: -1)) to uses for x699
+          x717 = UnrolledForeach(Set(),x701,Block(Const(())),List(List(b702)),List(List(b703)),None) [ctrl: x717 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  b702, x701, b703
+            Uses:    
+            Transient: false
+            Outer: true
+            x704 = RegRead(x676) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x676
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x704 [ctrl: x717 (stage: -1), block: x717 (block: 0)]
+            x705 = FixLeq(x704,b702) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x704, b702
+              Uses:    x704
+              Transient: false
+              Outer: false
+              Uses [Block: x717 (block: 0)]:
+                consumer x705
+                used Set(x704)
+                
+              - x704 = RegRead(x676)
+              Adding direct (x705 x717 (block: 0)) to uses for x704
+            x706 = RegRead(x677) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x677
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x706 [ctrl: x717 (stage: -1), block: x717 (block: 0)]
+            x707 = FixLst(b702,x706) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  b702, x706
+              Uses:    x706
+              Transient: false
+              Outer: false
+              Uses [Block: x717 (block: 0)]:
+                consumer x707
+                used Set(x706)
+                
+              - x706 = RegRead(x677)
+              Adding direct (x707 x717 (block: 0)) to uses for x706
+            x708 = And(x705,x707) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x705, x707
+              Uses:    
+              Transient: false
+              Outer: false
+            x709 = FixSub(b702,x704) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  b702, x704
+              Uses:    x704
+              Transient: false
+              Outer: false
+              Uses [Block: x717 (block: 0)]:
+                consumer x709
+                used Set(x704)
+                
+              - x704 = RegRead(x676)
+              Adding direct (x709 x717 (block: 0)) to uses for x704
+            x711 = FixMul(b674,Const(3)) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  b674, Const(3)
+              Uses:    
+              Transient: false
+              Outer: false
+            x712 = FixAdd(x711,x709) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x711, x709
+              Uses:    
+              Transient: false
+              Outer: false
+            x713 = SRAMBankedRead(x539,Vector(List(Const(0))),Vector(x712),Vector(Set(x708, b703)),Vec[Fix[TRUE,_10,_22]]) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  Const(0), x712, b703, x539, x708
+              Uses:    
+              Transient: false
+              Outer: false
+            x714 = VecApply(x713,0) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x713
+              Uses:    
+              Transient: true
+              Outer: false
+              Adding pending: x714 [ctrl: x717 (stage: -1), block: x717 (block: 0)]
+            x715 = SimpleStruct(ArrayBuffer((_1,x714), (_2,x708))) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x714 -> Set(x714), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x714, x708
+              Uses:    x714
+              Transient: true
+              Outer: false
+              Uses [Block: x717 (block: 0)]:
+                consumer x715
+                used Set(x714)
+                
+              - x714 = VecApply(x713,0)
+              Adding direct (x715 x717 (block: 0)) to uses for x714
+              Adding pending: x715 [ctrl: x717 (stage: -1), block: x717 (block: 0)]
+            x716 = StreamOutBankedWrite(x670,ArrayBuffer(x715),ArrayBuffer(Set(b703))) [ctrl: x717 (stage: -1), inner: true]
+              Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x714 -> Set(x714), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x715 -> Set(x715), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+              Inputs:  x670, x715, b703
+              Uses:    x715
+              Transient: false
+              Outer: false
+              Uses [Block: x717 (block: 0)]:
+                consumer x716
+                used Set(x715)
+                
+              - x715 = SimpleStruct(ArrayBuffer((_1,x714), (_2,x708)))
+              Adding direct (x716 x717 (block: 0)) to uses for x715
+        x719 = FringeDenseStore(x470,x669,x670,x671) [ctrl: x723 (stage: -1), inner: false]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x714 -> Set(x714), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x715 -> Set(x715), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  x470, x669, x670, x671
+          Uses:    
+          Transient: false
+          Outer: true
+        x722 = UnitPipe(Set(b675),Block(Const(())),None) [ctrl: x722 (stage: -1), inner: true]
+          Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x714 -> Set(x714), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x715 -> Set(x715), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+          Inputs:  b675
+          Uses:    
+          Transient: false
+          Outer: true
+          x720 = StreamInBankedRead(x671,ArrayBuffer(Set())) [ctrl: x722 (stage: -1), inner: true]
+            Pending: x559 -> Set(x559), x514 -> Set(x514), x517 -> Set(x517), x714 -> Set(x714), x699 -> Set(x699), x672 -> Set(x672), x654 -> Set(x654), x567 -> Set(x567), x540 -> Set(x540), x585 -> Set(x585), x606 -> Set(x606), x624 -> Set(x624), x510 -> Set(x510), x501 -> Set(x501), x546 -> Set(x546), x582 -> Set(x582), x477 -> Set(x477), x522 -> Set(x522), x692 -> Set(x692), x704 -> Set(x704), x641 -> Set(x641), x632 -> Set(x632), x659 -> Set(x659), x608 -> Set(x608), x572 -> Set(x572), x689 -> Set(x689), x512 -> Set(x512), x629 -> Set(x629), x548 -> Set(x548), x497 -> Set(x497), x524 -> Set(x524), x715 -> Set(x715), x518 -> Set(x517, x518), x509 -> Set(x509), x706 -> Set(x706), x491 -> Set(x491), x494 -> Set(x494), x700 -> Set(x699, x700), x664 -> Set(x664), x598 -> Set(x598), x643 -> Set(x643), x589 -> Set(x589), x607 -> Set(x607), x610 -> Set(x610), x529 -> Set(x529)
+            Inputs:  x671
+            Uses:    
+            Transient: false
+            Outer: false
+  x725 = ArrayNew(Const(300)) [ctrl: Host, inner: false]
+  x726 = GetMem(x470,x725) [ctrl: Host, inner: false]
+  x727 = OpenCSVFile(Const("/home/hhollen/ee109finalHH/output.csv"),true) [ctrl: Host, inner: false]
+  x728 = ArrayLength(x725) [ctrl: Host, inner: false]
+  x731 = WriteTokens(x727,Const(","),x728,Block((b95) => x730)) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x731
+      used Set(b95)
+      
+    - b95
+    x729 = ArrayApply(x725,b95) [ctrl: Host, inner: false]
+    x730 = FixToText(x729,None) [ctrl: Host, inner: false]
+    Uses [Block: Host]:
+      consumer x731
+      used Set()
+      
+  x732 = CloseCSVFile(x727) [ctrl: Host, inner: false]
+  x733 = AssertIf(Set(),Const(true),Some(Const("ProjectTemplate.scala:58:11: Assertion failure"))) [ctrl: Host, inner: false]

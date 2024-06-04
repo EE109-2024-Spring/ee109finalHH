@@ -1,0 +1,10 @@
+rc file Version 1.0
+
+[Design]
+COMPILE_PATH=/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs
+SystemC=FALSE
+UUM=FALSE
+KDB=FALSE
+USE_NOVAS_HOME=FALSE
+COSIM=FALSE
+TOP=SqrtSimBBox Log2BBox SRAMVerilogDualRead test 

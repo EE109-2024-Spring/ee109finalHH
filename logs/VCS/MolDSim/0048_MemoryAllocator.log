@@ -1,0 +1,31 @@
+
+
+
+Allocating Memory Resources
+---------------------------
+Capacity: 
+  SLICEL: 999999.0
+  Regs: 9999999.0
+  DSPs: 9999999.0
+  Slices: 999999.0
+  SLICEM: 999999.0
+  BRAM: 9999999.0
+Allocating URAM: 
+  Skipping URAM - not enough resources remaining
+Allocating BRAM: 
+  Skipped x321#0 - did not meet depth threshold (Depth: 30, Threshold: 32)
+  Skipped x268#2 - did not meet depth threshold (Depth: 30, Threshold: 32)
+  Skipped x268#0 - did not meet depth threshold (Depth: 30, Threshold: 32)
+  Skipped x329#4 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x329#0 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x329#3 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x329#1 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x329#2 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x270#0 - did not meet depth threshold (Depth: 16, Threshold: 32)
+  Skipped x337#0 - did not meet depth threshold (Depth: 1, Threshold: 32)
+  Assigned x268#1 to BRAM (area: (BRAM=2.0) (<= (BRAM=9999999.0, DSPs=9999999.0, Regs=9999999.0, SLICEL=999999.0, SLICEM=999999.0, Slices=999999.0)), depth: 150 (>= 32))
+  Skipped x348#0 - did not meet depth threshold (Depth: 1, Threshold: 32)
+  Skipped x324#1 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x324#0 - did not meet depth threshold (Depth: 3, Threshold: 32)
+Allocating URAM: 
+  Skipping URAM - not enough resources remaining

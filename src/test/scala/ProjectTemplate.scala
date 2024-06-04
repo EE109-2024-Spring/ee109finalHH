@@ -11,7 +11,7 @@ import spatial.dsl._
   def main(args: Array[String]): Unit = {
 
     // These are on the HOST
-    val A_host = loadCSV2D[T](s"/Users/hunterhollenbeck/EE109/EE109final/EE109finalHH/mol_arr100.csv")
+    val A_host = loadCSV2D[T](s"/home/hhollen/ee109finalHH/mol_arr100.csv")
     val A_dram = DRAM[T](N, 3)
     setMem(A_dram, A_host)
     val out_host = DRAM[T](N, 3)
@@ -22,13 +22,13 @@ import spatial.dsl._
 
       val out_sram = SRAM[T](N,3)
 
-      Foreach(0 until N par 10) {i =>
+      Foreach(0 until N) {i =>
 
 	 // out_sram(i,0) = i.to[T]
 	 // out_sram(i,1) = i.to[T]
 	 // out_sram(i,2) = i.to[T]
 	  val accum = SRAM[T](3)
-	  MemReduce(accum)(0 until N par 4) {j=>
+	  MemReduce(accum)(0 until N) {j=>
 	  //we take mol i and compare it with each other mol j
 	  //to calculate the distance and respective force. 
 	    val tmp = SRAM[T](3).buffer
@@ -54,7 +54,7 @@ import spatial.dsl._
       out_host store out_sram
     }
 
-    writeCSV1D(getMem(out_host), s"/Users/hunterhollenbeck/EE109/EE109final/EE109finalHH/output.csv")
+    writeCSV1D(getMem(out_host), s"/home/hhollen/ee109finalHH/output.csv")
     assert(Bit(true))
   }
 }

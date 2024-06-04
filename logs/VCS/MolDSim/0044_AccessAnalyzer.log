@@ -1,0 +1,1054 @@
+      x272 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [COUNTER]
+        start: List(0)
+        end: List(100)
+        step: List(1)
+      x292 = OpForeach(Set(),x273,Block(Const(())),List(b247),None) [LOOP]
+        Iters:  List(b247)
+        Starts:  List(Const(0))
+        Blocks: Block(Const(()))
+        x289 = StreamOutWrite(x269,x287,Set(x288)) [STREAMING VECTOR SIZE 1]
+        isInvariant b247, b247?  check against ArrayBuffer(x274, x275, x276, x277, x278, x279, x280, x281, x282, x283, x284, x286, x287, x289, x290, x291)
+          Access pattern: 
+          [0] 1*b247 + 0
+          Iterators: b247 (par: 1, start: Const(0))
+            xs: b247
+          Iterator: b247
+          Unrolled matrices: 
+            x289 = StreamOutWrite(x269,x287,Set(x288)) wr{0}
+             b247     c   mod
+                1     0     0wr
+        x291 = FIFOEnq(x270,x290,Set(Const(true))) [STREAMING VECTOR SIZE 1]
+        isInvariant b247, b247?  check against ArrayBuffer(x274, x275, x276, x277, x278, x279, x280, x281, x282, x283, x284, x286, x287, x289, x290, x291)
+          Access pattern: 
+          [0] 1*b247 + 0
+          Iterators: b247 (par: 1, start: Const(0))
+            xs: b247
+          Iterator: b247
+          Unrolled matrices: 
+            x291 = FIFOEnq(x270,x290,Set(Const(true))) wr{0}
+             b247     c   mod
+                1     0     0wr
+      x294 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [COUNTER]
+        start: List(0)
+        end: List(100)
+        step: List(1)
+      x319 = OpForeach(Set(),x295,Block(Const(())),List(b251),None) [LOOP]
+        Iters:  List(b251)
+        Starts:  List(Const(0))
+        Blocks: Block(Const(()))
+          x299 = FIFODeq(x270,Set(Const(true))) [STREAMING VECTOR SIZE 1]
+          isInvariant b251, b251?  check against ArrayBuffer(x317, x318)
+            Access pattern: 
+            [0] 1*b251 + 0
+            Iterators: b251 (par: 1, start: Const(0))
+              xs: b251
+            Iterator: b251
+            Unrolled matrices: 
+              x299 = FIFODeq(x270,Set(Const(true))) rd{0}
+               b251     c   mod
+                  1     0     0rd
+          x301 = RegWrite(x296,x300,Set()) [STREAMING VECTOR SIZE 1]
+            Access pattern: 
+            [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x301 = RegWrite(x296,x300,Set()) wr{}
+                 c  mod
+                 0    0wr
+          x303 = RegWrite(x297,x302,Set()) [STREAMING VECTOR SIZE 1]
+            Access pattern: 
+            [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x303 = RegWrite(x297,x302,Set()) wr{}
+                 c  mod
+                 0    0wr
+          x305 = RegWrite(x298,x304,Set()) [STREAMING VECTOR SIZE 1]
+            Access pattern: 
+            [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x305 = RegWrite(x298,x304,Set()) wr{}
+                 c  mod
+                 0    0wr
+        Relevant: Set(x305)
+        Creating reaching write subst rule for x307 = x304
+        x307 = RegRead(x298)
+          Access pattern: 
+          Iterators: 
+          Unrolled matrices: 
+            x307 = RegRead(x298) rd{}
+               c  modrd
+        x308 = CounterNew(Const(0),x307,Const(1),Const(1)) [COUNTER]
+        isInvariant b251, x304?  check against ArrayBuffer(x317, x318)
+          start: List(0)
+          end: List(x304)
+          step: List(1)
+        x318 = OpForeach(Set(),x309,Block(Const(())),List(b146),None) [LOOP]
+          Iters:  List(b146)
+          Starts:  List(Const(0))
+          Blocks: Block(Const(()))
+          Relevant: Set(x301)
+          Creating reaching write subst rule for x310 = x300
+          x310 = RegRead(x296)
+            Access pattern: 
+            Iterators: b146 (par: 1, start: Const(0))
+            Unrolled matrices: 
+              x310 = RegRead(x296) rd{0}
+                 c  modrd
+          Relevant: Set(x303)
+          Creating reaching write subst rule for x312 = x302
+          x312 = RegRead(x297)
+            Access pattern: 
+            Iterators: b146 (par: 1, start: Const(0))
+            Unrolled matrices: 
+              x312 = RegRead(x297) rd{0}
+                 c  modrd
+          x316 = StreamInRead(x271,Set()) [STREAMING VECTOR SIZE 1]
+          isInvariant b251, b251?  check against ArrayBuffer(x317, x318)
+          isInvariant b146, b251?  check against ArrayBuffer(x311, x313, x314, x315, x317)
+          isInvariant b251, b146?  check against ArrayBuffer(x317, x318)
+          isInvariant b146, b146?  check against ArrayBuffer(x311, x313, x314, x315, x317)
+            Access pattern: 
+            [0] 1*b251 + 1*b146 + 0
+            Iterators: b251 (par: 1, start: Const(0)), b146 (par: 1, start: Const(0))
+              xs: b251, b146
+            Iterator: b251
+            Iterator: b146
+            Unrolled matrices: 
+              x316 = StreamInRead(x271,Set()) rd{0,0}
+               b251  b146     c   mod
+                  1     1     0     0rd
+          x317 = SRAMWrite(x268,x316,List(b251, x315),Set(x314))
+          isInvariant b251, b251?  check against ArrayBuffer(x317, x318)
+          isInvariant b146, b251?  check against ArrayBuffer(x311, x313, x314, x315, x317)
+          isInvariant b251, x300?  check against ArrayBuffer(x317, x318)
+          isInvariant b146, x300?  check against ArrayBuffer(x311, x313, x314, x315, x317)
+          isInvariant b251, b146?  check against ArrayBuffer(x317, x318)
+          isInvariant b146, b146?  check against ArrayBuffer(x311, x313, x314, x315, x317)
+            Access pattern: 
+              [0] 1*b251 + 0
+              [1] 1*b146 + -1*x300
+            Iterators: b251 (par: 1, start: Const(0)), b146 (par: 1, start: Const(0))
+              xs: b251
+            Iterator: b251
+              xs: b146, x300
+            Iterator: b146
+            Other: x300
+              Iterators: b251,b146
+              All used iterators: ListBuffer()
+              Full UID: {0,0}
+              Unrolling x300 {} -> Left(b460)
+            Unrolled matrices: 
+              x317 = SRAMWrite(x268,x316,List(b251, x315),Set(x314)) wr{0,0}
+               b251  b146  b460     c   mod
+                  1     0     0     0     0
+                  0     1    -1     0     0wr
+    x322 = CounterNew(Const(0),Const(100),Const(1),Const(10)) [COUNTER]
+      start: List(0)
+      end: List(100)
+      step: List(1)
+    x396 = OpForeach(Set(),x323,Block(Const(())),List(b20),None) [LOOP]
+      Iters:  List(b20)
+      Starts:  List(Const(0))
+      Blocks: Block(Const(()))
+      x325 = CounterNew(Const(0),Const(100),Const(1),Const(2)) [COUNTER]
+        start: List(0)
+        end: List(100)
+        step: List(1)
+      x327 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [COUNTER]
+        start: List(0)
+        end: List(3)
+        step: List(1)
+      x388 = OpMemReduce(Set(),x326,x328,x324,Block(x329),Block((x329) => x384),Block((x324) => x385),Block((b29,b30) => x386),Block((x324,x386) => Const(())),None,false,List(b27),List(b28),None,Fix[TRUE,_10,_22],SRAM1[Fix[TRUE,_10,_22]]) [LOOP]
+        Iters:  List(b27)
+        Starts:  List(Const(0))
+        Blocks: Block(x329)
+        x330 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [COUNTER]
+          start: List(0)
+          end: List(3)
+          step: List(1)
+        x336 = OpForeach(Set(),x331,Block(Const(())),List(b33),None) [LOOP]
+          Iters:  List(b33)
+          Starts:  List(Const(0))
+          Blocks: Block(Const(()))
+          x332 = SRAMRead(x268,List(b20, b33),Set())
+          isInvariant b20, b20?  check against ArrayBuffer(x332, x334, x335, x336, x388, x392, x393, x394, x395)
+          isInvariant b27, b20?  check against ArrayBuffer(x333, x334, x335, x336)
+          isInvariant b33, b20?  check against ArrayBuffer(x332, x333, x334, x335)
+          isInvariant b20, b33?  check against ArrayBuffer(x332, x334, x335, x336, x388, x392, x393, x394, x395)
+          isInvariant b27, b33?  check against ArrayBuffer(x333, x334, x335, x336)
+          isInvariant b33, b33?  check against ArrayBuffer(x332, x333, x334, x335)
+            Access pattern: 
+              [0] 1*b20 + 0
+              [1] 1*b33 + 0
+            Iterators: b20 (par: 10, start: Const(0)), b27 (par: 2, start: Const(0)), b33 (par: 1, start: Const(0))
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+            Unrolled matrices: 
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{0,0,0}
+               b20  b33    c  mod
+                10    0    0    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{0,1,0}
+               b20  b33    c  mod
+                10    0    0    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{1,0,0}
+               b20  b33    c  mod
+                10    0    1    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{1,1,0}
+               b20  b33    c  mod
+                10    0    1    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{2,0,0}
+               b20  b33    c  mod
+                10    0    2    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{2,1,0}
+               b20  b33    c  mod
+                10    0    2    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{3,0,0}
+               b20  b33    c  mod
+                10    0    3    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{3,1,0}
+               b20  b33    c  mod
+                10    0    3    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{4,0,0}
+               b20  b33    c  mod
+                10    0    4    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{4,1,0}
+               b20  b33    c  mod
+                10    0    4    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{5,0,0}
+               b20  b33    c  mod
+                10    0    5    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{5,1,0}
+               b20  b33    c  mod
+                10    0    5    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{6,0,0}
+               b20  b33    c  mod
+                10    0    6    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{6,1,0}
+               b20  b33    c  mod
+                10    0    6    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{7,0,0}
+               b20  b33    c  mod
+                10    0    7    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{7,1,0}
+               b20  b33    c  mod
+                10    0    7    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{8,0,0}
+               b20  b33    c  mod
+                10    0    8    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{8,1,0}
+               b20  b33    c  mod
+                10    0    8    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{9,0,0}
+               b20  b33    c  mod
+                10    0    9    0
+                 0    1    0    0rd
+              xs: b20
+            Iterator: b20
+              xs: b33
+            Iterator: b33
+              x332 = SRAMRead(x268,List(b20, b33),Set()) rd{9,1,0}
+               b20  b33    c  mod
+                10    0    9    0
+                 0    1    0    0rd
+          x333 = SRAMRead(x268,List(b27, b33),Set())
+          isInvariant b20, b27?  check against ArrayBuffer(x332, x334, x335, x336, x388, x392, x393, x394, x395)
+          isInvariant b27, b27?  check against ArrayBuffer(x333, x334, x335, x336)
+          isInvariant b33, b27?  check against ArrayBuffer(x332, x333, x334, x335)
+          isInvariant b20, b33?  check against ArrayBuffer(x332, x334, x335, x336, x388, x392, x393, x394, x395)
+          isInvariant b27, b33?  check against ArrayBuffer(x333, x334, x335, x336)
+          isInvariant b33, b33?  check against ArrayBuffer(x332, x333, x334, x335)
+            Access pattern: 
+              [0] 1*b27 + 0
+              [1] 1*b33 + 0
+            Iterators: b20 (par: 10, start: Const(0)), b27 (par: 2, start: Const(0)), b33 (par: 1, start: Const(0))
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+            Unrolled matrices: 
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{0,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{0,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{1,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{1,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{2,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{2,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{3,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{3,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{4,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{4,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{5,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{5,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{6,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{6,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{7,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{7,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{8,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{8,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{9,0,0}
+               b27  b33    c  mod
+                 2    0    0    0
+                 0    1    0    0rd
+              xs: b27
+            Iterator: b27
+              xs: b33
+            Iterator: b33
+              x333 = SRAMRead(x268,List(b27, b33),Set()) rd{9,1,0}
+               b27  b33    c  mod
+                 2    0    1    0
+                 0    1    0    0rd
+          x335 = SRAMWrite(x329,x334,List(b33),Set())
+          isInvariant b33, b33?  check against ArrayBuffer(x332, x333, x334, x335)
+            Access pattern: 
+              [0] 1*b33 + 0
+            Iterators: b33 (par: 1, start: Const(0))
+              xs: b33
+            Iterator: b33
+            Unrolled matrices: 
+              x335 = SRAMWrite(x329,x334,List(b33),Set()) wr{0}
+               b33    c  mod
+                 1    0    0wr
+          x338 = SRAMRead(x329,List(Const(0)),Set())
+            Access pattern: 
+              [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x338 = SRAMRead(x329,List(Const(0)),Set()) rd{}
+                 c  mod
+                 0    0rd
+          x340 = SRAMRead(x329,List(Const(1)),Set())
+            Access pattern: 
+              [0] 1
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x340 = SRAMRead(x329,List(Const(1)),Set()) rd{}
+                 c  mod
+                 1    0rd
+          x343 = SRAMRead(x329,List(Const(2)),Set())
+            Access pattern: 
+              [0] 2
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x343 = SRAMRead(x329,List(Const(2)),Set()) rd{}
+                 c  mod
+                 2    0rd
+          x346 = SRAMWrite(x337,x345,List(Const(0)),Set())
+            Access pattern: 
+              [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x346 = SRAMWrite(x337,x345,List(Const(0)),Set()) wr{}
+                 c  mod
+                 0    0wr
+          x351 = SRAMRead(x337,List(Const(0)),Set())
+            Access pattern: 
+              [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x351 = SRAMRead(x337,List(Const(0)),Set()) rd{}
+                 c  mod
+                 0    0rd
+          x356 = RegWrite(x349,x354,Set()) [STREAMING VECTOR SIZE 1]
+            Access pattern: 
+            [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x356 = RegWrite(x349,x354,Set()) wr{}
+                 c  mod
+                 0    0wr
+          x357 = RegWrite(x350,x355,Set()) [STREAMING VECTOR SIZE 1]
+            Access pattern: 
+            [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x357 = RegWrite(x350,x355,Set()) wr{}
+                 c  mod
+                 0    0wr
+        Relevant: Set(x357)
+        Creating reaching write subst rule for x359 = x355
+        x359 = RegRead(x350)
+          Access pattern: 
+          Iterators: 
+          Unrolled matrices: 
+            x359 = RegRead(x350) rd{}
+               c  modrd
+        Relevant: Set(x356)
+        Creating reaching write subst rule for x360 = x354
+        x360 = RegRead(x349)
+          Access pattern: 
+          Iterators: 
+          Unrolled matrices: 
+            x360 = RegRead(x349) rd{}
+               c  modrd
+            Relevant: Set(x356)
+            Creating reaching write subst rule for x361 = x354
+            x361 = RegRead(x349)
+              Access pattern: 
+              Iterators: 
+              Unrolled matrices: 
+                x361 = RegRead(x349) rd{}
+                   c  modrd
+            x362 = SRAMRead(x337,List(Const(0)),Set(x361))
+              Access pattern: 
+                [0] 0
+              Iterators: 
+                xs: 
+              Unrolled matrices: 
+                x362 = SRAMRead(x337,List(Const(0)),Set(x361)) rd{}
+                   c  mod
+                   0    0rd
+          x374 = SRAMWrite(x348,x373,List(Const(0)),Set())
+            Access pattern: 
+              [0] 0
+            Iterators: 
+              xs: 
+            Unrolled matrices: 
+              x374 = SRAMWrite(x348,x373,List(Const(0)),Set()) wr{}
+                 c  mod
+                 0    0wr
+        x376 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [COUNTER]
+          start: List(0)
+          end: List(3)
+          step: List(1)
+        x383 = OpForeach(Set(),x377,Block(Const(())),List(b67),None) [LOOP]
+          Iters:  List(b67)
+          Starts:  List(Const(0))
+          Blocks: Block(Const(()))
+          x378 = SRAMRead(x329,List(b67),Set())
+          isInvariant b67, b67?  check against ArrayBuffer(x378, x379, x381, x382)
+            Access pattern: 
+              [0] 1*b67 + 0
+            Iterators: b67 (par: 1, start: Const(0))
+              xs: b67
+            Iterator: b67
+            Unrolled matrices: 
+              x378 = SRAMRead(x329,List(b67),Set()) rd{0}
+               b67    c  mod
+                 1    0    0rd
+          x380 = SRAMRead(x348,List(Const(0)),Set())
+            Access pattern: 
+              [0] 0
+            Iterators: b67 (par: 1, start: Const(0))
+              xs: 
+            Unrolled matrices: 
+              x380 = SRAMRead(x348,List(Const(0)),Set()) rd{0}
+                 c  mod
+                 0    0rd
+          x382 = SRAMWrite(x329,x381,List(b67),Set())
+          isInvariant b67, b67?  check against ArrayBuffer(x378, x379, x381, x382)
+            Access pattern: 
+              [0] 1*b67 + 0
+            Iterators: b67 (par: 1, start: Const(0))
+              xs: b67
+            Iterator: b67
+            Unrolled matrices: 
+              x382 = SRAMWrite(x329,x381,List(b67),Set()) wr{0}
+               b67    c  mod
+                 1    0    0wr
+      x388 = OpMemReduce(Set(),x326,x328,x324,Block(x329),Block((x329) => x384),Block((x324) => x385),Block((b29,b30) => x386),Block((x324,x386) => Const(())),None,false,List(b27),List(b28),None,Fix[TRUE,_10,_22],SRAM1[Fix[TRUE,_10,_22]]) [LOOP]
+        Iters:  List(b27, b28)
+        Starts:  List(Const(0), Const(0))
+        Blocks: Block((x329) => x384)
+        x384 = SRAMRead(x329,List(b28),Set())
+        isInvariant b28, b28?  check against ArrayBuffer(x384)
+          Access pattern: 
+            [0] 1*b28 + 0
+          Iterators: b28 (par: 1, start: Const(0))
+            xs: b28
+          Iterator: b28
+          Unrolled matrices: 
+            x384 = SRAMRead(x329,List(b28),Set()) rd{0}
+             b28    c  mod
+               1    0    0rd
+        Iters:  List(b28)
+        Starts:  List(Const(0))
+        Blocks: Block((x324) => x385)
+        x385 = SRAMRead(x324,List(b28),Set())
+        isInvariant b28, b28?  check against ArrayBuffer(x385)
+          Access pattern: 
+            [0] 1*b28 + 0
+          Iterators: b28 (par: 1, start: Const(0))
+            xs: b28
+          Iterator: b28
+          Unrolled matrices: 
+            x385 = SRAMRead(x324,List(b28),Set()) rd{0}
+             b28    c  mod
+               1    0    0rd
+        Iters:  List(b27, b28)
+        Starts:  List(Const(0), Const(0))
+        Blocks: Block((b29,b30) => x386)
+        Iters:  List(b28)
+        Starts:  List(Const(0))
+        Blocks: Block((x324,x386) => Const(()))
+        x387 = SRAMWrite(x324,x386,List(b28),Set())
+        isInvariant b28, b28?  check against ArrayBuffer(x387)
+          Access pattern: 
+            [0] 1*b28 + 0
+          Iterators: b28 (par: 1, start: Const(0))
+            xs: b28
+          Iterator: b28
+          Unrolled matrices: 
+            x387 = SRAMWrite(x324,x386,List(b28),Set()) wr{0}
+             b28    c  mod
+               1    0    0wr
+      x389 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [COUNTER]
+        start: List(0)
+        end: List(3)
+        step: List(1)
+      x395 = OpForeach(Set(),x390,Block(Const(())),List(b81),None) [LOOP]
+        Iters:  List(b81)
+        Starts:  List(Const(0))
+        Blocks: Block(Const(()))
+        x391 = SRAMRead(x324,List(b81),Set())
+        isInvariant b81, b81?  check against ArrayBuffer(x391, x392, x393, x394)
+          Access pattern: 
+            [0] 1*b81 + 0
+          Iterators: b81 (par: 1, start: Const(0))
+            xs: b81
+          Iterator: b81
+          Unrolled matrices: 
+            x391 = SRAMRead(x324,List(b81),Set()) rd{0}
+             b81    c  mod
+               1    0    0rd
+        x392 = SRAMRead(x268,List(b20, b81),Set())
+        isInvariant b20, b20?  check against ArrayBuffer(x332, x334, x335, x336, x388, x392, x393, x394, x395)
+        isInvariant b81, b20?  check against ArrayBuffer(x391, x392, x393, x394)
+        isInvariant b20, b81?  check against ArrayBuffer(x332, x334, x335, x336, x388, x392, x393, x394, x395)
+        isInvariant b81, b81?  check against ArrayBuffer(x391, x392, x393, x394)
+          Access pattern: 
+            [0] 1*b20 + 0
+            [1] 1*b81 + 0
+          Iterators: b20 (par: 10, start: Const(0)), b81 (par: 1, start: Const(0))
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+          Unrolled matrices: 
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{0,0}
+             b20  b81    c  mod
+              10    0    0    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{1,0}
+             b20  b81    c  mod
+              10    0    1    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{2,0}
+             b20  b81    c  mod
+              10    0    2    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{3,0}
+             b20  b81    c  mod
+              10    0    3    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{4,0}
+             b20  b81    c  mod
+              10    0    4    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{5,0}
+             b20  b81    c  mod
+              10    0    5    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{6,0}
+             b20  b81    c  mod
+              10    0    6    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{7,0}
+             b20  b81    c  mod
+              10    0    7    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{8,0}
+             b20  b81    c  mod
+              10    0    8    0
+               0    1    0    0rd
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x392 = SRAMRead(x268,List(b20, b81),Set()) rd{9,0}
+             b20  b81    c  mod
+              10    0    9    0
+               0    1    0    0rd
+        x394 = SRAMWrite(x321,x393,List(b20, b81),Set())
+        isInvariant b20, b20?  check against ArrayBuffer(x332, x334, x335, x336, x388, x392, x393, x394, x395)
+        isInvariant b81, b20?  check against ArrayBuffer(x391, x392, x393, x394)
+        isInvariant b20, b81?  check against ArrayBuffer(x332, x334, x335, x336, x388, x392, x393, x394, x395)
+        isInvariant b81, b81?  check against ArrayBuffer(x391, x392, x393, x394)
+          Access pattern: 
+            [0] 1*b20 + 0
+            [1] 1*b81 + 0
+          Iterators: b20 (par: 10, start: Const(0)), b81 (par: 1, start: Const(0))
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+          Unrolled matrices: 
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{0,0}
+             b20  b81    c  mod
+              10    0    0    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{1,0}
+             b20  b81    c  mod
+              10    0    1    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{2,0}
+             b20  b81    c  mod
+              10    0    2    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{3,0}
+             b20  b81    c  mod
+              10    0    3    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{4,0}
+             b20  b81    c  mod
+              10    0    4    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{5,0}
+             b20  b81    c  mod
+              10    0    5    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{6,0}
+             b20  b81    c  mod
+              10    0    6    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{7,0}
+             b20  b81    c  mod
+              10    0    7    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{8,0}
+             b20  b81    c  mod
+              10    0    8    0
+               0    1    0    0wr
+            xs: b20
+          Iterator: b20
+            xs: b81
+          Iterator: b81
+            x394 = SRAMWrite(x321,x393,List(b20, b81),Set()) wr{9,0}
+             b20  b81    c  mod
+              10    0    9    0
+               0    1    0    0wr
+      x400 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [COUNTER]
+        start: List(0)
+        end: List(100)
+        step: List(1)
+      x442 = OpForeach(Set(),x401,Block(Const(())),List(b256),None) [LOOP]
+        Iters:  List(b256)
+        Starts:  List(Const(0))
+        Blocks: Block(Const(()))
+            x420 = StreamOutWrite(x397,x418,Set(x419)) [STREAMING VECTOR SIZE 1]
+            isInvariant b256, b256?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+              Access pattern: 
+              [0] 1*b256 + 0
+              Iterators: b256 (par: 1, start: Const(0))
+                xs: b256
+              Iterator: b256
+              Unrolled matrices: 
+                x420 = StreamOutWrite(x397,x418,Set(x419)) wr{0}
+                 b256     c   mod
+                    1     0     0wr
+            x421 = RegWrite(x402,x409,Set()) [STREAMING VECTOR SIZE 1]
+              Access pattern: 
+              [0] 0
+              Iterators: 
+                xs: 
+              Unrolled matrices: 
+                x421 = RegWrite(x402,x409,Set()) wr{}
+                   c  mod
+                   0    0wr
+            x422 = RegWrite(x403,x410,Set()) [STREAMING VECTOR SIZE 1]
+              Access pattern: 
+              [0] 0
+              Iterators: 
+                xs: 
+              Unrolled matrices: 
+                x422 = RegWrite(x403,x410,Set()) wr{}
+                   c  mod
+                   0    0wr
+            x423 = RegWrite(x404,x413,Set()) [STREAMING VECTOR SIZE 1]
+              Access pattern: 
+              [0] 0
+              Iterators: 
+                xs: 
+              Unrolled matrices: 
+                x423 = RegWrite(x404,x413,Set()) wr{}
+                   c  mod
+                   0    0wr
+          Relevant: Set(x423)
+          Creating reaching write subst rule for x425 = x413
+          x425 = RegRead(x404)
+            Access pattern: 
+            Iterators: 
+            Unrolled matrices: 
+              x425 = RegRead(x404) rd{}
+                 c  modrd
+          x426 = CounterNew(Const(0),x425,Const(1),Const(1)) [COUNTER]
+          isInvariant b256, x412?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+            start: List(0)
+            end: List(16*x412)
+            step: List(1)
+          x437 = OpForeach(Set(),x427,Block(Const(())),List(b195),None) [LOOP]
+            Iters:  List(b195)
+            Starts:  List(Const(0))
+            Blocks: Block(Const(()))
+            Relevant: Set(x421)
+            Creating reaching write subst rule for x428 = x409
+            x428 = RegRead(x402)
+              Access pattern: 
+              Iterators: b195 (par: 1, start: Const(0))
+              Unrolled matrices: 
+                x428 = RegRead(x402) rd{0}
+                   c  modrd
+            Relevant: Set(x422)
+            Creating reaching write subst rule for x430 = x410
+            x430 = RegRead(x403)
+              Access pattern: 
+              Iterators: b195 (par: 1, start: Const(0))
+              Unrolled matrices: 
+                x430 = RegRead(x403) rd{0}
+                   c  modrd
+            x434 = SRAMRead(x321,List(b256, x433),Set(x432))
+            isInvariant b256, b256?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+            isInvariant b195, b256?  check against ArrayBuffer(x429, x431, x432, x433, x434, x435, x436)
+            isInvariant b256, x406?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+            isInvariant b195, x406?  check against ArrayBuffer(x429, x431, x432, x433, x434, x435, x436)
+            isInvariant b256, b256?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+            isInvariant b195, b256?  check against ArrayBuffer(x429, x431, x432, x433, x434, x435, x436)
+            isInvariant b256, b195?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+            isInvariant b195, b195?  check against ArrayBuffer(x429, x431, x432, x433, x434, x435, x436)
+              Access pattern: 
+                [0] 1*b256 + 0
+                [1] -3*b256 + 1*b195 + 16*x406
+              Iterators: b256 (par: 1, start: Const(0)), b195 (par: 1, start: Const(0))
+                xs: b256
+              Iterator: b256
+                xs: b256, b195, x406
+              Iterator: b256
+              Iterator: b195
+              Other: x406
+                Iterators: b256,b195
+                All used iterators: ListBuffer(b256)
+                Full UID: {0,0}
+                Unrolling x406 {(b256,0)} -> Left(b461)
+              Unrolled matrices: 
+                x434 = SRAMRead(x321,List(b256, x433),Set(x432)) rd{0,0}
+                 b256  b195  b461     c   mod
+                    1     0     0     0     0
+                   -3     1    16     0     0rd
+            x436 = StreamOutWrite(x398,x435,Set()) [STREAMING VECTOR SIZE 1]
+            isInvariant b256, b256?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+            isInvariant b195, b256?  check against ArrayBuffer(x429, x431, x432, x433, x434, x435, x436)
+            isInvariant b256, b195?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+            isInvariant b195, b195?  check against ArrayBuffer(x429, x431, x432, x433, x434, x435, x436)
+              Access pattern: 
+              [0] 1*b256 + 1*b195 + 0
+              Iterators: b256 (par: 1, start: Const(0)), b195 (par: 1, start: Const(0))
+                xs: b256, b195
+              Iterator: b256
+              Iterator: b195
+              Unrolled matrices: 
+                x436 = StreamOutWrite(x398,x435,Set()) wr{0,0}
+                 b256  b195     c   mod
+                    1     1     0     0wr
+          x440 = StreamInRead(x399,Set()) [STREAMING VECTOR SIZE 1]
+          isInvariant b256, b256?  check against ArrayBuffer(x405, x406, x407, x408, x409, x410, x411, x412, x413, x414, x415, x417, x418, x420, x421, x422, x423, x424, x434, x435, x436, x437, x438)
+            Access pattern: 
+            [0] 1*b256 + 0
+            Iterators: b256 (par: 1, start: Const(0))
+              xs: b256
+            Iterator: b256
+            Unrolled matrices: 
+              x440 = StreamInRead(x399,Set()) rd{0}
+               b256     c   mod
+                  1     0     0rd

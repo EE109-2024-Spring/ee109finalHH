@@ -1,0 +1,31 @@
+
+
+
+Allocating Memory Resources
+---------------------------
+Capacity: 
+  SLICEL: 34260.0
+  Regs: 548160.0
+  DSPs: 2520.0
+  Slices: 34260.0
+  SLICEM: 17600.0
+  BRAM: 912.0
+Allocating URAM: 
+  Skipping URAM - not enough resources remaining
+Allocating BRAM: 
+  Skipped x329#4 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x329#0 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x329#3 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x329#1 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x329#2 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Skipped x270#0 - did not meet depth threshold (Depth: 16, Threshold: 32)
+  Skipped x337#0 - did not meet depth threshold (Depth: 1, Threshold: 32)
+  Skipped x348#0 - did not meet depth threshold (Depth: 1, Threshold: 32)
+  Skipped x324#1 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Assigned x268#1 to BRAM (area: (BRAM=1.0) (<= (BRAM=912.0, DSPs=2520.0, Regs=548160.0, SLICEL=34260.0, SLICEM=17600.0, Slices=34260.0)), depth: 300 (>= 32))
+  Skipped x324#0 - did not meet depth threshold (Depth: 3, Threshold: 32)
+  Assigned x268#2 to BRAM (area: (BRAM=1.0) (<= (BRAM=911.0, DSPs=2520.0, Regs=548160.0, SLICEL=34260.0, SLICEM=17600.0, Slices=34260.0)), depth: 300 (>= 32))
+  Assigned x268#0 to BRAM (area: (BRAM=1.0) (<= (BRAM=910.0, DSPs=2520.0, Regs=548160.0, SLICEL=34260.0, SLICEM=17600.0, Slices=34260.0)), depth: 300 (>= 32))
+  Assigned x321#0 to BRAM (area: (BRAM=1.0) (<= (BRAM=909.0, DSPs=2520.0, Regs=548160.0, SLICEL=34260.0, SLICEM=17600.0, Slices=34260.0)), depth: 300 (>= 32))
+Allocating URAM: 
+  Skipping URAM - not enough resources remaining

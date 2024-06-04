@@ -1,0 +1,147 @@
+DRAM: x13 (List(Const(100), Const(3))), dim: Const(100) = isValue, mapping to Const(100)
+DRAM: x13 (List(Const(100), Const(3))), dim: Const(3) = isValue, mapping to Const(3)
+DRAM: x15 (List(Const(100), Const(3))), dim: Const(100) = isValue, mapping to Const(100)
+DRAM: x15 (List(Const(100), Const(3))), dim: Const(3) = isValue, mapping to Const(3)
+    Stms:
+      x69 = SRAMRead(x31,List(b67),Set())
+      x88 = OpForeach(Set(),x21,Block(Const(())),List(b20),None)
+      x56 = FixDiv(Const(100),x55)
+      x42 = FixMul(x41,x41)
+      x24 = CounterChainNew(List(x23))
+      x37 = FixSub(x35,x36)
+      x25 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+      x52 = FixLst(Const(0),x51)
+      x46 = SRAMRead(x31,List(Const(2)),Set())
+      x57 = FixDiv(x56,x55)
+      x78 = SRAMWrite(x22,x75,List(b28),Set())
+      x84 = SRAMRead(x16,List(b20, b81),Set())
+      x61 = FixDiv(Const(10),x55)
+      x89 = DenseTransfer(x15,x18,false,false,Set(),Fix[TRUE,_10,_22],SRAM2[Fix[TRUE,_10,_22]],DRAM2[Fix[TRUE,_10,_22]])
+      x74 = OpForeach(Set(),x68,Block(Const(())),List(b67),None)
+      x60 = FixDiv(x59,x55)
+      x85 = FixAdd(x83,x84)
+      x38 = SRAMWrite(x31,x37,List(b33),Set())
+      x70 = FixMul(x69,Const(0.099999904632568359375))
+      x21 = CounterChainNew(List(x19))
+      x65 = SRAMWrite(x50,x64,List(Const(0)),Set())
+      x53 = FixLst(Const(1),x51)
+      x77 = SRAMRead(x22,List(b28),Set())
+      x41 = SRAMRead(x31,List(Const(0)),Set())
+      x73 = SRAMWrite(x31,x72,List(b67),Set())
+      x32 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+      x34 = CounterChainNew(List(x32))
+      x45 = FixAdd(x42,x44)
+      x64 = IfThenElse(x54,Block(x63),Block(Const(90)))
+      x17 = DenseTransfer(x13,x16,true,false,Set(),Fix[TRUE,_10,_22],SRAM2[Fix[TRUE,_10,_22]],DRAM2[Fix[TRUE,_10,_22]])
+      x22 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+      x44 = FixMul(x43,x43)
+      x59 = FixDiv(x58,x55)
+      x71 = SRAMRead(x50,List(Const(0)),Set())
+      x54 = And(x52,x53)
+      x49 = SRAMWrite(x40,x48,List(Const(0)),Set())
+      x86 = SRAMWrite(x18,x85,List(b20, b81),Set())
+      x76 = SRAMRead(x31,List(b28),Set())
+      x39 = OpForeach(Set(),x34,Block(Const(())),List(b33),None)
+      x66 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+      x80 = CounterNew(Const(0),Const(3),Const(1),Const(1))
+      x35 = SRAMRead(x16,List(b20, b33),Set())
+      x48 = FixAdd(x45,x47)
+      x63 = FixSub(x60,x62)
+      x18 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]])
+      x50 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]])
+      x16 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]])
+      x31 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]])
+      x72 = FixMul(x70,x71)
+      x43 = SRAMRead(x31,List(Const(1)),Set())
+      x87 = OpForeach(Set(),x82,Block(Const(())),List(b81),None)
+      x40 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]])
+      x26 = CounterChainNew(Vector(x25))
+      x55 = SRAMRead(x40,List(Const(0)),Set())
+      x23 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+      x75 = FixAdd(b29,b30)
+      x58 = FixDiv(x57,x55)
+      x82 = CounterChainNew(List(x80))
+      x36 = SRAMRead(x16,List(b27, b33),Set())
+      x51 = SRAMRead(x40,List(Const(0)),Set())
+      x19 = CounterNew(Const(0),Const(100),Const(1),Const(1))
+      x79 = OpMemReduce(Set(),x24,x26,x22,Block(x31),Block((x31) => x76),Block((x22) => x77),Block((b29,b30) => x75),Block((x22,x75) => x78),None,false,List(b27),List(b28),None,Fix[TRUE,_10,_22],SRAM1[Fix[TRUE,_10,_22]])
+      x47 = FixMul(x46,x46)
+      x68 = CounterChainNew(List(x66))
+      x62 = FixDiv(x61,x55)
+      x83 = SRAMRead(x22,List(b81),Set())
+    Used:
+      x69 = SRAMRead(x31,List(b67),Set()) [Made: true]
+      () [Made: false]
+      x56 = FixDiv(Const(100),x55) [Made: true]
+      x42 = FixMul(x41,x41) [Made: true]
+      x24 = CounterChainNew(List(x23)) [Made: true]
+      x37 = FixSub(x35,x36) [Made: true]
+      x25 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [Made: true]
+      x52 = FixLst(Const(0),x51) [Made: true]
+      b20 [Made: true]
+      x46 = SRAMRead(x31,List(Const(2)),Set()) [Made: true]
+      x57 = FixDiv(x56,x55) [Made: true]
+      x78 = SRAMWrite(x22,x75,List(b28),Set()) [Made: true]
+      b29 [Made: true]
+      x84 = SRAMRead(x16,List(b20, b81),Set()) [Made: true]
+      x61 = FixDiv(Const(10),x55) [Made: true]
+      x74 = OpForeach(Set(),x68,Block(Const(())),List(b67),None) [Made: true]
+      x60 = FixDiv(x59,x55) [Made: true]
+      x85 = FixAdd(x83,x84) [Made: true]
+      b28 [Made: true]
+      x38 = SRAMWrite(x31,x37,List(b33),Set()) [Made: true]
+      x70 = FixMul(x69,Const(0.099999904632568359375)) [Made: true]
+      x21 = CounterChainNew(List(x19)) [Made: true]
+      b33 [Made: true]
+      x65 = SRAMWrite(x50,x64,List(Const(0)),Set()) [Made: true]
+      x53 = FixLst(Const(1),x51) [Made: true]
+      x77 = SRAMRead(x22,List(b28),Set()) [Made: true]
+      x13 = DRAMHostNew(List(Const(100), Const(3)),Const(0)) [Made: false]
+      x41 = SRAMRead(x31,List(Const(0)),Set()) [Made: true]
+      x73 = SRAMWrite(x31,x72,List(b67),Set()) [Made: true]
+      x32 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [Made: true]
+      x34 = CounterChainNew(List(x32)) [Made: true]
+      x45 = FixAdd(x42,x44) [Made: true]
+      x64 = IfThenElse(x54,Block(x63),Block(Const(90))) [Made: true]
+      x22 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [Made: true]
+      x44 = FixMul(x43,x43) [Made: true]
+      x59 = FixDiv(x58,x55) [Made: true]
+      b27 [Made: true]
+      x71 = SRAMRead(x50,List(Const(0)),Set()) [Made: true]
+      x54 = And(x52,x53) [Made: true]
+      x49 = SRAMWrite(x40,x48,List(Const(0)),Set()) [Made: true]
+      x86 = SRAMWrite(x18,x85,List(b20, b81),Set()) [Made: true]
+      b81 [Made: true]
+      x76 = SRAMRead(x31,List(b28),Set()) [Made: true]
+      x39 = OpForeach(Set(),x34,Block(Const(())),List(b33),None) [Made: true]
+      x66 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [Made: true]
+      x80 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [Made: true]
+      x35 = SRAMRead(x16,List(b20, b33),Set()) [Made: true]
+      90 [Made: false]
+      x48 = FixAdd(x45,x47) [Made: true]
+      x63 = FixSub(x60,x62) [Made: true]
+      x18 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [Made: true]
+      x50 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]]) [Made: true]
+      b67 [Made: true]
+      x16 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [Made: true]
+      x31 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [Made: true]
+      x72 = FixMul(x70,x71) [Made: true]
+      x43 = SRAMRead(x31,List(Const(1)),Set()) [Made: true]
+      x87 = OpForeach(Set(),x82,Block(Const(())),List(b81),None) [Made: true]
+      x40 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]]) [Made: true]
+      x26 = CounterChainNew(Vector(x25)) [Made: true]
+      x55 = SRAMRead(x40,List(Const(0)),Set()) [Made: true]
+      x23 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [Made: true]
+      x75 = FixAdd(b29,b30) [Made: true]
+      x58 = FixDiv(x57,x55) [Made: true]
+      x82 = CounterChainNew(List(x80)) [Made: true]
+      x36 = SRAMRead(x16,List(b27, b33),Set()) [Made: true]
+      b30 [Made: true]
+      x51 = SRAMRead(x40,List(Const(0)),Set()) [Made: true]
+      x19 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [Made: true]
+      x79 = OpMemReduce(Set(),x24,x26,x22,Block(x31),Block((x31) => x76),Block((x22) => x77),Block((b29,b30) => x75),Block((x22,x75) => x78),None,false,List(b27),List(b28),None,Fix[TRUE,_10,_22],SRAM1[Fix[TRUE,_10,_22]]) [Made: true]
+      x47 = FixMul(x46,x46) [Made: true]
+      x15 = DRAMHostNew(List(Const(100), Const(3)),Const(0)) [Made: false]
+      x68 = CounterChainNew(List(x66)) [Made: true]
+      x62 = FixDiv(x61,x55) [Made: true]
+      x83 = SRAMRead(x22,List(b81),Set()) [Made: true]

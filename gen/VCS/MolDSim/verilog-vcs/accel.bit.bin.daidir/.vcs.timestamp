@@ -1,0 +1,114 @@
+0 
+49
++cli+1
++define+CLOCK_PERIOD=1
++incdir+/cad/synopsys/dc_shell/J-2014.09-SP3/dw/dw02/src_ver
++itf+/cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/vcsdp.tab
++libext++.v
++lint=TFIPC-L
++memcbk
++v2k
++vcs+initreg+random
++vcs+lic+wait
++vcsd
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -g -I/cad/synopsys/vcs/K-2015.09-SP2-7/include -I../../cpp/SW -I../../vcs.sw-resources -I../dramShim -I../DRAMSim2 -I../ -fPIC -std=c++11 -L../ -ldramsim -lstdc++ -Wl,-rpath=../ -I/cad/synopsys/vcs/K-2015.09-SP2-7/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=sim.cpp
+-Mdir=Top.csrc
+-Mexternalobj=
+-Mldflags=-L/usr/lib/x86_64-linux-gnu -L/lib/x86_64-linux-gnu -Wl,--no-as-needed -Wl,--no-as-needed -no-pie -L../ -ldramsim -lstdc++ -Wl,-rpath=../ -rdynamic
+-Mobjects= /cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/libvirsim.so /cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/liberrorinf.so /cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/libsnpsmalloc.so
+-Mout=accel.bit.bin
+-Msaverestoreobj=/cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl -lm
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/cad/synopsys/vcs/K-2015.09-SP2-7/include
+-Xcbug=0x1
+-Xpiyushb1=0x80
+-debug=1
+-full64
+-gen_obj
+-o accel.bit.bin
+-picarchive
+-pp_used
+-q
+-sverilog
+-timescale=1ns/1ps
+-y
+/cad/synopsys/dc_shell/J-2014.09-SP3/dw/sim_ver
+/cad/synopsys/vcs/K-2015.09-SP2-7/linux64/bin/vcs1
+Math.v
+RetimeShiftRegister.sv
+SRAMVerilogDualRead.v
+SRAMVerilogSim.v
+SpatialIP.v
+Top-harness.sv
+46
+sysc_uni_pwd=/home/hhollen/ee109finalHH/gen/VCS/MolDSim/verilog-vcs
+XILINX_VIVADO=/opt/Xilinx/Vivado/2017.1
+XDG_SESSION_TYPE=tty
+XDG_SESSION_ID=3461
+XDG_SESSION_CLASS=user
+XDG_RUNTIME_DIR=/run/user/374940
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+VMR_MODE_FLAG=64
+VCS_MODE_FLAG=64
+VCS_HOME=/cad/synopsys/vcs/K-2015.09-SP2-7
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+VCD_OFF=1
+UNAME=/bin/uname
+TOOL_HOME=/cad/synopsys/vcs/K-2015.09-SP2-7/linux64
+SSH_TTY=/dev/pts/14
+SSH_CONNECTION=10.37.193.195 63461 172.24.72.63 22
+SSH_CLIENT=10.37.193.195 63461 22
+SNPS_VCS_INTERNAL_UBUNTU_PRE_LDFLAGS=-Wl,--no-as-needed 
+SNPS_VCS_INTERNAL_LINKER_NEEDS_NO_AS_NEEDED=1
+SDKMAN_PLATFORM=linuxx64
+SDKMAN_DIR=/home/hhollen/.sdkman
+SDKMAN_CANDIDATES_DIR=/home/hhollen/.sdkman/candidates
+SDKMAN_CANDIDATES_API=https://api.sdkman.io/2
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+SCALA_HOME=/home/hhollen/.sdkman/candidates/scala/current
+SBT_HOME=/home/hhollen/.sdkman/candidates/sbt/current
+OVA_UUM=0
+NUM_THREADS=10
+MOTD_SHOWN=pam
+MFLAGS=-ew
+MAKEOVERRIDES=${-*-command-variables-*-}
+MAKELEVEL=2
+MAKEFLAGS=ew -- $(MAKEOVERRIDES)
+LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+LESSOPEN=| /usr/bin/lesspipe %s
+LESSCLOSE=/usr/bin/lesspipe %s %s
+LC_ALL=C
+KRB5CCNAME=FILE:/tmp/krb5cc_374940_Y2qOXZ
+JAVA_OPTS=-Dfile.encoding=UTF-8
+JAVA_HOME=/home/hhollen/.sdkman/candidates/java/current
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/374940/bus
+CPATH=/usr/include/x86_64-linux-gnu
+CLOCK_FREQ_MHZ=100
+0
+7
+1717382382 Top-harness.sv
+1717382382 RetimeShiftRegister.sv
+1717380778 SpatialIP.v
+1717382382 SRAMVerilogSim.v
+1717382382 SRAMVerilogDualRead.v
+1717382382 Math.v
+1476936195 /cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/vcsdp.tab
+5
+1717382382 sim.cpp
+0 
+1476936821 /cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/libvirsim.so
+1476936375 /cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/liberrorinf.so
+1476936347 /cad/synopsys/vcs/K-2015.09-SP2-7/linux64/lib/libsnpsmalloc.so
+1717382392 accel.bit.bin.daidir

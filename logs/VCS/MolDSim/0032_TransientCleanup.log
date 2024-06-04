@@ -1,0 +1,1218 @@
+  Advancing blk
+     From: Host
+     To: Host
+    x1 = OpenCSVFile(Const("/home/hhollen/ee109finalHH/mol_arr100.csv"),false) [Host]
+    Updating x1 since there are no subst rules for it
+    x2 = ReadTokens(x1,Const(",")) [Host]
+    Updating x2 since there are no subst rules for it
+    x4 = CloseCSVFile(x1) [Host]
+    Updating x4 since there are no subst rules for it
+    x8 = ArrayMap(x2,Block((x2,b5) => x6),Block((x6) => x7)) [Host]
+    Updating x8 since there are no subst rules for it
+    Advancing blk
+       From: Host
+       To: Host
+      x6 = ArrayApply(x2,b5) [Host]
+      Updating x6 since there are no subst rules for it
+    Advancing blk
+       From: Host
+       To: Host
+      x7 = TextToFix(x6,TRUE,_10,_22) [Host]
+      Updating x7 since there are no subst rules for it
+    x13 = DRAMHostNew(List(Const(100), Const(3)),Const(0)) [Host]
+    Updating x13 since there are no subst rules for it
+    x14 = SetMem(x13,x8) [Host]
+    Updating x14 since there are no subst rules for it
+    x15 = DRAMHostNew(List(Const(100), Const(3)),Const(0)) [Host]
+    Updating x15 since there are no subst rules for it
+    x90 = AccelScope(Block(Const(()))) [x90 (block: -1)]
+    Updating x90 since there are no subst rules for it
+    Advancing blk
+       From: x90 (block: -1)
+       To: x90 (block: 0)
+    node: (x90,x90 (block: -1)), block: (x90,x90 (block: 0))
+      x16 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [x90 (block: 0)]
+      Updating x16 since there are no subst rules for it
+      x107 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [x163 (block: -1)]
+      Updating x107 since there are no subst rules for it
+      x109 = CounterChainNew(List(x107)) [x163 (block: -1)]
+      Updating x109 since there are no subst rules for it
+      x163 = OpForeach(Set(),x109,Block(Const(())),List(b108),None) [x163 (block: -1)]
+      Updating x163 since there are no subst rules for it
+      Advancing blk
+         From: x163 (block: -1)
+         To: x163 (block: 0)
+      node: (x163,x163 (block: -1)), block: (x163,x163 (block: 0))
+        x110 = StreamOutNew(BurstCmdBus) [x163 (block: 0)]
+        Updating x110 since there are no subst rules for it
+        x111 = FIFONew(Const(16)) [x163 (block: 0)]
+        Updating x111 since there are no subst rules for it
+        x112 = StreamInNew(BurstDataBus()) [x163 (block: 0)]
+        Updating x112 since there are no subst rules for it
+        x131 = UnitPipe(Set(),Block(Const(())),None) [x131 (block: -1)]
+        Updating x131 since there are no subst rules for it
+        Advancing blk
+           From: x131 (block: -1)
+           To: x131 (block: 0)
+        node: (x131,x131 (block: -1)), block: (x131,x131 (block: 0))
+          x113 = FixMul(b108,Const(3)) [x131 (block: 0)]
+          Updating x113 since there are no subst rules for it
+          x114 = FixDivSRA(x113,Const(4)) [x131 (block: 0)]
+          Updating x114 since there are no subst rules for it
+          x115 = FixSLA(x114,Const(4)) [x131 (block: 0)]
+          Updating x115 since there are no subst rules for it
+          x116 = FixSLA(x115,Const(2)) [x131 (block: 0)]
+          Updating x116 since there are no subst rules for it
+          x117 = FixSub(x113,x115) [x131 (block: 0)]
+          Updating x117 since there are no subst rules for it
+          x118 = FixAdd(x117,Const(3)) [x131 (block: 0)]
+          Updating x118 since there are no subst rules for it
+          x119 = FixAdd(x117,Const(18)) [x131 (block: 0)]
+          Updating x119 since there are no subst rules for it
+          x120 = FixDivSRA(x119,Const(4)) [x131 (block: 0)]
+          Updating x120 since there are no subst rules for it
+          x121 = FixSLA(x120,Const(4)) [x131 (block: 0)]
+          Updating x121 since there are no subst rules for it
+          x122 = FixSLA(x121,Const(2)) [x131 (block: 0)]
+          Updating x122 since there are no subst rules for it
+          
+          Transforming node that is primitive, is inHw, and is transient
+          x123 = FixToFix(x116,TRUE,_64,_0) [stateless]
+           - users: Set(User(x125,x131 (block: 0)))
+           - ctrl:  x131 (block: 0)
+          x123 = FixToFix(x116,TRUE,_64,_0) [x131 (block: 0)]
+          Updating x123 since there are no subst rules for it
+          x124 = DRAMAddress(x13) [x131 (block: 0)]
+          Updating x124 since there are no subst rules for it
+          x125 = FixAdd(x123,x124) [x131 (block: 0)]
+          Updating x125 since there are no subst rules for it
+          
+          Transforming node that is primitive, is inHw, and is transient
+          x126 = SimpleStruct(ArrayBuffer((offset,x125), (size,x122), (isLoad,Const(true)))) [stateless]
+           - users: Set(User(x128,x131 (block: 0)))
+           - ctrl:  x131 (block: 0)
+          x126 = SimpleStruct(ArrayBuffer((offset,x125), (size,x122), (isLoad,Const(true)))) [x131 (block: 0)]
+          Updating x126 since there are no subst rules for it
+          x127 = DRAMIsAlloc(x13) [x131 (block: 0)]
+          Updating x127 since there are no subst rules for it
+          x128 = StreamOutWrite(x110,x126,Set(x127)) [x131 (block: 0)]
+          Updating x128 since there are no subst rules for it
+          
+          Transforming node that is primitive, is inHw, and is transient
+          x129 = SimpleStruct(ArrayBuffer((size,x121), (start,x117), (end,x118))) [stateless]
+           - users: Set(User(x130,x131 (block: 0)))
+           - ctrl:  x131 (block: 0)
+          x129 = SimpleStruct(ArrayBuffer((size,x121), (start,x117), (end,x118))) [x131 (block: 0)]
+          Updating x129 since there are no subst rules for it
+          x130 = FIFOEnq(x111,x129,Set(Const(true))) [x131 (block: 0)]
+          Updating x130 since there are no subst rules for it
+        x132 = FringeDenseLoad(x13,x110,x112) [x163 (block: 0)]
+        Updating x132 since there are no subst rules for it
+        x162 = UnitPipe(Set(),Block(Const(())),None) [x162 (block: -1)]
+        Updating x162 since there are no subst rules for it
+        Advancing blk
+           From: x162 (block: -1)
+           To: x162 (block: 0)
+        node: (x162,x162 (block: -1)), block: (x162,x162 (block: 0))
+          
+          x133 = RegNew(Const(0)) [reg new]
+          x133 = RegNew(Const(0)) [x162 (block: 0)]
+          Updating x133 since there are no subst rules for it
+          
+          x134 = RegNew(Const(0)) [reg new]
+          x134 = RegNew(Const(0)) [x162 (block: 0)]
+          Updating x134 since there are no subst rules for it
+          
+          x135 = RegNew(Const(0)) [reg new]
+          x135 = RegNew(Const(0)) [x162 (block: 0)]
+          Updating x135 since there are no subst rules for it
+          x143 = UnitPipe(Set(),Block(Const(())),None) [x143 (block: -1)]
+          Updating x143 since there are no subst rules for it
+          Advancing blk
+             From: x143 (block: -1)
+             To: x143 (block: 0)
+          node: (x143,x143 (block: -1)), block: (x143,x143 (block: 0))
+            x136 = FIFODeq(x111,Set(Const(true))) [x143 (block: 0)]
+            Updating x136 since there are no subst rules for it
+            
+            Transforming node that is primitive, is inHw, and is transient
+            x137 = FieldApply(x136,start) [stateless]
+             - users: Set(User(x138,x143 (block: 0)))
+             - ctrl:  x143 (block: 0)
+            x137 = FieldApply(x136,start) [x143 (block: 0)]
+            Updating x137 since there are no subst rules for it
+            
+            x138 = RegWrite(x133,x137,Set()) [reg write]
+            x138 = RegWrite(x133,x137,Set()) [x143 (block: 0)]
+            Updating x138 since there are no subst rules for it
+            
+            Transforming node that is primitive, is inHw, and is transient
+            x139 = FieldApply(x136,end) [stateless]
+             - users: Set(User(x140,x143 (block: 0)))
+             - ctrl:  x143 (block: 0)
+            x139 = FieldApply(x136,end) [x143 (block: 0)]
+            Updating x139 since there are no subst rules for it
+            
+            x140 = RegWrite(x134,x139,Set()) [reg write]
+            x140 = RegWrite(x134,x139,Set()) [x143 (block: 0)]
+            Updating x140 since there are no subst rules for it
+            
+            Transforming node that is primitive, is inHw, and is transient
+            x141 = FieldApply(x136,size) [stateless]
+             - users: Set(User(x142,x143 (block: 0)))
+             - ctrl:  x143 (block: 0)
+            x141 = FieldApply(x136,size) [x143 (block: 0)]
+            Updating x141 since there are no subst rules for it
+            
+            x142 = RegWrite(x135,x141,Set()) [reg write]
+            x142 = RegWrite(x135,x141,Set()) [x143 (block: 0)]
+            Updating x142 since there are no subst rules for it
+          
+          Transforming node that is primitive and requires move or dup
+          x144 = RegRead(x135)
+           - users: Set(User(x147,x161 (block: -1)), User(x145,x161 (block: -1))) [stateless]
+           - ctrl: x161 (block: -1)
+              - (x147, x161 (block: -1)): x144 -> spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@164ec28d
+              - (x145, x161 (block: -1)): x144 -> spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@164ec28d
+          x145 = CounterNew(Const(0),x144,Const(1),Const(1)) [x161 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          
+          x145 = CounterNew(Const(0),x144,Const(1),Const(1)) [external user, blk = x161 (block: -1)]: Subst Rule List((x144,spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@164ec28d))
+          x144 = RegRead(x135) [x161 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x144 since there are no subst rules for it
+          Created new mirror x240 for x144 in x161 (block: -1)
+            x144 -> x240 = RegRead(x135)
+          x145 = CounterNew(Const(0),x240,Const(1),Const(1))
+          x147 = CounterChainNew(List(x145)) [x161 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          
+          x147 = CounterChainNew(List(x145)) [external user, blk = x161 (block: -1)]: Subst Rule List((x144,spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@164ec28d))
+          Using mirror x240 for x144 in x161 (block: -1)
+            x144 -> x240 = RegRead(x135)
+          x147 = CounterChainNew(List(x145))
+          x161 = OpForeach(Set(),x147,Block(Const(())),List(b146),None) [x161 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x161 since there are no subst rules for it
+          Advancing blk
+             From: x161 (block: -1)
+             To: x161 (block: 0)
+          node: (x161,x161 (block: -1)), block: (x161,x161 (block: 0))
+            
+            Transforming node that is primitive, is inHw, and is transient
+            x152 = RegRead(x133) [stateless]
+             - users: Set(User(x153,x161 (block: 0)), User(x158,x161 (block: 0)))
+             - ctrl:  x161 (block: 0)
+            x152 = RegRead(x133) [x161 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x152 since there are no subst rules for it
+            x153 = FixLeq(x152,b146) [x161 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x153 since there are no subst rules for it
+            
+            Transforming node that is primitive, is inHw, and is transient
+            x154 = RegRead(x134) [stateless]
+             - users: Set(User(x155,x161 (block: 0)))
+             - ctrl:  x161 (block: 0)
+            x154 = RegRead(x134) [x161 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x154 since there are no subst rules for it
+            x155 = FixLst(b146,x154) [x161 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x155 since there are no subst rules for it
+            x156 = And(x153,x155) [x161 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x156 since there are no subst rules for it
+            x158 = FixSub(b146,x152) [x161 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x158 since there are no subst rules for it
+            x159 = StreamInRead(x112,Set()) [x161 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x159 since there are no subst rules for it
+            x160 = SRAMWrite(x16,x159,List(b108, x158),Set(x156)) [x161 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x160 since there are no subst rules for it
+      x18 = SRAMNew(List(Const(100), Const(3)),SRAM2[Fix[TRUE,_10,_22]]) [x90 (block: 0)]
+        (x147,x161 (block: -1))
+        (x145,x161 (block: -1))
+      Updating x18 since there are no subst rules for it
+      x19 = CounterNew(Const(0),Const(100),Const(1),Const(10)) [x88 (block: -1)]
+        (x147,x161 (block: -1))
+        (x145,x161 (block: -1))
+      Updating x19 since there are no subst rules for it
+      x21 = CounterChainNew(List(x19)) [x88 (block: -1)]
+        (x147,x161 (block: -1))
+        (x145,x161 (block: -1))
+      Updating x21 since there are no subst rules for it
+      x88 = OpForeach(Set(),x21,Block(Const(())),List(b20),None) [x88 (block: -1)]
+        (x147,x161 (block: -1))
+        (x145,x161 (block: -1))
+      Updating x88 since there are no subst rules for it
+      Advancing blk
+         From: x88 (block: -1)
+         To: x88 (block: 0)
+      node: (x88,x88 (block: -1)), block: (x88,x88 (block: 0))
+        x22 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [x88 (block: 0)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+        Updating x22 since there are no subst rules for it
+        x23 = CounterNew(Const(0),Const(100),Const(1),Const(2)) [x79 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+        Updating x23 since there are no subst rules for it
+        x24 = CounterChainNew(List(x23)) [x79 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+        Updating x24 since there are no subst rules for it
+        x25 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [x79 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+        Updating x25 since there are no subst rules for it
+        x26 = CounterChainNew(Vector(x25)) [x79 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+        Updating x26 since there are no subst rules for it
+        x79 = OpMemReduce(Set(),x24,x26,x22,Block(x31),Block((x31) => x76),Block((x22) => x77),Block((b29,b30) => x75),Block((x22,x75) => x78),None,false,List(b27),List(b28),None,Fix[TRUE,_10,_22],SRAM1[Fix[TRUE,_10,_22]]) [x79 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+        Updating x79 since there are no subst rules for it
+        Advancing blk
+           From: x79 (block: -1)
+           To: x79 (block: 0)
+        node: (x79,x79 (block: -1)), block: (x79,x79 (block: 0))
+          x31 = SRAMNew(List(Const(3)),SRAM1[Fix[TRUE,_10,_22]]) [x79 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x31 since there are no subst rules for it
+          x32 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [x39 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x32 since there are no subst rules for it
+          x34 = CounterChainNew(List(x32)) [x39 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x34 since there are no subst rules for it
+          x39 = OpForeach(Set(),x34,Block(Const(())),List(b33),None) [x39 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x39 since there are no subst rules for it
+          Advancing blk
+             From: x39 (block: -1)
+             To: x39 (block: 0)
+          node: (x39,x39 (block: -1)), block: (x39,x39 (block: 0))
+            x35 = SRAMRead(x16,List(b20, b33),Set()) [x39 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x35 since there are no subst rules for it
+            x36 = SRAMRead(x16,List(b27, b33),Set()) [x39 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x36 since there are no subst rules for it
+            x37 = FixSub(x35,x36) [x39 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x37 since there are no subst rules for it
+            x38 = SRAMWrite(x31,x37,List(b33),Set()) [x39 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x38 since there are no subst rules for it
+          x40 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]]) [x79 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x40 since there are no subst rules for it
+          
+          x219 = RegNew(Const(0)) [reg new]
+          REMOVING register x219
+          
+          x220 = RegNew(Const(0)) [reg new]
+          REMOVING register x220
+          
+          x221 = RegNew(Const(0)) [reg new]
+          REMOVING register x221
+          x225 = UnitPipe(Set(),Block(Const(())),None) [x225 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x225 since there are no subst rules for it
+          Advancing blk
+             From: x225 (block: -1)
+             To: x225 (block: 0)
+          node: (x225,x225 (block: -1)), block: (x225,x225 (block: 0))
+            x41 = SRAMRead(x31,List(Const(0)),Set()) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x41 since there are no subst rules for it
+            x42 = FixMul(x41,x41) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x42 since there are no subst rules for it
+            x43 = SRAMRead(x31,List(Const(1)),Set()) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x43 since there are no subst rules for it
+            x44 = FixMul(x43,x43) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x44 since there are no subst rules for it
+            x45 = FixAdd(x42,x44) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x45 since there are no subst rules for it
+            x46 = SRAMRead(x31,List(Const(2)),Set()) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x46 since there are no subst rules for it
+            x47 = FixMul(x46,x46) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x47 since there are no subst rules for it
+            x48 = FixAdd(x45,x47) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x48 since there are no subst rules for it
+            x49 = SRAMWrite(x40,x48,List(Const(0)),Set()) [x225 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x49 since there are no subst rules for it
+            
+            x222 = RegWrite(x219,x41,Set()) [reg write]
+            REMOVING register write x222
+            
+            x223 = RegWrite(x220,x43,Set()) [reg write]
+            REMOVING register write x223
+            
+            x224 = RegWrite(x221,x46,Set()) [reg write]
+            REMOVING register write x224
+          x50 = SRAMNew(List(Const(1)),SRAM1[Fix[TRUE,_10,_22]]) [x79 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x50 since there are no subst rules for it
+          
+          x229 = RegNew(Const(0)) [reg new]
+          REMOVING register x229
+          
+          x230 = RegNew(Const(false)) [reg new]
+          x230 = RegNew(Const(false)) [x79 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x230 since there are no subst rules for it
+          
+          x231 = RegNew(Const(false)) [reg new]
+          x231 = RegNew(Const(false)) [x79 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x231 since there are no subst rules for it
+          x235 = UnitPipe(Set(),Block(Const(())),None) [x235 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+          Updating x235 since there are no subst rules for it
+          Advancing blk
+             From: x235 (block: -1)
+             To: x235 (block: 0)
+          node: (x235,x235 (block: -1)), block: (x235,x235 (block: 0))
+            x51 = SRAMRead(x40,List(Const(0)),Set()) [x235 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x51 since there are no subst rules for it
+            x52 = FixLst(Const(0),x51) [x235 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x52 since there are no subst rules for it
+            x53 = FixLst(Const(1),x51) [x235 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x53 since there are no subst rules for it
+            x54 = And(x52,x53) [x235 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x54 since there are no subst rules for it
+            x102 = Not(x54) [x235 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x102 since there are no subst rules for it
+            
+            x232 = RegWrite(x229,x51,Set()) [reg write]
+            REMOVING register write x232
+            
+            x233 = RegWrite(x230,x54,Set()) [reg write]
+            x233 = RegWrite(x230,x54,Set()) [x235 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x233 since there are no subst rules for it
+            
+            x234 = RegWrite(x231,x102,Set()) [reg write]
+            x234 = RegWrite(x231,x102,Set()) [x235 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+            Updating x234 since there are no subst rules for it
+          
+          Transforming node that is primitive and requires move or dup
+          x237 = RegRead(x230)
+           - users: Set(User(x218,x218 (block: -1)), User(x55,x103 (block: 0))) [stateless]
+           - ctrl: x103 (block: 0)
+              - (x55, x103 (block: 0)): x237 -> spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@528084c6
+           - ctrl: x218 (block: -1)
+              - (x218, x218 (block: -1)): x237 -> spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@7126734b
+          
+          Transforming node that is primitive and requires move or dup
+          x238 = RegRead(x231)
+           - users: Set(User(x218,x218 (block: -1))) [stateless]
+           - ctrl: x218 (block: -1)
+              - (x218, x218 (block: -1)): x238 -> spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@56aa2e34
+          x218 = Switch(List(x237, x238),Block(x104)) [x218 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          
+          x218 = Switch(List(x237, x238),Block(x104)) [external user, blk = x218 (block: -1)]: Subst Rule List((x238,spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@56aa2e34), (x237,spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@7126734b))
+          x238 = RegRead(x231) [x218 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x238 since there are no subst rules for it
+          Created new mirror x241 for x238 in x218 (block: -1)
+          x237 = RegRead(x230) [x218 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x237 since there are no subst rules for it
+          Created new mirror x242 for x237 in x218 (block: -1)
+            x238 -> x241 = RegRead(x231)
+            x237 -> x242 = RegRead(x230)
+          Advancing blk
+             From: x218 (block: -1)
+             To: x218 (block: 0)
+          node: (x218,x218 (block: -1)), block: (x218,x218 (block: 0))
+          Using mirror x241 for x238 in x218 (block: -1)
+          Using mirror x242 for x237 in x218 (block: -1)
+            x238 -> x241
+            x237 -> x242
+            x103 = SwitchCase(Block(x63)) [x103 (block: -1)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x103 since there are no subst rules for it
+            Advancing blk
+               From: x103 (block: -1)
+               To: x103 (block: 0)
+            node: (x103,x103 (block: -1)), block: (x103,x103 (block: 0))
+              x55 = SRAMRead(x40,List(Const(0)),Set(x237)) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              
+              x55 = SRAMRead(x40,List(Const(0)),Set(x237)) [external user, blk = x103 (block: 0)]: Subst Rule List((x237,spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@528084c6))
+              x237 = RegRead(x230) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x237 since there are no subst rules for it
+              Created new mirror x243 for x237 in x103 (block: 0)
+                x237 -> x243 = RegRead(x230)
+              x55 = SRAMRead(x40,List(Const(0)),Set(x243))
+              x56 = FixDiv(Const(100),x55) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x56 since there are no subst rules for it
+              x57 = FixDiv(x56,x55) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x57 since there are no subst rules for it
+              x58 = FixDiv(x57,x55) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x58 since there are no subst rules for it
+              x59 = FixDiv(x58,x55) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x59 since there are no subst rules for it
+              x60 = FixDiv(x59,x55) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x60 since there are no subst rules for it
+              x61 = FixDiv(Const(10),x55) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x61 since there are no subst rules for it
+              x62 = FixDiv(x61,x55) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x62 since there are no subst rules for it
+              x63 = FixSub(x60,x62) [x103 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x63 since there are no subst rules for it
+              node: (x103,x103 (block: -1)), block: (x103,x103 (block: 0))
+            x104 = SwitchCase(Block(Const(90))) [x104 (block: -1)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x104 since there are no subst rules for it
+            Advancing blk
+               From: x104 (block: -1)
+               To: x104 (block: 0)
+            node: (x104,x104 (block: -1)), block: (x104,x104 (block: 0))
+              node: (x104,x104 (block: -1)), block: (x104,x104 (block: 0))
+            node: (x218,x218 (block: -1)), block: (x218,x218 (block: 0))
+            Using mirror x241 for x238 in x218 (block: -1)
+            Using mirror x242 for x237 in x218 (block: -1)
+              x238 -> x241
+              x237 -> x242
+          x218 = Switch(List(x242, x241),Block(x104))
+          x239 = UnitPipe(Set(),Block(Const(())),None) [x239 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x239 since there are no subst rules for it
+          Advancing blk
+             From: x239 (block: -1)
+             To: x239 (block: 0)
+          node: (x239,x239 (block: -1)), block: (x239,x239 (block: 0))
+            x65 = SRAMWrite(x50,x218,List(Const(0)),Set()) [x239 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x65 since there are no subst rules for it
+          x66 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [x74 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x66 since there are no subst rules for it
+          x68 = CounterChainNew(List(x66)) [x74 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x68 since there are no subst rules for it
+          x74 = OpForeach(Set(),x68,Block(Const(())),List(b67),None) [x74 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x74 since there are no subst rules for it
+          Advancing blk
+             From: x74 (block: -1)
+             To: x74 (block: 0)
+          node: (x74,x74 (block: -1)), block: (x74,x74 (block: 0))
+            x69 = SRAMRead(x31,List(b67),Set()) [x74 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x69 since there are no subst rules for it
+            x70 = FixMul(x69,Const(0.099999904632568359375)) [x74 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x70 since there are no subst rules for it
+            x71 = SRAMRead(x50,List(Const(0)),Set()) [x74 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x71 since there are no subst rules for it
+            x72 = FixMul(x70,x71) [x74 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x72 since there are no subst rules for it
+            x73 = SRAMWrite(x31,x72,List(b67),Set()) [x74 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x73 since there are no subst rules for it
+          node: (x79,x79 (block: -1)), block: (x79,x79 (block: 0))
+        Advancing blk
+           From: x79 (block: 0)
+           To: x79 (block: 1)
+        node: (x79,x79 (block: -1)), block: (x79,x79 (block: 1))
+          x76 = SRAMRead(x31,List(b28),Set()) [x79 (block: 1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x76 since there are no subst rules for it
+          node: (x79,x79 (block: -1)), block: (x79,x79 (block: 1))
+        Advancing blk
+           From: x79 (block: 1)
+           To: x79 (block: 2)
+        node: (x79,x79 (block: -1)), block: (x79,x79 (block: 2))
+          x77 = SRAMRead(x22,List(b28),Set()) [x79 (block: 2)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x77 since there are no subst rules for it
+          node: (x79,x79 (block: -1)), block: (x79,x79 (block: 2))
+        Advancing blk
+           From: x79 (block: 2)
+           To: x79 (block: 3)
+        node: (x79,x79 (block: -1)), block: (x79,x79 (block: 3))
+          x75 = FixAdd(b29,b30) [x79 (block: 3)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x75 since there are no subst rules for it
+          node: (x79,x79 (block: -1)), block: (x79,x79 (block: 3))
+        Advancing blk
+           From: x79 (block: 3)
+           To: x79 (block: 4)
+        node: (x79,x79 (block: -1)), block: (x79,x79 (block: 4))
+          x78 = SRAMWrite(x22,x75,List(b28),Set()) [x79 (block: 4)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x78 since there are no subst rules for it
+        x80 = CounterNew(Const(0),Const(3),Const(1),Const(1)) [x87 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+          (x55,x103 (block: 0))
+          (x218,x218 (block: -1))
+        Updating x80 since there are no subst rules for it
+        x82 = CounterChainNew(List(x80)) [x87 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+          (x55,x103 (block: 0))
+          (x218,x218 (block: -1))
+        Updating x82 since there are no subst rules for it
+        x87 = OpForeach(Set(),x82,Block(Const(())),List(b81),None) [x87 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+          (x55,x103 (block: 0))
+          (x218,x218 (block: -1))
+        Updating x87 since there are no subst rules for it
+        Advancing blk
+           From: x87 (block: -1)
+           To: x87 (block: 0)
+        node: (x87,x87 (block: -1)), block: (x87,x87 (block: 0))
+          x83 = SRAMRead(x22,List(b81),Set()) [x87 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x83 since there are no subst rules for it
+          x84 = SRAMRead(x16,List(b20, b81),Set()) [x87 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x84 since there are no subst rules for it
+          x85 = FixAdd(x83,x84) [x87 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x85 since there are no subst rules for it
+          x86 = SRAMWrite(x18,x85,List(b20, b81),Set()) [x87 (block: 0)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x86 since there are no subst rules for it
+      x164 = CounterNew(Const(0),Const(100),Const(1),Const(1)) [x217 (block: -1)]
+        (x147,x161 (block: -1))
+        (x145,x161 (block: -1))
+        (x55,x103 (block: 0))
+        (x218,x218 (block: -1))
+      Updating x164 since there are no subst rules for it
+      x166 = CounterChainNew(List(x164)) [x217 (block: -1)]
+        (x147,x161 (block: -1))
+        (x145,x161 (block: -1))
+        (x55,x103 (block: 0))
+        (x218,x218 (block: -1))
+      Updating x166 since there are no subst rules for it
+      x217 = OpForeach(Set(),x166,Block(Const(())),List(b165),None) [x217 (block: -1)]
+        (x147,x161 (block: -1))
+        (x145,x161 (block: -1))
+        (x55,x103 (block: 0))
+        (x218,x218 (block: -1))
+      Updating x217 since there are no subst rules for it
+      Advancing blk
+         From: x217 (block: -1)
+         To: x217 (block: 0)
+      node: (x217,x217 (block: -1)), block: (x217,x217 (block: 0))
+        x167 = StreamOutNew(BurstCmdBus) [x217 (block: 0)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+          (x55,x103 (block: 0))
+          (x218,x218 (block: -1))
+        Updating x167 since there are no subst rules for it
+        x168 = StreamOutNew(BurstFullDataBus()) [x217 (block: 0)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+          (x55,x103 (block: 0))
+          (x218,x218 (block: -1))
+        Updating x168 since there are no subst rules for it
+        x169 = StreamInNew(BurstAckBus) [x217 (block: 0)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+          (x55,x103 (block: 0))
+          (x218,x218 (block: -1))
+        Updating x169 since there are no subst rules for it
+        x216 = UnitPipe(Set(),Block(Const(())),None) [x216 (block: -1)]
+          (x147,x161 (block: -1))
+          (x145,x161 (block: -1))
+          (x55,x103 (block: 0))
+          (x218,x218 (block: -1))
+        Updating x216 since there are no subst rules for it
+        Advancing blk
+           From: x216 (block: -1)
+           To: x216 (block: 0)
+        node: (x216,x216 (block: -1)), block: (x216,x216 (block: 0))
+          x212 = UnitPipe(Set(),Block(Const(())),None) [x212 (block: -1)]
+            (x147,x161 (block: -1))
+            (x145,x161 (block: -1))
+            (x55,x103 (block: 0))
+            (x218,x218 (block: -1))
+          Updating x212 since there are no subst rules for it
+          Advancing blk
+             From: x212 (block: -1)
+             To: x212 (block: 0)
+          node: (x212,x212 (block: -1)), block: (x212,x212 (block: 0))
+            
+            x170 = RegNew(Const(0)) [reg new]
+            x170 = RegNew(Const(0)) [x212 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x170 since there are no subst rules for it
+            
+            x171 = RegNew(Const(0)) [reg new]
+            x171 = RegNew(Const(0)) [x212 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x171 since there are no subst rules for it
+            
+            x172 = RegNew(Const(0)) [reg new]
+            x172 = RegNew(Const(0)) [x212 (block: 0)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x172 since there are no subst rules for it
+            x192 = UnitPipe(Set(),Block(Const(())),None) [x192 (block: -1)]
+              (x147,x161 (block: -1))
+              (x145,x161 (block: -1))
+              (x55,x103 (block: 0))
+              (x218,x218 (block: -1))
+            Updating x192 since there are no subst rules for it
+            Advancing blk
+               From: x192 (block: -1)
+               To: x192 (block: 0)
+            node: (x192,x192 (block: -1)), block: (x192,x192 (block: 0))
+              x173 = FixMul(b165,Const(3)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x173 since there are no subst rules for it
+              x174 = FixDivSRA(x173,Const(4)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x174 since there are no subst rules for it
+              x175 = FixSLA(x174,Const(4)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x175 since there are no subst rules for it
+              x176 = FixSLA(x175,Const(2)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x176 since there are no subst rules for it
+              x177 = FixSub(x173,x175) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x177 since there are no subst rules for it
+              x178 = FixAdd(x177,Const(3)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x178 since there are no subst rules for it
+              x179 = FixAdd(x177,Const(18)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x179 since there are no subst rules for it
+              x180 = FixDivSRA(x179,Const(4)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x180 since there are no subst rules for it
+              x181 = FixSLA(x180,Const(4)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x181 since there are no subst rules for it
+              x182 = FixSLA(x181,Const(2)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x182 since there are no subst rules for it
+              
+              Transforming node that is primitive, is inHw, and is transient
+              x183 = FixToFix(x176,TRUE,_64,_0) [stateless]
+               - users: Set(User(x185,x192 (block: 0)))
+               - ctrl:  x192 (block: 0)
+              x183 = FixToFix(x176,TRUE,_64,_0) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x183 since there are no subst rules for it
+              x184 = DRAMAddress(x15) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x184 since there are no subst rules for it
+              x185 = FixAdd(x183,x184) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x185 since there are no subst rules for it
+              
+              Transforming node that is primitive, is inHw, and is transient
+              x186 = SimpleStruct(ArrayBuffer((offset,x185), (size,x182), (isLoad,Const(false)))) [stateless]
+               - users: Set(User(x188,x192 (block: 0)))
+               - ctrl:  x192 (block: 0)
+              x186 = SimpleStruct(ArrayBuffer((offset,x185), (size,x182), (isLoad,Const(false)))) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x186 since there are no subst rules for it
+              x187 = DRAMIsAlloc(x15) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x187 since there are no subst rules for it
+              x188 = StreamOutWrite(x167,x186,Set(x187)) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x188 since there are no subst rules for it
+              
+              x189 = RegWrite(x170,x177,Set()) [reg write]
+              x189 = RegWrite(x170,x177,Set()) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x189 since there are no subst rules for it
+              
+              x190 = RegWrite(x171,x178,Set()) [reg write]
+              x190 = RegWrite(x171,x178,Set()) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x190 since there are no subst rules for it
+              
+              x191 = RegWrite(x172,x181,Set()) [reg write]
+              x191 = RegWrite(x172,x181,Set()) [x192 (block: 0)]
+                (x147,x161 (block: -1))
+                (x145,x161 (block: -1))
+                (x55,x103 (block: 0))
+                (x218,x218 (block: -1))
+              Updating x191 since there are no subst rules for it
+            
+            Transforming node that is primitive and requires move or dup
+            x193 = RegRead(x172)
+             - users: Set(User(x196,x211 (block: -1)), User(x194,x211 (block: -1))) [stateless]
+             - ctrl: x211 (block: -1)
+                - (x196, x211 (block: -1)): x193 -> spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@450009ca
+                - (x194, x211 (block: -1)): x193 -> spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@450009ca
+            x194 = CounterNew(Const(0),x193,Const(1),Const(1)) [x211 (block: -1)]
+              (x147,x161 (block: -1))
+              (x194,x211 (block: -1))
+              (x218,x218 (block: -1))
+              (x145,x161 (block: -1))
+              (x196,x211 (block: -1))
+              (x55,x103 (block: 0))
+            
+            x194 = CounterNew(Const(0),x193,Const(1),Const(1)) [external user, blk = x211 (block: -1)]: Subst Rule List((x193,spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@450009ca))
+            x193 = RegRead(x172) [x211 (block: -1)]
+              (x147,x161 (block: -1))
+              (x194,x211 (block: -1))
+              (x218,x218 (block: -1))
+              (x145,x161 (block: -1))
+              (x196,x211 (block: -1))
+              (x55,x103 (block: 0))
+            Updating x193 since there are no subst rules for it
+            Created new mirror x244 for x193 in x211 (block: -1)
+              x193 -> x244 = RegRead(x172)
+            x194 = CounterNew(Const(0),x244,Const(1),Const(1))
+            x196 = CounterChainNew(List(x194)) [x211 (block: -1)]
+              (x147,x161 (block: -1))
+              (x194,x211 (block: -1))
+              (x218,x218 (block: -1))
+              (x145,x161 (block: -1))
+              (x196,x211 (block: -1))
+              (x55,x103 (block: 0))
+            
+            x196 = CounterChainNew(List(x194)) [external user, blk = x211 (block: -1)]: Subst Rule List((x193,spatial.transform.TransientCleanup$$Lambda$7440/0x0000000102021c40@450009ca))
+            Using mirror x244 for x193 in x211 (block: -1)
+              x193 -> x244 = RegRead(x172)
+            x196 = CounterChainNew(List(x194))
+            x211 = OpForeach(Set(),x196,Block(Const(())),List(b195),None) [x211 (block: -1)]
+              (x147,x161 (block: -1))
+              (x194,x211 (block: -1))
+              (x218,x218 (block: -1))
+              (x145,x161 (block: -1))
+              (x196,x211 (block: -1))
+              (x55,x103 (block: 0))
+            Updating x211 since there are no subst rules for it
+            Advancing blk
+               From: x211 (block: -1)
+               To: x211 (block: 0)
+            node: (x211,x211 (block: -1)), block: (x211,x211 (block: 0))
+              
+              Transforming node that is primitive, is inHw, and is transient
+              x201 = RegRead(x170) [stateless]
+               - users: Set(User(x202,x211 (block: 0)), User(x207,x211 (block: 0)))
+               - ctrl:  x211 (block: 0)
+              x201 = RegRead(x170) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x201 since there are no subst rules for it
+              x202 = FixLeq(x201,b195) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x202 since there are no subst rules for it
+              
+              Transforming node that is primitive, is inHw, and is transient
+              x203 = RegRead(x171) [stateless]
+               - users: Set(User(x204,x211 (block: 0)))
+               - ctrl:  x211 (block: 0)
+              x203 = RegRead(x171) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x203 since there are no subst rules for it
+              x204 = FixLst(b195,x203) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x204 since there are no subst rules for it
+              x205 = And(x202,x204) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x205 since there are no subst rules for it
+              x207 = FixSub(b195,x201) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x207 since there are no subst rules for it
+              x208 = SRAMRead(x18,List(b165, x207),Set(x205)) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x208 since there are no subst rules for it
+              
+              Transforming node that is primitive, is inHw, and is transient
+              x209 = SimpleStruct(ArrayBuffer((_1,x208), (_2,x205))) [stateless]
+               - users: Set(User(x210,x211 (block: 0)))
+               - ctrl:  x211 (block: 0)
+              x209 = SimpleStruct(ArrayBuffer((_1,x208), (_2,x205))) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x209 since there are no subst rules for it
+              x210 = StreamOutWrite(x168,x209,Set()) [x211 (block: 0)]
+                (x147,x161 (block: -1))
+                (x194,x211 (block: -1))
+                (x218,x218 (block: -1))
+                (x145,x161 (block: -1))
+                (x196,x211 (block: -1))
+                (x55,x103 (block: 0))
+              Updating x210 since there are no subst rules for it
+          x213 = FringeDenseStore(x15,x167,x168,x169) [x216 (block: 0)]
+            (x147,x161 (block: -1))
+            (x194,x211 (block: -1))
+            (x218,x218 (block: -1))
+            (x145,x161 (block: -1))
+            (x196,x211 (block: -1))
+            (x55,x103 (block: 0))
+          Updating x213 since there are no subst rules for it
+          x215 = UnitPipe(Set(),Block(Const(())),None) [x215 (block: -1)]
+            (x147,x161 (block: -1))
+            (x194,x211 (block: -1))
+            (x218,x218 (block: -1))
+            (x145,x161 (block: -1))
+            (x196,x211 (block: -1))
+            (x55,x103 (block: 0))
+          Updating x215 since there are no subst rules for it
+          Advancing blk
+             From: x215 (block: -1)
+             To: x215 (block: 0)
+          node: (x215,x215 (block: -1)), block: (x215,x215 (block: 0))
+            x214 = StreamInRead(x169,Set()) [x215 (block: 0)]
+              (x147,x161 (block: -1))
+              (x194,x211 (block: -1))
+              (x218,x218 (block: -1))
+              (x145,x161 (block: -1))
+              (x196,x211 (block: -1))
+              (x55,x103 (block: 0))
+            Updating x214 since there are no subst rules for it
+    x91 = ArrayNew(Const(300)) [Host]
+      (x147,x161 (block: -1))
+      (x194,x211 (block: -1))
+      (x218,x218 (block: -1))
+      (x145,x161 (block: -1))
+      (x196,x211 (block: -1))
+      (x55,x103 (block: 0))
+    Updating x91 since there are no subst rules for it
+    x92 = GetMem(x15,x91) [Host]
+      (x147,x161 (block: -1))
+      (x194,x211 (block: -1))
+      (x218,x218 (block: -1))
+      (x145,x161 (block: -1))
+      (x196,x211 (block: -1))
+      (x55,x103 (block: 0))
+    Updating x92 since there are no subst rules for it
+    x93 = OpenCSVFile(Const("/home/hhollen/ee109finalHH/output.csv"),true) [Host]
+      (x147,x161 (block: -1))
+      (x194,x211 (block: -1))
+      (x218,x218 (block: -1))
+      (x145,x161 (block: -1))
+      (x196,x211 (block: -1))
+      (x55,x103 (block: 0))
+    Updating x93 since there are no subst rules for it
+    x94 = ArrayLength(x91) [Host]
+      (x147,x161 (block: -1))
+      (x194,x211 (block: -1))
+      (x218,x218 (block: -1))
+      (x145,x161 (block: -1))
+      (x196,x211 (block: -1))
+      (x55,x103 (block: 0))
+    Updating x94 since there are no subst rules for it
+    x98 = WriteTokens(x93,Const(","),x94,Block((b95) => x97)) [Host]
+      (x147,x161 (block: -1))
+      (x194,x211 (block: -1))
+      (x218,x218 (block: -1))
+      (x145,x161 (block: -1))
+      (x196,x211 (block: -1))
+      (x55,x103 (block: 0))
+    Updating x98 since there are no subst rules for it
+    Advancing blk
+       From: Host
+       To: Host
+      x96 = ArrayApply(x91,b95) [Host]
+        (x147,x161 (block: -1))
+        (x194,x211 (block: -1))
+        (x218,x218 (block: -1))
+        (x145,x161 (block: -1))
+        (x196,x211 (block: -1))
+        (x55,x103 (block: 0))
+      Updating x96 since there are no subst rules for it
+      x97 = FixToText(x96,None) [Host]
+        (x147,x161 (block: -1))
+        (x194,x211 (block: -1))
+        (x218,x218 (block: -1))
+        (x145,x161 (block: -1))
+        (x196,x211 (block: -1))
+        (x55,x103 (block: 0))
+      Updating x97 since there are no subst rules for it
+    x99 = CloseCSVFile(x93) [Host]
+      (x147,x161 (block: -1))
+      (x194,x211 (block: -1))
+      (x218,x218 (block: -1))
+      (x145,x161 (block: -1))
+      (x196,x211 (block: -1))
+      (x55,x103 (block: 0))
+    Updating x99 since there are no subst rules for it
+    x101 = AssertIf(Set(),Const(true),Some(Const("ProjectTemplate.scala:58:11: Assertion failure"))) [Host]
+      (x147,x161 (block: -1))
+      (x194,x211 (block: -1))
+      (x218,x218 (block: -1))
+      (x145,x161 (block: -1))
+      (x196,x211 (block: -1))
+      (x55,x103 (block: 0))
+    Updating x101 since there are no subst rules for it
