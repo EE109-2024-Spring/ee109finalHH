@@ -2,7 +2,7 @@ import spatial.dsl._
 
 @spatial class MolDSim extends SpatialTest {
 
-  type T = FixPt[TRUE,_10,_22]
+  type T = FixPt[TRUE,_12,_20]
 
   val N = 100  // mols is Nx3i
   val Timesteps = 1 //we are doing one computationally expensive timestep
@@ -22,13 +22,13 @@ import spatial.dsl._
 
       val out_sram = SRAM[T](N,3)
 
-      Foreach(0 until N par 10) {i =>
+      Pipe.Foreach(0 until N par 10) {i =>
 
 	 // out_sram(i,0) = i.to[T]
 	 // out_sram(i,1) = i.to[T]
 	 // out_sram(i,2) = i.to[T]
 	  val accum = SRAM[T](3)
-	  MemReduce(accum)(0 until N par 4) {j=>
+	  MemReduce(accum)(0 until N par 10) {j=>
 	  //we take mol i and compare it with each other mol j
 	  //to calculate the distance and respective force. 
 	    val tmp = SRAM[T](3).buffer
